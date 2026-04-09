@@ -1,0 +1,326 @@
+# -------------------------------
+# MKDocs Configuration
+# Project: Certus Knowledgebase Site
+# -------------------------------
+
+site_name: "Certus Knowledgebase Site"
+site_description: "Knowledgebase Portal for CERTUS products by Fritz Gyger AG"
+site_url: "https://fgyger.ch/docs"
+site_author: "Fritz Gyger AG"
+edit_uri: "edit/main/docs/"
+copyright: "© Fritz Gyger AG. All rights reserved."
+docs_dir: docs
+
+# -------------------------------
+# Theme: Material for MkDocs
+# -------------------------------
+theme:
+  name: "material"    # Use the Material for MkDocs theme
+  custom_dir: "docs/configurations/templates"   # Custom templates for PDF generation
+  language: "en"
+  logo: "_shared_assets/company_logo_light.png"
+  favicon: "_shared_assets/company_favicon.png"
+  
+  font:
+    text: "Open Sans"
+    code: "Source Code Pro"   
+
+  # Features: https://squidfunk.github.io/mkdocs-material/setup/changing-the-theme/#features
+  features:
+    - search.highlight        # Highlight search terms in the results page
+    - search.suggest          # Show search suggestions as the user types
+    # Navigation features     # Note: some navigation features like tracking and expand are commented out to optimize performance for large documentation sites, but can be enabled if desired
+    - navigation.tracking     # Track active navigation item based on scroll position (can be disabled for better performance on large sites)
+    #- navigation.expand      # Automatically expand parent navigation items to show the active page (can be disabled for better performance on large sites)
+    - navigation.sections     # Show section headers in the navigation for better organization of large documentation sites
+    - navigation.instant      # Show an instant loading indicator when navigating between pages for a smoother user experience
+    - navigation.indexes      # Show page indexes in the navigation for easier access to subpages
+    - navigation.footer       # Show a footer in the navigation with additional information or links
+    # Content features        # Note: some content features like code annotation and tabbed content are enabled to enhance the documentation experience
+    - content.code.annotate   # Show annotations for code blocks (e.g., line highlights, error highlights)
+    - content.code.copy       # Enable copy button for code blocks
+    - content.code.focus      # Highlight the active line in code blocks
+    - content.code.tabbed     # Enable tabbed code blocks
+    - content.tabs.link       # Enable linking between tabs
+    - content.tooltips        # Enable tooltips for additional information  
+    # Typography features     # Note: typography features like smart quotes and smart dashes are enabled to improve the readability of the documentation
+    - header.autolinks        # Automatically add anchor links to headers for easy linking and navigation within the documentation
+    - header.linked           # Make header links clickable for easier navigation
+    # Other features
+    - toc.sticky              # Make the table of contents sticky for easier navigation on long pages
+    
+  # Color palette with light/dark mode support
+  palette:
+    # Light
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: custom
+      accent: custom
+    # Dark
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: custom
+      accent: custom
+  icon:
+    admonition:                           # Custom icons for admonition types using Octicons (https://primer.style/octicons/)
+      note: octicons/tag-16
+      important: octicons/pin-16
+      caution: octicons/alert-16
+      warning: octicons/bell-16
+      danger: octicons/zap-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      failure: octicons/x-circle-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16 
+      draft: octicons/pencil-16   
+
+# -------------------------------
+#  Extra CSS: for custom styling of PDF output and other elements
+# -------------------------------
+extra_css:                        # Note: some custom CSS files are included to style the PDF output and other elements of the documentation, but can be customized or expanded as needed
+  #- configurations/stylesheets/style.css
+  - configurations/stylesheets/pdf-button.css
+  - configurations/stylesheets/home.css                   # Note: the home.css file includes custom styles for the homepage, such as the hero section and call-to-action buttons, to create a visually appealing and user-friendly landing page for the documentation site 
+  - configurations/stylesheets/typography.css
+  #- configurations/stylesheets/typography-home-page.css   # Note: the typography-home-page.css file includes custom typography styles specifically for the homepage, such as larger font sizes and adjusted line heights, to create a more engaging and readable landing page for visitors to the documentation site
+  
+extra_javascript:                 # Note: some custom JavaScript files are included to enhance the functionality of the documentation, but can be customized or expanded as needed
+  #- configurations/javascripts/print-download.js
+  - configurations/javascripts/pdf-config.js
+  - configurations/javascripts/pdf-button.js
+  - configurations/javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - configurations/javascripts/figure_caption.js
+
+hooks:
+  - docs/configurations/hooks/strip_drafts.py
+
+# -------------------------------
+#  Plugins
+# -------------------------------
+# plugins: https://squidfunk.github.io/mkdocs-material/reference/plugins/
+plugins:
+  - search:                     # Note: the search plugin is configured to prebuild the search index for better performance on large documentation sites, but can be customized as needed
+      lang: en
+      separator: '[\s\-]+'
+      prebuild_index: true
+      indexing: full
+      min_search_length: 3
+  
+  - mkdocstrings:               # Note: the mkdocstrings plugin is included to automatically generate API documentation from docstrings in the code, but can be customized or removed if not needed
+      default_handler: python
+
+  - macros:                     # Note: the macros plugin is configured to include variables from an external YAML file and a directory of common content for use in templates and markdown files, but can be customized as needed
+      include_yaml:
+        # Both loaded under the same key "variables" so they
+        # deep-merge into one namespace. variables.product.*
+        # is added by the second file for this build.
+        - variables: docs/data/variables.yaml
+        - variables: docs/data/variables.flex.yaml
+      on_error_fail: false
+      # Include variables from an external YAML file for use in templates and markdown files
+      include_dir: docs/common_content
+  
+  - glightbox:      # glightbox (Image Zooming) configuration: https://squidfunk.github.io/mkdocs-material/reference/plugins/#glightbox
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      auto_caption: true
+      caption_position: bottom
+      background: "#e3e3e3"
+      shadow: true
+      manual: true
+  
+  - with-pdf:         # with-pdf plugin configuration: Download PDF export configuration for Material for MkDocs: https://squidfunk.github.io/mkdocs-material/reference/plugins/#with-pdf
+      author: Fritz Gyger AG
+      copyright: "© Fritz Gyger AG. All rights reserved."
+      #
+      cover: true
+      back_cover: false
+      cover_title: "User Manual"
+      cover_subtitle: "With CERTUS CONTROL 2.1.19"
+      custom_template_path: docs/configurations/templates/pdf/
+      #
+      toc_title: Table of Contents
+      heading_shift: false          #  set to true to shift heading levels in the PDF (e.g., h1 becomes h2) 
+      toc_level: 3                  # maximum heading level to include in the table of contents (e.g., 3 will include h1, h2, and h3)
+      ordered_chapter_level: 3      # set to 1 to start chapter numbering from h1, 2 for h2, etc.  
+      # 
+      excludes_children:           # exclude all child pages of the specified pages (e.g., 'release-notes/' will exclude all release notes and their subpages) 
+        - 'docs/en/products/certus-flex/table_of_figures.md'
+      
+      exclude_pages:     
+        - '^$'
+        - 'de/'
+        - 'docs/release_notes/*.md'   # example of excluding a specific page from the PDF export using a regex pattern
+
+      #two_columns_level: 3
+      #
+      #render_js: true
+      #headless_chrome_path: headless-chromium
+      #
+      output_path: "pdf/User_Manual_CERTUS_FLEX_EN.pdf"
+      enabled_if_env: ENABLE_PDF_EXPORT
+      #
+      #debug_html: false
+      #verbose: false
+      show_anchors: true    # adds anchor links to headings in the PDF for easy navigation (e.g., 1. Introduction)
+  
+  - table-of-figures:
+      directive_identifier: 'table-of-figures'
+      figure_types:
+        - image
+        - table
+      # - codeblock
+      custom_templates_path: null
+      translations_overrides_path: docs/configurations/javascripts/translations_overrides.json  
+      caption_identifier_description_separator: ' — '  # Separator between figure identifier and description in captions (e.g., "Figure 1 — Description")
+      sections_breadcrumb_separator: ' > '
+      
+extra:    # Extra configuration variables that can be used in templates and markdown files
+  companyLogoURL: "http://mkdocsdemo.teknosyssolutions.com/_shared_assets/company_logo_light.png"
+  pdfHeaderLogoURL: "http://mkdocsdemo.teknosyssolutions.com/_shared_assets/company_logo_small.png"
+  certusFlexImageURL: "http://mkdocsdemo.teknosyssolutions.com/en/products/certus-flex/_assets/certus_flex.png"
+  # Custom UI labels for multilingual support
+  ui_labels:
+    en:
+      print: "Print PDF"
+      download: "Download PDF"
+    de:
+      print: "Drucken (PDF)"
+      download: "PDF herunterladen"
+
+  # Social media links and icons for the header/footer    
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/fritz-gyger-ag/
+      name: LinkedIn
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/fritzgygerag
+      name: Facebook
+    - icon: fontawesome/brands/twitter
+      link: https://www.fgyger.ch/
+      name: Company Website
+  banner_message: "Save this page using File > Print > Save as PDF"
+  announce: "**New:** Multi-product docs with English & German are live. Download as PDF from the top-right menu."
+  generator: false
+  
+  # Product/site metadata used in templates/macros
+  productsRoot: en/products/
+  flexProductName: "CERTUS FLEX"
+  rivoProductName: "CERTUS RIVO" 
+  sharedAssetsFolder: _shared_assets
+  helpSiteName: "Certus Knowledgebase Site"
+  pdfGuideName: "User Manual"
+  pdfFlexProductName: "CERTUS FLEX"
+  pdfFlexProductSubtitle: "with CERTUS CONTROL 2.1.19"
+  pdfFlexVersion: "v12.0"
+  pdfPublishingDate: "February 2026"
+  company: "Fritz Gyger AG"
+  company_logo_url: "_shared_assets/company_logo.png"
+  watermark: "SAMPLE"       # comment this line to remove watermark
+  page_size: "A4"           # "A4" or "Letter"
+  pdfDownloadPath: "pdf/User_Manual_CERTUS_FLEX_EN.pdf"
+
+  
+# -------------------------------
+# Markdown Extensions
+# -------------------------------
+markdown_extensions:          # Note: a variety of markdown extensions are included to enhance the formatting and functionality of the documentation, but can be customized or expanded as needed
+  - admonition
+  - pymdownx.snippets         # Note: the snippets extension allows you to include external markdown files or code snippets in your documentation, which can be useful for reusing content across multiple pages or including code examples from your codebase
+  - pymdownx.details          # Note: the details extension allows you to create collapsible sections in your documentation, which can be useful for hiding advanced information or providing a cleaner layout  
+  - pymdownx.superfences      # Note: the superfences extension provides enhanced code block formatting and features, such as support for multiple languages in a single block and improved syntax highlighting
+  - pymdownx.inlinehilite     # Note: the inlinehilite extension allows you to highlight specific words or phrases within your markdown content, which can be useful for drawing attention to important information or keywords
+  - pymdownx.arithmatex:      # Note: the arithmatex extension allows you to include mathematical equations in your documentation using LaTeX syntax, which can be useful for technical documentation that requires mathematical notation
+      generic: true
+  - pymdownx.caret            # Note: the caret extension allows you to create interactive dropdowns in your documentation, which can be useful for providing additional information or options without cluttering the main content
+  - pymdownx.critic           # Note: the critic extension allows you to mark text as additions, deletions, or substitutions, which can be useful for showing changes or differences in documentation revisions
+  - pymdownx.keys             # Note: the keys extension allows you to format text as keyboard keys, which can be useful for documentation that includes instructions for using software or hardware interfaces
+  - pymdownx.magiclink        # Note: the magiclink extension automatically converts URLs, email addresses, and other patterns into clickable links, which can enhance the interactivity of your documentation
+  - pymdownx.mark             # Note: the mark extension allows you to highlight text with a background color, which can be useful for emphasizing important information or keywords in your documentation
+  - pymdownx.smartsymbols     # Note: the smartsymbols extension automatically converts certain character combinations into typographically correct symbols (e.g., (c) becomes ©), which can improve the readability and professionalism of your documentation
+  - pymdownx.tilde            # Note: the tilde extension allows you to create strikethrough text by surrounding it with double tildes (e.g., ~~strikethrough~~), which can be useful for indicating deprecated information or changes in documentation
+  - pymdownx.blocks.caption   # Note: the caption extension allows you to add captions to images and other block elements, which can provide additional context or information for visual content in your documentation
+  - abbr                      # Note: the abbr extension allows you to define abbreviations and their expansions, which can be useful for providing additional context or explanations for terms used in your documentation
+  - attr_list                 # Note: the attr_list extension allows you to add attributes to elements, which can be useful for customizing the appearance or behavior of elements in your documentation
+  - def_list                  # Note: the def_list extension allows you to create definition lists, which can be useful for providing structured explanations or definitions for terms used in your documentation
+  - footnotes                 # Note: the footnotes extension allows you to add footnotes to your documentation, which can be useful for providing additional context or references without cluttering the main content
+  - meta                      # Note: the meta extension allows you to add metadata to your documentation, which can be useful for providing additional information or context for your documentation
+  - md_in_html                # Note: the md_in_html extension allows you to include markdown content within HTML blocks, which can be useful for creating more complex layouts or including markdown formatting within custom HTML elements in your documentation
+  - tables                    # Note: the tables extension allows you to create tables, which can be useful for organizing and presenting data in a structured format
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+      linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - codehilite:
+      guess_lang: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# -------------------------------
+# Navigation
+# -------------------------------
+nav:
+  - Home: index.md
+  - Table of Figures: en/products/certus-flex/table_of_figures.md
+  - Products:
+    - Certus Flex:
+      - Introduction:
+          - Overview: en/products/certus-flex/introduction.md
+          - About this Document: en/products/certus-flex/about_this_document.md
+      - Safety: en/products/certus-flex/safety.md
+      - Transportation and Storage:
+          - Transportation: en/products/certus-flex/transportation_storage.md
+      - Technical Specifications:
+          - Dimensions: en/products/certus-flex/specifications_dimensions.md
+          - Device Data: en/products/certus-flex/specifications_device_data.md
+      - Assembly and Operation:
+          - Assembly: en/products/certus-flex/assembly_and_operation.md
+      - Certus Control:
+          - Certus Control: en/products/certus-flex/certus_controls.md
+      - Operation:
+          - Operation: en/products/certus-flex/operations.md
+      - Troubleshooting:
+          - Troubleshooting: en/products/certus-flex/troubleshooting.md
+      - Maintenance:
+          - Maintenance: en/products/certus-flex/maintenance.md
+      - Decommissioning:
+          - Decommissioning: en/products/certus-flex/decommissioning_&_disposal.md
+      - Start-Up:
+          - Start Up: en/products/certus-flex/start_up.md
+      - Appendix:
+          - Change Index: en/products/certus-flex/appendix_change_index.md
+          - Document List: en/products/certus-flex/appendix_document_list.md
+          - Web Control: en/products/certus-flex/appendix_web_control.md
+          - Decontamination Declaration: en/products/certus-flex/appendix_decontamination_declaration.md
+          - Glossary: common_content/glossary.md
+

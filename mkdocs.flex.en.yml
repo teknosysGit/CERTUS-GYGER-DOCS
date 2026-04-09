@@ -1,0 +1,181 @@
+# -------------------------------------------------------
+# mkdocs.flex.en.yml -- CERTUS FLEX - English
+#
+# docs_dir: docs  (inherited from mkdocs.base.yml)
+# site_dir: site/flex/en
+#
+# docs/_shared_assets/ is automatically copied to
+# site/flex/en/_shared_assets/ because it is inside
+# docs_dir and not a nav page (non-nav files are always
+# copied verbatim by MkDocs).
+#
+# Nav paths are relative to docs_dir (docs/).
+# Only flex/en/ pages are listed in nav — other folders
+# (rivo/, de/, portal/) are copied as static files but
+# have no nav entries in this build.
+#
+# Image paths in markdown:
+#   Shared icons:    ../_shared_assets/icon_name.png
+#                    (from flex/en/pagename/ up to flex/en/
+#                     then _shared_assets/ is there)
+#   Product images:  _assets/images/certus_flex.png
+#                    (relative, inside same folder)
+#   OR use macros:   {{ base_path }}/_shared_assets/icon.png
+#                    (always correct regardless of depth)
+# -------------------------------------------------------
+
+INHERIT: mkdocs.base.yml
+
+site_name: "Certus Knowledgebase - CERTUS FLEX"
+site_description: "User Manual for CERTUS FLEX by Fritz Gyger AG"
+site_url: "https://fgyger.ch/docs/flex/en"
+site_dir: site/flex/en
+
+theme:
+  language: en
+
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-]+'
+      prebuild_index: true
+      indexing: full
+      min_search_length: 3
+  - mkdocstrings:
+      default_handler: python
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      auto_caption: true
+      caption_position: bottom
+      background: "#e3e3e3"
+      shadow: true
+      manual: true
+  - table-of-figures:
+      directive_identifier: 'table-of-figures'
+      figure_types:
+        - image
+        - table
+      custom_templates_path: null
+      translations_overrides_path: docs/configurations/javascripts/translations_overrides.json
+      caption_identifier_description_separator: ' - '
+      sections_breadcrumb_separator: ' > '
+  - macros:
+      include_yaml:
+        # Both loaded under the same key "variables" so they
+        # deep-merge into one namespace. variables.product.*
+        # is added by the second file for this build.
+        - variables: docs/data/variables.yaml
+        - variables: docs/data/variables.flex.yaml
+      on_error_fail: false
+      include_dir: docs/common_content
+  - with-pdf:
+      author: Fritz Gyger AG
+      copyright: "© Fritz Gyger AG. All rights reserved."
+      cover: true
+      back_cover: false
+      product_name: "CERTUS FLEX"
+      cover_title: "User Manual"
+      cover_subtitle: "With CERTUS CONTROL 2.1.19"
+      custom_template_path: docs/configurations/templates/flex-pdf/
+      toc_title: Table of Contents
+      heading_shift: false
+      toc_level: 3
+      ordered_chapter_level: 3
+      excludes_children:
+        # Path relative to docs_dir (docs/)
+        - 'flex/en/table_of_figures.md'
+      exclude_pages:
+        - '^$'
+        - 'flex/en/release_notes/*.md'
+      output_path: "pdf/User_Manual_CERTUS_FLEX_EN.pdf"
+      #enabled_if_env: ENABLE_PDF_EXPORT
+      show_anchors: true
+      #verbose: true
+      #debug_html: true
+
+extra:
+  alternate:
+    - name: English
+      link: /docs/flex/en/
+      lang: en
+    - name: Deutsch
+      link: /docs/flex/de/
+      lang: de
+  companyLogoURL: "http://mkdocsdemo.teknosyssolutions.com/_shared_assets/company_logo_light.png"
+  pdfHeaderLogoURL: "http://mkdocsdemo.teknosyssolutions.com/_shared_assets/company_logo_small.png"
+  productImageURL: "http://mkdocsdemo.teknosyssolutions.com/_shared_assets/certus_flex.png" 
+  ui_labels:
+    en:
+      print: "Print PDF"
+      download: "Download PDF"
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/fritz-gyger-ag/
+      name: LinkedIn
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/fritzgygerag
+      name: Facebook
+    - icon: fontawesome/brands/twitter
+      link: https://www.fgyger.ch/
+      name: Company Website
+  banner_message: "Save this page using File > Print > Save as PDF"
+  announce: "Documentation available in English and German."
+  generator: false
+  sharedAssetsFolder: _shared_assets
+  helpSiteName: "Certus Knowledgebase Site"
+  pdfGuideName: "User Manual"
+  pdfProductName: "CERTUS FLEX"
+  pdfProductSubtitle: "with CERTUS CONTROL 2.1.19"
+  pdfVersion: "v12.0"
+  pdfPublishingDate: "February 2026"
+  company: "Fritz Gyger AG"
+  company_logo_url: "_shared_assets/company_logo.png"
+  watermark: "SAMPLE"
+  page_size: "A4"
+  pdfDownloadPath: "pdf/User_Manual_CERTUS_FLEX_EN.pdf"
+
+# All paths relative to docs_dir (docs/).
+# Only flex/en/ pages listed — language switcher links
+# to /docs/flex/de/ which is the separate DE build.
+# -------------------------------
+# Navigation
+# -------------------------------
+nav:
+  - Home: common_content/introduction.md
+  - Table of Figures: en/products/certus-flex/table_of_figures.md
+  - Products:
+    - Certus Flex:
+      - Introduction: en/products/certus-flex/about_this_document.md
+      - Safety: en/products/certus-flex/safety.md
+      - Transportation and Storage:
+          - Transportation: en/products/certus-flex/transportation_storage.md
+      - Technical Specifications:
+          - Dimensions: en/products/certus-flex/specifications_dimensions.md
+          - Device Data: en/products/certus-flex/specifications_device_data.md
+      - Assembly and Operation:
+          - Assembly: en/products/certus-flex/assembly_and_operation.md
+      - Certus Control:
+          - Certus Control: en/products/certus-flex/certus_controls.md
+      - Operation:
+          - Operation: en/products/certus-flex/operations.md
+      - Troubleshooting:
+          - Troubleshooting: en/products/certus-flex/troubleshooting.md
+      - Maintenance:
+          - Maintenance: en/products/certus-flex/maintenance.md
+      - Decommissioning:
+          - Decommissioning: en/products/certus-flex/decommissioning_&_disposal.md
+      - Start-Up:
+          - Start Up: en/products/certus-flex/start_up.md
+      - Appendix:
+          - Change Index: en/products/certus-flex/appendix_change_index.md
+          - Document List: en/products/certus-flex/appendix_document_list.md
+          - Web Control: en/products/certus-flex/appendix_web_control.md
+          - Decontamination Declaration: en/products/certus-flex/appendix_decontamination_declaration.md
+          - Glossary: common_content/glossary.md

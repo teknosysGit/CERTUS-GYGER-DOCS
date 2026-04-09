@@ -1,0 +1,142 @@
+# -------------------------------------------------------
+# mkdocs.base.yml
+# Shared configuration inherited by ALL builds via INHERIT.
+#
+# docs_dir: docs
+#   Set here once for all builds. Every subfolder inside
+#   docs/ is visible to MkDocs. Non-nav files (including
+#   _shared_assets/) are copied verbatim into site_dir.
+#   This means docs/_shared_assets/ lands in every
+#   build's site_dir automatically — no hooks needed.
+#   New products and languages added later benefit from
+#   the same shared assets automatically.
+#
+# site_dir is NOT set here — each product config sets
+# its own so builds never overlap.
+#
+# plugins are NOT set here — macros and with-pdf differ
+# per product+language build.
+# -------------------------------------------------------
+
+docs_dir: docs
+site_author: "Fritz Gyger AG"
+edit_uri: "edit/main/docs/"
+copyright: "© Fritz Gyger AG. All rights reserved."
+
+theme:
+  name: "material"
+  custom_dir: "docs/configurations/templates"
+  logo: "_shared_assets/company_logo_light.png"
+  favicon: "_shared_assets/company_favicon.png"
+  font:
+    text: "Open Sans"
+    code: "Source Code Pro"
+  features:
+    - search.highlight
+    - search.suggest
+    - navigation.tracking
+    - navigation.sections
+    - navigation.instant
+    - navigation.indexes
+    - navigation.footer
+    - content.code.annotate
+    - content.code.copy
+    - content.code.focus
+    - content.code.tabbed
+    - content.tabs.link
+    - content.tooltips
+    - header.autolinks
+    - header.linked
+    - toc.sticky
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: custom
+      accent: custom
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: custom
+      accent: custom
+  icon:
+    admonition:
+      note: octicons/tag-16
+      important: octicons/pin-16
+      caution: octicons/alert-16
+      warning: octicons/bell-16
+      danger: octicons/zap-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      failure: octicons/x-circle-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+      draft: octicons/pencil-16
+
+extra_css:
+  - configurations/stylesheets/pdf-button.css
+  - configurations/stylesheets/home.css
+  - configurations/stylesheets/typography.css
+
+extra_javascript:
+  - configurations/javascripts/pdf-config.js
+  - configurations/javascripts/pdf-button.js
+  - configurations/javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - configurations/javascripts/figure_caption.js
+
+hooks:
+  - docs/configurations/hooks/strip_drafts.py
+  #- docs/configurations/hooks/create pdf_event_hook.py
+
+markdown_extensions:
+  - admonition
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+  - pymdownx.blocks.caption
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+      linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - codehilite:
+      guess_lang: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
