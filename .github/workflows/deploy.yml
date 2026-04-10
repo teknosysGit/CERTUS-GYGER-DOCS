@@ -28,7 +28,7 @@ jobs:
           pip install mkdocstrings
           pip install mkdocs-glightbox
           pip install mkdocs-table-of-figures
-          pip install mkdocs-macros
+          pip install mkdocs-macros-plugin
           pip install mkdocs-with-pdf
           pip install ghp-import
 
