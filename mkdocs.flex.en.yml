@@ -83,9 +83,9 @@ plugins:
       toc_level: 3
 
       # -------------------------------------------------------
-      # STYLING (OPTIONAL BUT IMPORTANT)
+      # Custom Template Path
       # -------------------------------------------------------
-      css: docs/configurations/stylesheets/typography.css
+      custom_template_path: docs/configurations/templates/flex-pdf/
 
 extra:
   alternate:
