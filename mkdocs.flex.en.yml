@@ -28,7 +28,7 @@ INHERIT: mkdocs.base.yml
 
 site_name: "Certus Knowledgebase - CERTUS FLEX"
 site_description: "User Manual for CERTUS FLEX by Fritz Gyger AG"
-site_url: "https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-flex/"
+site_url: https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-flex/
 site_dir: site/flex/en
 
 theme:
