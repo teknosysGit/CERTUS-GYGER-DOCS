@@ -1,16 +1,10 @@
-# -------------------------------------------------------
-# mkdocs.rivo.en.yml -- CERTUS RIVO - English
-#
-# docs_dir: docs  (inherited from mkdocs.base.yml)
-# site_dir: site/rivo/en
-# -------------------------------------------------------
-
 INHERIT: mkdocs.base.yml
 
 site_name: "Certus Knowledgebase - CERTUS RIVO"
 site_description: "User Manual for CERTUS RIVO by Fritz Gyger AG"
 site_url: https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-rivo/
-site_dir: site
+site_dir: site/rivo/en
+use_directory_urls: true
 
 theme:
   language: en
@@ -54,45 +48,25 @@ plugins:
       on_error_fail: false
       include_dir: docs/common_content
   - with-pdf:
-      cover: true
-      back_cover: false
-      
-      author: Fritz Gyger AG
-      copyright: "© Fritz Gyger AG. All rights reserved."
-      cover_title: User Manual
-      cover_subtitle: With CERTUS CONTROL 2.1.19
-      custom_template_path: docs/configurations/templates/rivo-pdf/
-      toc_title: Table of Contents
-      pdf_guide_name: User Manual
-      pdf_product_name: CERTUS RIVO
-      pdf_product_version: V12.0
-      
-      heading_shift: false
-      toc_level: 3
-      ordered_chapter_level: 3
-      excludes_children:
-        - 'rivo/en/table_of_figures.md'
-      exclude_pages:
-        - '^$'
-        - 'rivo/en/release_notes/*.md'
-      output_path: "pdf/User_Manual_CERTUS_RIVO_EN.pdf"
-      #enabled_if_env: ENABLE_PDF_EXPORT
-      show_anchors: true
+      enabled_if_env: ENABLE_PDF_EXPORT
 
 extra:
   alternate:
     - name: English
-      link: /docs/rivo/en/
+      link: /CERTUS-GYGER-DOCS/certus-rivo/
       lang: en
     - name: Deutsch
-      link: /docs/rivo/de/
+      link: /CERTUS-GYGER-DOCS/certus-flex/
       lang: de
+
   companyLogoURL: "http://mkdocsdemo.teknosyssolutions.com/_shared_assets/company_logo_light.png"
   pdfHeaderLogoURL: "http://mkdocsdemo.teknosyssolutions.com/_shared_assets/company_logo_small.png"
+
   ui_labels:
     en:
       print: "Print PDF"
       download: "Download PDF"
+
   social:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/fritz-gyger-ag/
@@ -103,11 +77,12 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://www.fgyger.ch/
       name: Company Website
-  
+
   banner_message: "Save this page using File > Print > Save as PDF"
   announce: "Documentation available in English and German."
   generator: false
   sharedAssetsFolder: _shared_assets
+
   helpSiteName: "Certus Knowledgebase Site"
   pdfGuideName: "User Manual"
   pdfProductName: "CERTUS RIVO"
@@ -115,44 +90,44 @@ extra:
   pdfProductVersion: "V12.0"
   pdfVersion: "v1.0"
   pdfPublishingDate: "February 2026"
+
   company: "Fritz Gyger AG"
   company_logo_url: "_shared_assets/company_logo.png"
   watermark: "SAMPLE"
   page_size: "A4"
+
   pdfDownloadPath: "pdf/User_Manual_CERTUS_RIVO_EN.pdf"
 
-# -------------------------------
-# Navigation
-# -------------------------------
 nav:
-  - Home: common_content/introduction.md
+  - Home: ../common_content/introduction.md
   - Table of Figures: en/products/certus-rivo/table_of_figures.md
+
   - Products:
-    - Certus Rivo:
-      - Introduction: en/products/certus-rivo/about_this_document.md          
-      - Safety: en/products/certus-rivo/safety.md
-      - Transportation and Storage:
-          - Transportation: en/products/certus-rivo/transportation_storage.md
-      - Technical Specifications:
-          - Dimensions: en/products/certus-rivo/specifications_dimensions.md
-          - Device Data: en/products/certus-rivo/specifications_device_data.md
-      - Assembly and Operation:
-          - Assembly: en/products/certus-rivo/assembly_and_operation.md
-      - Certus Control:
-          - Certus Control: en/products/certus-rivo/certus_controls.md
-      - Operation:
-          - Operation: en/products/certus-rivo/operations.md
-      - Troubleshooting:
-          - Troubleshooting: en/products/certus-rivo/troubleshooting.md
-      - Maintenance:
-          - Maintenance: en/products/certus-rivo/maintenance.md
-      - Decommissioning:
-          - Decommissioning: en/products/certus-rivo/decommissioning_&_disposal.md
-      - Start-Up:
-          - Start Up: en/products/certus-rivo/start_up.md
-      - Appendix:
-          - Change Index: en/products/certus-rivo/appendix_change_index.md
-          - Document List: en/products/certus-rivo/appendix_document_list.md
-          - Web Control: en/products/certus-rivo/appendix_web_control.md
-          - Decontamination Declaration: en/products/certus-rivo/appendix_decontamination_declaration.md
-          - Glossary: common_content/glossary.md
+      - Certus Rivo:
+          - Introduction: en/products/certus-rivo/about_this_document.md
+          - Safety: en/products/certus-rivo/safety.md
+          - Transportation and Storage:
+              - Transportation: en/products/certus-rivo/transportation_storage.md
+          - Technical Specifications:
+              - Dimensions: en/products/certus-rivo/specifications_dimensions.md
+              - Device Data: en/products/certus-rivo/specifications_device_data.md
+          - Assembly and Operation:
+              - Assembly: en/products/certus-rivo/assembly_and_operation.md
+          - Certus Control:
+              - Certus Control: en/products/certus-rivo/certus_controls.md
+          - Operation:
+              - Operation: en/products/certus-rivo/operations.md
+          - Troubleshooting:
+              - Troubleshooting: en/products/certus-rivo/troubleshooting.md
+          - Maintenance:
+              - Maintenance: en/products/certus-rivo/maintenance.md
+          - Decommissioning:
+              - Decommissioning: en/products/certus-rivo/decommissioning_&_disposal.md
+          - Start-Up:
+              - Start Up: en/products/certus-rivo/start_up.md
+          - Appendix:
+              - Change Index: en/products/certus-rivo/appendix_change_index.md
+              - Document List: en/products/certus-rivo/appendix_document_list.md
+              - Web Control: en/products/certus-rivo/appendix_web_control.md
+              - Decontamination Declaration: en/products/certus-rivo/appendix_decontamination_declaration.md
+              - Glossary: ../common_content/glossary.md
