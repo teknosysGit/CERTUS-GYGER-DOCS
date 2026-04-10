@@ -1,103 +1,109 @@
 name: Build and Deploy Docs
 
 on:
-  push:
-    branches:
-      - main
+push:
+branches:
+- main
 
 permissions:
-  contents: write
+contents: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+build:
+runs-on: ubuntu-latest
 
-    steps:
-      # ─────────────────────────────────────────────
-      # Checkout repository
-      # ─────────────────────────────────────────────
-      - name: Checkout repo
-        uses: actions/checkout@v4
+```
+steps:
+  # ─────────────────────────────────────────────
+  # Checkout repository
+  # ─────────────────────────────────────────────
+  - name: Checkout repo
+    uses: actions/checkout@v4
 
-      # ─────────────────────────────────────────────
-      # Set up Python
-      # ─────────────────────────────────────────────
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+  # ─────────────────────────────────────────────
+  # Set up Python environment
+  # ─────────────────────────────────────────────
+  - name: Set up Python
+    uses: actions/setup-python@v5
+    with:
+      python-version: '3.x'
 
-      # ─────────────────────────────────────────────
-      # Install system dependencies (REQUIRED for PDF)
-      # These are needed by WeasyPrint (mkdocs-with-pdf)
-      # ─────────────────────────────────────────────
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libcairo2 \
-            libpango-1.0-0 \
-            libpangocairo-1.0-0 \
-            libgdk-pixbuf2.0-0 \
-            libffi-dev \
-            shared-mime-info \
-            fonts-dejavu-core
+  # ─────────────────────────────────────────────
+  # Install system dependencies REQUIRED for PDF
+  # (Fixes broken fonts, layout, and styling)
+  # These are required by WeasyPrint (mkdocs-with-pdf)
+  # ─────────────────────────────────────────────
+  - name: Install system dependencies
+    run: |
+      sudo apt-get update
+      sudo apt-get install -y \
+        libcairo2 \
+        libpango-1.0-0 \
+        libpangocairo-1.0-0 \
+        libgdk-pixbuf2.0-0 \
+        libffi-dev \
+        shared-mime-info \
+        fontconfig \
+        fonts-dejavu \
+        fonts-liberation \
+        fonts-freefont-ttf
 
-      # ─────────────────────────────────────────────
-      # Install Python dependencies
-      # ─────────────────────────────────────────────
-      - name: Install Python dependencies
-        run: |
-          pip install mkdocs
-          pip install mkdocs-material
-          pip install mkdocstrings
-          pip install mkdocs-glightbox
-          pip install mkdocs-table-of-figures
-          pip install mkdocs-macros-plugin
-          pip install mkdocs-with-pdf
-          pip install ghp-import
+  # ─────────────────────────────────────────────
+  # Install Python dependencies
+  # ─────────────────────────────────────────────
+  - name: Install Python dependencies
+    run: |
+      pip install mkdocs
+      pip install mkdocs-material
+      pip install mkdocstrings
+      pip install mkdocs-glightbox
+      pip install mkdocs-table-of-figures
+      pip install mkdocs-macros-plugin
+      pip install mkdocs-with-pdf
+      pip install ghp-import
 
-      # ─────────────────────────────────────────────
-      # Build Certus Flex (ENABLE PDF GENERATION)
-      # IMPORTANT: ENABLE_PDF_EXPORT is required
-      # ─────────────────────────────────────────────
-      - name: Build Certus Flex
-        run: ENABLE_PDF_EXPORT=1 python -m mkdocs build -f mkdocs.flex.en.yml -d site/certus-flex
+  # ─────────────────────────────────────────────
+  # Build Certus Flex (PDF ENABLED)
+  # IMPORTANT: ENABLE_PDF_EXPORT triggers PDF generation
+  # ─────────────────────────────────────────────
+  - name: Build Certus Flex
+    run: ENABLE_PDF_EXPORT=1 python -m mkdocs build -f mkdocs.flex.en.yml -d site/certus-flex
 
-      # ─────────────────────────────────────────────
-      # Build Certus Rivo (ENABLE PDF GENERATION)
-      # ─────────────────────────────────────────────
-      - name: Build Certus Rivo
-        run: ENABLE_PDF_EXPORT=1 python -m mkdocs build -f mkdocs.rivo.en.yml -d site/certus-rivo
+  # ─────────────────────────────────────────────
+  # Build Certus Rivo (PDF ENABLED)
+  # ─────────────────────────────────────────────
+  - name: Build Certus Rivo
+    run: ENABLE_PDF_EXPORT=1 python -m mkdocs build -f mkdocs.rivo.en.yml -d site/certus-rivo
 
-      # ─────────────────────────────────────────────
-      # Generate root index page
-      # ─────────────────────────────────────────────
-      - name: Generate combined index
-        run: |
-          mkdir -p site
-          cat <<EOF > site/index.html
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <meta charset="utf-8">
-            <title>Certus Documentation</title>
-            <style>
-              body { font-family: sans-serif; max-width: 600px; margin: 80px auto; padding: 0 20px }
-              a { display: block; padding: 16px; margin: 12px 0; border: 1px solid #ddd; border-radius: 8px; text-decoration: none; color: #333; font-size: 18px }
-              a:hover { background: #f5f5f5 }
-            </style>
-          </head>
-          <body>
-            <h1>Certus Documentation</h1>
-            <a href="certus-flex/">Certus Flex Documentation</a>
-            <a href="certus-rivo/">Certus Rivo Documentation</a>
-          </body>
-          </html>
-          EOF
+  # ─────────────────────────────────────────────
+  # Generate root index page (landing page)
+  # ─────────────────────────────────────────────
+  - name: Generate combined index
+    run: |
+      mkdir -p site
+      cat <<EOF > site/index.html
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <title>Certus Documentation</title>
+        <style>
+          body { font-family: sans-serif; max-width: 600px; margin: 80px auto; padding: 0 20px }
+          a { display: block; padding: 16px; margin: 12px 0; border: 1px solid #ddd; border-radius: 8px; text-decoration: none; color: #333; font-size: 18px }
+          a:hover { background: #f5f5f5 }
+        </style>
+      </head>
+      <body>
+        <h1>Certus Documentation</h1>
+        <a href="certus-flex/">Certus Flex Documentation</a>
+        <a href="certus-rivo/">Certus Rivo Documentation</a>
+      </body>
+      </html>
+      EOF
 
-      # ─────────────────────────────────────────────
-      # Deploy to GitHub Pages (gh-pages branch)
-      # ─────────────────────────────────────────────
-      - name: Deploy to GitHub Pages
-        run: ghp-import -n -p -f site
+  # ─────────────────────────────────────────────
+  # Deploy to GitHub Pages (gh-pages branch)
+  # ─────────────────────────────────────────────
+  - name: Deploy to GitHub Pages
+    run: ghp-import -n -p -f site
+```
