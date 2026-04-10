@@ -12,6 +12,7 @@ jobs:
 build:
 runs-on: ubuntu-latest
 
+```
 steps:
   # ─────────────────────────────────────────────
   # Checkout repository
@@ -29,8 +30,6 @@ steps:
 
   # ─────────────────────────────────────────────
   # Install system dependencies REQUIRED for PDF
-  # (Fixes broken fonts, layout, and styling)
-  # These are required by WeasyPrint (mkdocs-with-pdf)
   # ─────────────────────────────────────────────
   - name: Install system dependencies
     run: |
@@ -63,7 +62,6 @@ steps:
 
   # ─────────────────────────────────────────────
   # Build Certus Flex (PDF ENABLED)
-  # IMPORTANT: ENABLE_PDF_EXPORT triggers PDF generation
   # ─────────────────────────────────────────────
   - name: Build Certus Flex
     run: ENABLE_PDF_EXPORT=1 python -m mkdocs build -f mkdocs.flex.en.yml -d site/certus-flex
@@ -75,7 +73,7 @@ steps:
     run: ENABLE_PDF_EXPORT=1 python -m mkdocs build -f mkdocs.rivo.en.yml -d site/certus-rivo
 
   # ─────────────────────────────────────────────
-  # Generate root index page (landing page)
+  # Generate root index page
   # ─────────────────────────────────────────────
   - name: Generate combined index
     run: |
@@ -101,7 +99,7 @@ steps:
       EOF
 
   # ─────────────────────────────────────────────
-  # Deploy to GitHub Pages (gh-pages branch)
+  # Deploy to GitHub Pages
   # ─────────────────────────────────────────────
   - name: Deploy to GitHub Pages
     run: ghp-import -n -p -f site
