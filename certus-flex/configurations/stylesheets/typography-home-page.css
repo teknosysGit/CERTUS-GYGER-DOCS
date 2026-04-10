@@ -1,0 +1,507 @@
+/* ==========================================================================
+   Home page Typography & Simple Home (Landing) Styles for Material for MkDocs
+   NOTE: We DON'T touch Material's default margins, grid, or layout.
+         Only custom classes (prefixed with "home-"/"tile-"/"btn-").
+   Scope: Material's index page (.md-index) or a manual .home wrapper
+   Focus: Smaller base; compact headings; hero/tiles/cards text sizes
+   ========================================================================== */
+
+/*==========================================================================
+   Quick tweaks:
+   - Change colors in the "--brand-*" variables below.
+   - Adjust spacing by editing the numbers next to "gap", "padding", etc.
+   ========================================================= */
+
+/* ---------- 1) Brand tokens (edit these) ---------- */
+:root {
+  /* Core colors (light mode; Material will swap to dark automatically) */
+  --brand-primary: #2563eb;       /* Blue */
+  --brand-primary-strong: #1e40af;/* Darker blue on hover */
+  --brand-accent: #22c55e;       /* Green accent for hovers/borders */
+
+  /* Neutral tones (borrowed from theme but safe locally) */
+  --surface:       var(--md-surface, #fff);
+  --surface-elev1: color-mix(in srgb, var(--surface) 92%, #000);
+  --border:        color-mix(in srgb, var(--surface) 75%, #000);
+  --text-main:     var(--md-default-fg-color, #1f2937);
+  --text-soft:     color-mix(in srgb, var(--text-main) 70%, #0000);
+
+  /* Rounded corners and shadows */
+  --radius: 8px;
+  --shadow-sm: 0 6px 18px -10px rgba(0,0,0,.25);
+   --home-font: "Open Sans", "Helvetica Neue", Arial, "Noto Sans",
+               "Liberation Sans", "Nimbus Sans L", sans-serif;
+
+  /* Smaller base to keep landing dense & scannable */
+  --home-fs-body: 0.625rem;    /* 16px (1.0rem), 15px (0.9375rem), 12px (0.75rem) 11 px (0.6875rem) 10.5 px (0.65625rem) */
+  --home-fs-small: 0.5625rem;    /* 10px(0.625rem), 9px(0.5625rem), 8px(0.5rem) */
+  --home-fs-smaller: 0.5rem; /* 8px (0.5rem), 7px (0.4375rem), 6px (0.375rem) */
+  
+  /* Compact heading scale (Open Sans) */
+  --home-title: clamp(2rem, 1.3rem + 1vw, 2rem); /* 32px */
+  --home-h1: clamp(1.375rem, 1.1rem + 0.8vw, 1.5rem); /* ~20–22 */
+  /*--home-h1: clamp(1.25rem, 1.1rem + 0.8vw, 1.375rem);*/ /* ~18–20 */
+
+  --home-h2: 1.125rem;  /* 18 */
+  --home-h3: 1rem;      /* 16 */
+  --home-h4: 0.9375rem; /* 15 */
+  --home-h5: 0.875rem;  /* 14 */
+  --home-h6: 0.813rem;  /* 13 */
+
+  --home-lh-body: 1.6;
+  --home-lh-head: 1.25;
+
+  --home-weight-regular: 400;
+  --home-weight-medium: 500;
+  --home-weight-semibold: 600;
+  --home-weight-bold: 700;
+
+  --home-space-3: 0.75rem;
+  --home-space-4: 1rem;
+}
+
+/* ------------------------------------------------------------
+     2) DARK MODE — CLEAN SEPARATION
+     ------------------------------------------------------------ */
+  :root[data-theme="dark"],
+  html[data-theme="dark"],
+  [data-md-color-scheme="slate"],
+  html[data-color-mode="dark"] {
+
+    /* Company Logo configuration for dark mode */
+
+    [data-md-color-scheme="slate"] .md-header__button.md-logo img,
+    html[data-md-color-scheme="slate"] .md-header__button.md-logo img {
+    content: url("_shared_assets/company_logo_dark.png");
+    }
+
+    /* PRIMARY foreground colors (dark mode) */
+    --primary-fg:   #f3f4f6;     /* headings, strong text */
+    --primary-fg-2: #e5e7eb;     /* body text */
+
+    /* ACCENT foreground colors (dark mode) */
+    --accent-fg:    #38bdf8;     /* cyan-accent for dark mode */
+    --accent-fg-2:  #7ab7ff;     /* primary link color */
+
+    /* SURFACE / NEUTRAL (dark mode) */
+    --surface-0: #0f172a;  /* deep background */
+    --surface-1: #1e293b;  /* elevated surfaces */
+    --surface-2: #334155;  /* panels, blocks */
+
+    /* TEXT SYSTEM */
+    --color-text: var(--primary-fg-2);         /* body text */
+    --color-header-text: var(--primary-fg);    /* headings */
+    --color-muted: #cbd5e1;
+    --color-subtle: #9aa3b2;
+
+    /* Borders */
+    --color-border: #334155;
+
+    /* Link system */
+    --color-link: var(--accent-fg-2);
+    --color-link-hover: #a1c9ff;
+    --color-link-visited: #c4a6ff;
+
+    /* Accents */
+    --color-accent: var(--accent-fg);
+    --color-caption: #a3aab6;
+
+    /* Sidebar */
+    --sidebar-title: #f1f5f9;
+    --sidebar-subtitle: #e2e8f0;
+
+    /* Footer */
+    --color-footer-text: #d1d5db;
+
+    --footer-bg: transparent;
+
+
+    /* Selection */
+    --selection-bg: #3b82f6;
+    --selection-text: #f9fafb;
+    --outline: 2px solid #38bdf8;
+
+   /* --- DARK: tile color tokens --- */
+
+    --tile-surface: var(--surface-1);       /* e.g., #1e293b */
+    --tile-border:  var(--color-border);
+
+    --tile-title-fg: #e5e7eb;             /* soft white for headings */
+    --tile-text-fg:  var(--primary-fg-2);   /* body text in dark */
+    --tile-link-fg:  #7ab7ff;
+    --tile-link-hov: #a1c9ff;
+    --tile-link-vis: #c4a6ff;
+  }
+
+
+/* === 1) Local home tokens ================================================== */
+.md-index, .home {
+  --home-font: "Open Sans", "Helvetica Neue", Arial, "Noto Sans",
+               "Liberation Sans", "Nimbus Sans L", sans-serif;
+
+  /* Smaller base to keep landing dense & scannable */
+  --home-fs-body: 0.625rem;    /* 16px (1.0rem), 15px (0.9375rem), 12px (0.75rem) 11 px (0.6875rem) 10.5 px (0.65625rem) */
+  --home-fs-small: 0.5625rem;    /* 10px(0.625rem), 9px(0.5625rem), 8px(0.5rem) */
+  --home-fs-smaller: 0.5rem; /* 8px (0.5rem), 7px (0.4375rem), 6px (0.375rem) */
+  
+  /* Compact heading scale (Open Sans) */
+  --home-title: clamp(2rem, 1.3rem + 1vw, 2rem); /* 32px */
+  --home-h1: clamp(1.375rem, 1.1rem + 0.8vw, 1.5rem); /* ~20–22 */
+  /*--home-h1: clamp(1.25rem, 1.1rem + 0.8vw, 1.375rem);*/ /* ~18–20 */
+
+  --home-h2: 1.125rem;  /* 18 */
+  --home-h3: 1rem;      /* 16 */
+  --home-h4: 0.9375rem; /* 15 */
+  --home-h5: 0.875rem;  /* 14 */
+  --home-h6: 0.813rem;  /* 13 */
+
+  --home-lh-body: 1.6;
+  --home-lh-head: 1.25;
+
+  --home-weight-regular: 400;
+  --home-weight-medium: 500;
+  --home-weight-semibold: 600;
+  --home-weight-bold: 700;
+
+  --home-space-3: 0.75rem;
+  --home-space-4: 1rem;
+}
+
+
+
+/* === 2) Base & paragraphs (home only) ===================================== */
+.md-index, .home {
+  font-family: var(--home-font);
+  font-size: var(--home-fs-body);
+  line-height: var(--home-lh-body);
+}
+.md-index p, .home p { margin: 0; }
+.md-index p + p, .home p + p { margin-top: var(--home-space-4); }
+
+.md-index .lead, .home .lead {
+  font-size: var(--home-fs-body);       /* 16px */
+  line-height: 1.55;
+  opacity: 0.95;
+}
+
+/* === 3) Body Text (home only) ================================================== */
+
+.md-index .md-typeset {
+  font-size: var(--home-fs-body);    /* change this to scale all body text */
+  line-height: var(--home-lh-body);   /* optional but recommended */
+}
+
+/* ============================================================
+   HOME PAGE ONLY – Override H1 and H2 font-weight
+   ============================================================ */
+
+.md-index .md-typeset h1 {
+  font-weight: var(--home-weight-bold);     /* or 600, 500 — your choice */
+}
+
+.md-index .md-typeset h2 {
+  font-weight: var(--home-weight-semibold);     /* adjust to your preferred strength */
+}
+
+/* === 4) Headings (home only) ============================================== */
+.md-index .md-typeset h1, .home .md-typeset h1 {
+  font-size: var(--home-h1) !important;
+  line-height: var(--home-lh-head);
+  font-weight: var(--home-weight-bold);
+  letter-spacing: -0.002em;
+  border-bottom: none;
+  margin: var(--home-space-4) 0 var(--home-space-3);
+}
+.md-index .md-typeset h2, .home .md-typeset h2 {
+  font-size: var(--home-h2) !important;
+  line-height: var(--home-lh-head);
+  font-weight: var(--home-weight-semibold);
+  border-bottom: 0;
+  margin: var(--home-space-4) 0 var(--home-space-3);
+}
+.md-index .md-typeset h3, .home .md-typeset h3 {
+  font-size: var(--home-h3) !important;
+  line-height: var(--home-lh-head);
+  font-weight: var(--home-weight-semibold);
+  margin: var(--home-space-3) 0 calc(var(--home-space-3) - 0.35rem);
+}
+.md-index .md-typeset h4, .home .md-typeset h4 { font-size: var(--home-h4) !important; font-weight: var(--home-weight-semibold); }
+.md-index .md-typeset h5, .home .md-typeset h5 { font-size: var(--home-h5) !important; font-weight: var(--home-weight-medium); }
+.md-index .md-typeset h6, .home .md-typeset h6 {
+  font-size: var(--home-h6) !important;
+  font-weight: var(--home-weight-medium);
+  letter-spacing: 0.01em;
+}
+
+/* === 5) Home components’ text (typography only; no layout) ================ */
+/* Hero */
+.md-index .home-hero h1, .home .home-hero h1 { margin: 0 0 0.25rem 0; }
+.md-index .home-hero p.lead, .home .home-hero p.lead { font-size: var(--home-fs-body); }
+
+/* Tiles & cards */
+.md-index .tile h3, .home .tile h3,
+.md-index .tile__title, .home .tile__title {
+  font-size: var(--home-h3) !important; /* 18px */
+  font-weight: var(--home-weight-bold);
+  margin: 0 0 0.3rem 0;
+}
+.md-index .tile__desc, .home .tile__desc {
+  font-size: 0.9375rem; /* 15px */
+  line-height: 1.55;
+}
+.md-index .card h3, .home .card h3 {
+  font-size: var(--home-h3) !important; /* 18px */
+  font-weight: var(--home-weight-semibold);
+  margin: 0 0 0.45rem 0;
+}
+
+/* Base text inside cards / tiles on the home page */
+.md-index .tile, .md-index .card, .md-index .tile__body,
+.md-index .tile__desc, .md-index .tile__title {
+  font-size: var(--home-fs-body);      /* 15px — same as home page base */
+  line-height: var(--home-lh-body);
+  font-family: var(--home-font);
+}
+
+/* Card / tile titles */
+.md-index .tile__title, .md-index .tile h3,
+.md-index .card h3 {
+  font-size: var(--home-h3);       /* 18px */
+  font-weight: var(--home-weight-semibold);
+  line-height: var(l--home-lh-body);
+}
+
+/* Card / tile descriptions */
+.md-index .tile__desc, .md-index .card p,
+.md-index .card li {
+  font-size: var(--home-fs-body);      /* 15px */
+  line-height: var(--home-lh-body)  ;
+}
+
+/* Lists inside cards */
+.md-index .card ul,
+.md-index .tile ul {
+  font-size: var(--home-fs-body);      /* 15px */
+  padding-left: 1.1rem;
+}
+
+/* Buttons used on the home page (text only) */
+.md-index .btn, .home .btn {
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* Lists on the home page */
+.md-index .md-typeset ul, .home .md-typeset ul,
+.md-index .md-typeset ol, .home .md-typeset ol {
+  margin: 0.6rem 0 1rem;
+  padding-left: 1.1rem;
+}
+.md-index .md-typeset li + li, .home .md-typeset li + li { margin-top: 0.2em; }
+
+/* Ensure all home text uses Open Sans explicitly */
+.md-index :is(h1,h2,h3,h4,h5,h6,p,ul,ol,li,.lead),
+.home    :is(h1,h2,h3,h4,h5,h6,p,ul,ol,li,.lead) { font-family: var(--home-font); }
+
+/* ---------- Hero section ---------- */
+/* Put your hero block inside index.md using <div class="home-hero">...</div> */
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* text | image */
+  gap: 1.5rem;
+  align-items: center;
+  background: var(--tile-surface);
+  border: 1px solid var(--tile-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 0 0 1.5rem 0; /* bottom space only (keeps site margins intact) */
+}
+
+.home-hero h1 {
+  margin: 0 0 .25rem 0;
+  border-bottom: none;          /* cleaner hero title */
+  color: var(--text-main);
+}
+
+
+
+.home-hero p.lead {
+  margin: 0.25rem 0 0.75rem 0;
+  font-size: var(--home-fs-body);      /* 16px */
+  color: var(--text-soft);
+}
+
+/* Optional hero button row */
+.home-hero .hero-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: .5rem;
+}
+
+/* ---------- 3) Buttons (reusable) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--brand-primary);
+  color: #fff;
+}
+.btn--primary:hover { background: var(--brand-primary-strong); }
+
+.btn--outline {
+  background: transparent;
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+.btn--outline:hover {
+  background: color-mix(in oklab, var(--brand-primary) 12%, var(--surface));
+}
+
+/* ---------- 4) Product/feature tiles ---------- */
+/* Wrap each feature in <div class="tile"> inside a .home-tiles container */
+.home-tiles {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, 1fr); /* simple 12-col grid */
+}
+
+/* Add a bit of breathing room inside each home-tiles panel */
+.home-tiles .tile {
+  padding: 0.5rem; /* Adds space between tile border and internal content */
+}
+
+/* Ensure the image section also respects padding */
+.home-tiles .tile__media {
+  padding: 1rem;            /* more comfortable spacing */
+  border: none;             /* optional: remove bottom border if not needed */
+  background: none;         /* optional: keep clean background */
+}
+
+/* Add optional padding inside the text area for symmetry */
+.home-tiles .tile__body {
+  padding: 1rem;  /* even spacing on all sides */
+}
+
+.tile {
+  grid-column: span 4;          /* 3 per row on desktop */
+  background: var(--surface-elev1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.tile:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--brand-accent) 35%, var(--border));
+  box-shadow: var(--shadow-sm);
+}
+
+.tile__media {
+  /* Put an <img> or <svg> inside; centered and not oversized */
+  display: grid;
+  place-items: center;
+  padding: .75rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--surface) 92%, var(--brand-primary) 8%);
+}
+.tile__media img,
+.tile__media svg {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.tile__body {
+  padding: .85rem .95rem 1rem;
+}
+
+.tile__title {
+  font-weight: 800;
+  margin: 0 0 .35rem 0;
+  color: var(--text-main);
+}
+.tile h3 {
+  font-weight: 800;
+}
+
+.tile__desc {
+  color: var(--text-soft);
+  font-size: .95rem;
+  margin: 0 0 .75rem 0;
+}
+
+.tile__actions {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- 5) Simple cards row (New • Updated • FAQs) ---------- */
+/* Create three <div class="card"> inside .home-sections */
+.home-sections {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem; /* spacing from previous block */
+}
+
+.card {
+  grid-column: span 4; /* 3 per row on desktop */
+  background: var(--surface-elev1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.card h3 {
+  margin: 0 0 .5rem 0;
+  border-bottom: none;
+  color: var(--text-main);
+}
+
+.card ul {
+  margin: .25rem 0 0 1rem;
+}
+
+/* ---------- 6) Collapsible helper (optional) ---------- */
+/* Add "is-open" on the container to expand by default */
+.collapse {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: .75rem;
+  background: color-mix(in oklab, var(--surface) 96%, black);
+}
+.collapse__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+}
+.collapse__content { display: none; margin-top: .5rem; }
+.collapse.is-open .collapse__content { display: block; }
+
+/* ---------- 7) Responsive tweaks ---------- */
+/* Tablet (≤ 1024px): 2 columns for tiles/cards, hero stacks */
+@media (max-width: 1024px) {
+  .home-hero { grid-template-columns: 1fr; }
+  .tile, .card { grid-column: span 6; } /* 2 per row */
+}
+
+/* Mobile (≤ 640px): single column */
+@media (max-width: 640px) {
+  .tile, .card { grid-column: span 12; } /* 1 per row */
+}

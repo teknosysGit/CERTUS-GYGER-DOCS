@@ -1,0 +1,492 @@
+/* =================================================================
+   PDF BUTTONS + PRODUCT SWITCHER — SCREEN-ONLY, LIGHT/DARK VIA VARIABLES
+   -----------------------------------------------------------------
+   - Foreground/background/border/hover states are variable-driven
+   - Light & dark palettes separated for clarity
+   - Dropdown shares the exact same token set as the PDF button
+   - Dialog buttons share the same token set for consistency
+   ================================================================= */
+
+@media screen {
+
+  /* --------------------------------------------------------------
+     1) LIGHT MODE TOKENS
+     -------------------------------------------------------------- */
+  :root {
+    /* Primary action button */
+    --btn-bg:             var(--accent-fg, #0ea5e9);
+    --btn-fg:             #ffffff;
+    --btn-border:         rgba(0, 0, 0, .08);
+    --btn-shadow:         0 1px 1px rgba(0,0,0,.06);
+
+    /* Hover / Active */
+    --btn-bg-hover:       color-mix(in srgb, var(--btn-bg) 92%, #ffffff);
+    --btn-bg-active:      color-mix(in srgb, var(--btn-bg) 86%, #000000);
+    --btn-shadow-hover:   0 2px 3px rgba(0,0,0,.10);
+    --btn-transform-act:  translateY(1px);
+
+    /* Focus ring */
+    --btn-focus:          0 0 0 3px color-mix(in srgb, var(--btn-bg) 30%, transparent);
+
+    /* Disabled */
+    --btn-bg-disabled:    #e5e7eb;
+    --btn-fg-disabled:    #9aa3b2;
+    --btn-border-disabled:rgba(0,0,0,.06);
+
+    /* Ghost / secondary (reserved for future use) */
+    --btn-ghost-fg:       var(--color-link, #0b5fff);
+    --btn-ghost-border:   var(--color-border, #e5e7eb);
+
+    /* Dropdown-specific */
+    --dropdown-menu-bg:   #ffffff;
+    --dropdown-menu-border: rgba(0,0,0,.10);
+    --dropdown-menu-shadow: 0 8px 24px rgba(0,0,0,.12), 0 2px 6px rgba(0,0,0,.07);
+    --dropdown-item-fg:   #1f2937;
+    --dropdown-item-hover-bg: color-mix(in srgb, var(--btn-bg) 10%, transparent);
+    --dropdown-item-hover-fg: var(--btn-bg);
+    --dropdown-item-selected-bg: color-mix(in srgb, var(--btn-bg) 16%, transparent);
+    --dropdown-item-selected-fg: color-mix(in srgb, var(--btn-bg) 100%, #000000 10%);
+    --dropdown-divider:   rgba(0,0,0,.07);
+
+    /* Dialog surface tokens */
+    --dialog-bg:          var(--surface-0, #ffffff);
+    --dialog-fg:          var(--color-text, #1f2937);
+    --dialog-border:      var(--color-border, #e5e7eb);
+    --dialog-shadow-1:    0 12px 24px rgba(0,0,0,.25);
+    --dialog-shadow-2:    0 2px 8px rgba(0,0,0,.12);
+  }
+
+  /* --------------------------------------------------------------
+     2) DARK MODE TOKENS
+     -------------------------------------------------------------- */
+  :root[data-theme="dark"],
+  html[data-theme="dark"],
+  [data-md-color-scheme="slate"],
+  html[data-color-mode="dark"] {
+    --btn-bg:             var(--accent-fg, #38bdf8);
+    --btn-fg:             #0b1220;
+    --btn-border:         rgba(255,255,255,.10);
+    --btn-shadow:         0 1px 1px rgba(0,0,0,.35);
+
+    --btn-bg-hover:       color-mix(in srgb, var(--btn-bg) 92%, #ffffff);
+    --btn-bg-active:      color-mix(in srgb, var(--btn-bg) 86%, #000000);
+    --btn-shadow-hover:   0 2px 3px rgba(0,0,0,.45);
+    --btn-focus:          0 0 0 3px color-mix(in srgb, var(--btn-bg) 35%, transparent);
+
+    --btn-bg-disabled:    #334155;
+    --btn-fg-disabled:    #94a3b8;
+    --btn-border-disabled:rgba(255,255,255,.08);
+
+    --btn-ghost-fg:       var(--color-link, #7ab7ff);
+    --btn-ghost-border:   var(--color-border, #334155);
+
+    --dropdown-menu-bg:   var(--surface-1, #1e293b);
+    --dropdown-menu-border: rgba(255,255,255,.10);
+    --dropdown-menu-shadow: 0 8px 24px rgba(0,0,0,.55), 0 2px 6px rgba(0,0,0,.35);
+    --dropdown-item-fg:   #e2e8f0;
+    --dropdown-item-hover-bg: color-mix(in srgb, var(--btn-bg) 15%, transparent);
+    --dropdown-item-hover-fg: var(--btn-bg);
+    --dropdown-item-selected-bg: color-mix(in srgb, var(--btn-bg) 20%, transparent);
+    --dropdown-item-selected-fg: var(--btn-bg);
+    --dropdown-divider:   rgba(255,255,255,.08);
+
+    --dialog-bg:          var(--surface-1, #1e293b);
+    --dialog-fg:          var(--color-text, #e5e7eb);
+    --dialog-border:      var(--color-border, #334155);
+    --dialog-shadow-1:    0 12px 24px rgba(0,0,0,.65);
+    --dialog-shadow-2:    0 2px 8px rgba(0,0,0,.45);
+  }
+
+  /* --------------------------------------------------------------
+     3) HEADER GROUP  — keeps switcher + button side-by-side
+     -------------------------------------------------------------- */
+
+  .pdf-header-group {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    margin-left: .4rem;
+  }
+
+  /* --------------------------------------------------------------
+     4) PRODUCT SWITCHER (dropdown trigger — styled like PDF button)
+     -------------------------------------------------------------- */
+
+  .pdf-product-switcher {
+    position: relative;   /* anchor for the absolute menu */
+  }
+
+  /* The visible trigger button */
+  .pdf-product-switcher__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    white-space: nowrap;
+    padding: .35rem .65rem;
+    border-radius: .35rem;
+    cursor: pointer;
+
+    /* Identical token set to the PDF button */
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border: 1px solid var(--btn-border);
+    box-shadow: var(--btn-shadow);
+
+    font: inherit;
+    font-weight: 600;
+    line-height: 1;
+    transition: box-shadow .15s ease, background-color .15s ease,
+                transform .02s ease, filter .15s ease;
+  }
+
+  .pdf-product-switcher__trigger:hover {
+    background: var(--btn-bg-hover);
+    box-shadow: var(--btn-shadow-hover);
+    filter: brightness(1.02);
+  }
+
+  .pdf-product-switcher__trigger:active {
+    background: var(--btn-bg-active);
+    transform: var(--btn-transform-act);
+  }
+
+  .pdf-product-switcher__trigger:focus-visible {
+    outline: none;
+    box-shadow: var(--btn-shadow), var(--btn-focus);
+  }
+
+  /* Chevron icon */
+  .pdf-product-switcher__chevron {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: transform .2s ease;
+  }
+
+  .pdf-product-switcher__chevron svg {
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+  }
+
+  /* Rotate chevron when open */
+  .pdf-product-switcher.is-open .pdf-product-switcher__chevron {
+    transform: rotate(180deg);
+  }
+
+  /* --------------------------------------------------------------
+     5) DROPDOWN MENU
+     -------------------------------------------------------------- */
+
+  .pdf-product-switcher__menu {
+    display: none;                  /* hidden by default */
+    position: absolute;
+    top: calc(100% + .35rem);       /* just below the trigger */
+    right: 0;                       /* align to the right edge of the trigger */
+    z-index: 9999;
+
+    width: max-content;             /* always exactly as wide as the widest item… */
+    min-width: 100%;                /* …but never narrower than the trigger button */
+    padding: .3rem 0;
+    margin: 0;
+    list-style: none;
+
+    background: var(--dropdown-menu-bg);
+    border: 1px solid var(--dropdown-menu-border);
+    border-radius: .45rem;
+    box-shadow: var(--dropdown-menu-shadow);
+
+    /* Smooth reveal */
+    opacity: 0;
+    transform: translateY(-.4rem) scaleY(.97);
+    transform-origin: top center;
+    transition: opacity .14s ease, transform .14s ease;
+  }
+
+  /* Open state — toggled by JS adding .is-open on the wrapper */
+  .pdf-product-switcher.is-open .pdf-product-switcher__menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+
+  /* --------------------------------------------------------------
+     6) MENU ITEMS
+     -------------------------------------------------------------- */
+
+  .pdf-product-switcher__item {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+
+    color: var(--dropdown-item-fg);
+    font: inherit;                  /* start from the same base as the trigger button… */
+    font-size: .875rem !important;  /* …then pin to our size, beating any theme override */
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+    border-radius: 0;
+
+    /* Thin left accent bar — invisible until selected/hovered */
+    border-left: 3px solid transparent;
+    transition: background-color .12s ease, color .12s ease, border-color .12s ease;
+  }
+
+  .pdf-product-switcher__item:hover,
+  .pdf-product-switcher__item:focus {
+    background: var(--dropdown-item-hover-bg);
+    color: var(--dropdown-item-hover-fg);
+    border-left-color: var(--btn-bg);
+    outline: none;
+  }
+
+  /* Active / selected item */
+  .pdf-product-switcher__item.is-selected,
+  .pdf-product-switcher__item[aria-selected="true"] {
+    background: var(--dropdown-item-selected-bg);
+    color: var(--dropdown-item-selected-fg);
+    border-left-color: var(--btn-bg);
+    font-weight: 600;
+  }
+
+  /* Thin divider between items */
+  .pdf-product-switcher__item + .pdf-product-switcher__item {
+    border-top: 1px solid var(--dropdown-divider);
+  }
+
+  /* Round first and last item corners to match the menu radius */
+  .pdf-product-switcher__item:first-child { border-radius: .45rem .45rem 0 0; }
+  .pdf-product-switcher__item:last-child  { border-radius: 0 0 .45rem .45rem; }
+  .pdf-product-switcher__item:first-child:last-child { border-radius: .45rem; }
+
+  /* Icon inside each menu item */
+  .pdf-product-switcher__item-icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .pdf-product-switcher__item-icon svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+
+  /* Icon shown inside the trigger button when a product is active */
+  .pdf-product-switcher__trigger-icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .pdf-product-switcher__trigger-icon svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+
+  /* Keep trigger label (icon + text) in a row with a small gap */
+  .pdf-product-switcher__label {
+    display: none;
+    align-items: center;
+    gap: .35rem;
+  }
+
+  @media (min-width: 960px) {
+    .pdf-product-switcher__label { display: inline-flex; }
+  }
+
+  /* --------------------------------------------------------------
+     7) PDF DOWNLOAD BUTTON
+     -------------------------------------------------------------- */
+
+  /* display:inline-flex !important overrides MkDocs Material's
+     .md-header__button:not([hidden]) { display: inline-block }
+     which would otherwise collapse the flex layout and cause the
+     icon and text to stack / misalign. */
+  .pdf-download {
+    display: inline-flex !important;
+    align-items: center;
+    gap: .45rem;
+    white-space: nowrap;
+    padding: .35rem .65rem;
+    border-radius: .35rem;
+    text-decoration: none;
+
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border: 1px solid var(--btn-border);
+    box-shadow: var(--btn-shadow);
+
+    font: inherit;
+    font-weight: 600;
+    line-height: 1;
+    transition: box-shadow .15s ease, background-color .15s ease,
+                transform .02s ease, filter .15s ease;
+  }
+
+  .pdf-download:hover {
+    background: var(--btn-bg-hover);
+    box-shadow: var(--btn-shadow-hover);
+    filter: brightness(1.02);
+  }
+
+  .pdf-download:active {
+    background: var(--btn-bg-active);
+    transform: var(--btn-transform-act);
+  }
+
+  .pdf-download:focus-visible {
+    outline: none;
+    box-shadow: var(--btn-shadow), var(--btn-focus);
+  }
+
+  .pdf-download[disabled],
+  .pdf-download[aria-disabled="true"] {
+    background: var(--btn-bg-disabled);
+    color: var(--btn-fg-disabled);
+    border-color: var(--btn-border-disabled);
+    box-shadow: none;
+    cursor: not-allowed;
+    filter: none;
+    transform: none;
+    pointer-events: none;
+  }
+
+  .pdf-download__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .pdf-download__icon svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    display: block;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+  }
+
+  /* Hidden on small screens, shown on wide */
+  .pdf-download__text {
+    display: none;
+  }
+
+  @media (min-width: 960px) {
+    .pdf-download__text {
+      display: flex;
+      align-items: center;
+      line-height: 1;
+    }
+  }
+
+  /* --------------------------------------------------------------
+     8) LIGHTWEIGHT ERROR DIALOG  (for missing PDF)
+     -------------------------------------------------------------- */
+
+  .pdf-dialog-backdrop {
+    position: fixed;
+    inset: 0;
+    display: none;
+    place-items: center;
+    background: rgba(0,0,0,.5);
+    z-index: 999;
+  }
+  .pdf-dialog-backdrop.is-open { display: grid; }
+
+  .pdf-dialog {
+    min-width: min(560px, calc(100% - 3rem));
+    background: var(--dialog-bg);
+    color: var(--dialog-fg);
+    border-radius: .5rem;
+    border: 1px solid var(--dialog-border);
+    box-shadow: var(--dialog-shadow-1), var(--dialog-shadow-2);
+  }
+
+  .pdf-dialog__header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--dialog-border);
+    font-weight: 600;
+  }
+
+  .pdf-dialog__body {
+    padding: 1rem 1.25rem;
+  }
+
+  .pdf-dialog__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+    padding: .75rem 1.25rem 1rem;
+  }
+
+  .pdf-dialog__btn {
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border: 1px solid var(--btn-border);
+    border-radius: .35rem;
+    padding: .5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: box-shadow .15s ease, background-color .15s ease,
+                transform .02s ease, filter .15s ease;
+  }
+  .pdf-dialog__btn:hover   { background: var(--btn-bg-hover);  box-shadow: var(--btn-shadow-hover); }
+  .pdf-dialog__btn:active  { background: var(--btn-bg-active); transform: var(--btn-transform-act); }
+  .pdf-dialog__btn:focus-visible { outline: none; box-shadow: var(--btn-focus); }
+
+  .pdf-dialog__btn[disabled] {
+    background: var(--btn-bg-disabled);
+    color: var(--btn-fg-disabled);
+    border-color: var(--btn-border-disabled);
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+  }
+
+  /* Prevent body scroll when dialog is open */
+  body.no-scroll { overflow: hidden; }
+}
+
+/* =================================================================
+   9) PDF-ONLY FIXES  (with-pdf plugin — NOT in @media screen)
+   -----------------------------------------------------------------
+   These run in the PDF export build only (.pdf-export class is
+   added by mkdocs-with-pdf automatically).
+   ================================================================= */
+
+.pdf-export .md-typeset .admonition,
+.pdf-export .md-typeset details {
+  position: relative;
+}
+
+.pdf-export .md-typeset .admonition-title,
+.pdf-export .md-typeset details > summary {
+  display: block !important;
+  position: relative !important;
+  line-height: 1.4 !important;
+}
+
+.pdf-export .md-typeset .admonition-title::before,
+.pdf-export .md-typeset details > summary::before {
+  position: absolute !important;
+  left: -0.5rem !important;
+  top: 0.3rem !important;
+  margin: 0 !important;
+  transform: scale(0.9);
+}

@@ -1,0 +1,39 @@
+# -------------------------------------------------------
+# variables.rivo.yaml
+# Loaded after variables.yaml for CERTUS RIVO builds.
+# Same structure as variables.flex.yaml — only values differ.
+# -------------------------------------------------------
+
+product:
+  id: "rivo"                  # use this in {% if %} conditions
+  name:
+    en: "CERTUS RIVO"
+    de: "CERTUS RIVO"
+  shortName:
+    en: "RIVO"
+    de: "RIVO"
+  tagline:
+    en: "A 16-channel contactless dispenser engineered for precise low-volume applications."
+    de: "Ein 16-Kanal-berührungsloser Dispenser für präzise Anwendungen mit geringem Volumen."
+  description:
+    en: "CERTUS RIVO is a compact, modular and versatile dispensing system for precise and repeatable dispensing of fluids in the micro to milliliter range."
+    de: "CERTUS RIVO ist ein kompaktes, modulares und vielseitiges Dosiersystem für die präzise und wiederholbare Dosierung von Flüssigkeiten im Mikro- bis Milliliterbereich."
+  software:
+    name:
+      en: "CERTUS CONTROL"
+      de: "CERTUS CONTROL"
+    version: "2.1.19"
+    releaseDate: "February 2026"
+    releaseDateDE: "Februar 2026"
+  productImageURL: "http://mkdocsdemo.teknosyssolutions.com/en/products/certus-rivo/_assets/certus_rivo.png"
+  pdf:
+    coverTitle: "User Manual"
+    coverTitleDE: "Benutzerhandbuch"
+    coverSubtitle: "With CERTUS CONTROL 2.1.19"
+    coverSubtitleDE: "Mit CERTUS CONTROL 2.1.19"
+    outputPath: "pdf/User_Manual_CERTUS_RIVO_EN.pdf"
+    outputPathDE: "pdf/User_Manual_CERTUS_RIVO_DE.pdf"
+    version: "v1.0"
+  docs:
+    safetyPage: "safety.md"
+    packagingPage: "packaging.md"
