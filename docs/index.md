@@ -9,24 +9,19 @@ docsite_url: https://docs.fgyger.ch)
 role:
 ---
 
-<div class="home-hero">         <!-- Use the class 'home' for putting title and image one below each other without a wrapping panel -->
+<div class="home-hero">
   <div>
     <h1>Certus Knowledgebase Site</h1>
     <p class="lead">
       Technical documentation and training content for clients.
       Explore product guides, implementation playbooks, and FAQs — all in one place.
     </p>
-    <!--<div class="tile__desc">
-      <a href="common_content/introduction">Certus Flex: Introduction</a> |
-      <a href="common_content/introduction">Certus Rivo: Introduction</a>
-    </div>-->
   </div>
   <div>
     <img src="_shared_assets/landing_page_banner.png" alt="Welcome Banner">
   </div>
 </div>
 
-<!-- Grid container keeps column layout; we add a helper class for scoping -->
 ## Products
 
 <div class="grid cards home-tiles">
@@ -38,8 +33,11 @@ role:
       A fully automatic dispenser for contactless dispensing of various fluids into well plates.
     </p>
     <ul class="tile-text">
-      <li><a href="../certus-flex/common_content/introduction/">Introduction</a></li>
-      <li><a href="../certus-flex/en/products/certus-flex/getting-started">Getting Started</a></li>
+      <!-- FIX: use absolute path for GitHub Pages (project site requires repo name prefix) -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-flex/common_content/introduction/">Introduction</a></li>
+
+      <!-- FIX: added trailing slash + absolute path -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-flex/en/products/certus-flex/getting-started/">Getting Started</a></li>
     </ul>
   </div>
 
@@ -50,8 +48,11 @@ role:
       A 16-channel contactless dispenser designed for precise low-volume applications.
     </p>
     <ul class="tile-text">
-      <li><a href="../certus-rivo/common_content/introduction/">Introduction</a></li>
-      <li><a href="../certus-rivo/en/products/certus-rivo/getting-started">Getting Started</a></li>
+      <!-- FIX: absolute path -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-rivo/common_content/introduction/">Introduction</a></li>
+
+      <!-- FIX: absolute path + trailing slash -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-rivo/en/products/certus-rivo/getting-started/">Getting Started</a></li>
     </ul>
   </div>
 
@@ -69,8 +70,9 @@ role:
       List of new topics added to the Knowledgebase.
     </p>
     <ul class="tile-text">
-      <li><a href="../certus-flex/common_content/introduction/">Introduction</a></li>
-      <li><a href="../certus-flex/en/products/certus-flex/getting-started/">Getting Started</a></li>
+      <!-- FIX -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-flex/common_content/introduction/">Introduction</a></li>
+      <li><a href="/CERTUS-GYGER-DOCS/certus-flex/en/products/certus-flex/getting-started/">Getting Started</a></li>
     </ul>
   </div>
 
@@ -80,8 +82,9 @@ role:
       List of updated topics in the Knowledgebase.
     </p>
     <ul class="tile-text">
-      <li><a href="../certus-flex/common_content/introduction/">Introduction</a></li>
-      <li><a href="../certus-flex/en/products/certus-flex/getting-started/">Getting Started</a></li>
+      <!-- FIX -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-flex/common_content/introduction/">Introduction</a></li>
+      <li><a href="/CERTUS-GYGER-DOCS/certus-flex/en/products/certus-flex/getting-started/">Getting Started</a></li>
     </ul>
   </div>
 
@@ -91,8 +94,9 @@ role:
       List of release notes in the Knowledgebase.
     </p>
     <ul class="tile-text">
-      <li><a href="../certus-flex/en/products/certus-flex/release_notes/release_notes_February2026/">February 2026</a></li>
-      <li><a href="../certus-flex/en/products/certus-flex/release_notes/release_notes_March2026/">March 2026</a></li>
+      <!-- FIX -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-flex/en/products/certus-flex/release_notes/release_notes_February2026/">February 2026</a></li>
+      <li><a href="/CERTUS-GYGER-DOCS/certus-flex/en/products/certus-flex/release_notes/release_notes_March2026/">March 2026</a></li>
     </ul>
   </div>
 
@@ -108,8 +112,9 @@ role:
       List of new topics added to the Knowledgebase.
     </p>
     <ul class="tile-text">
-      <li><a href="../certus-rivo/common_content/introduction/">Introduction</a></li>
-      <li><a href="../certus-rivo/en/products/certus-rivo/getting-started/">Getting Started</a></li>
+      <!-- FIX -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-rivo/common_content/introduction/">Introduction</a></li>
+      <li><a href="/CERTUS-GYGER-DOCS/certus-rivo/en/products/certus-rivo/getting-started/">Getting Started</a></li>
     </ul>
   </div>
 
@@ -119,8 +124,9 @@ role:
       List of updated topics in the Knowledgebase.
     </p>
     <ul class="tile-text">
-      <li><a href="../certus-rivo/common_content/introduction/">Introduction</a></li>
-      <li><a href="../certus-rivo/en/products/certus-rivo/getting-started/">Getting Started</a></li>
+      <!-- FIX -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-rivo/common_content/introduction/">Introduction</a></li>
+      <li><a href="/CERTUS-GYGER-DOCS/certus-rivo/en/products/certus-rivo/getting-started/">Getting Started</a></li>
     </ul>
   </div>
 
@@ -130,8 +136,9 @@ role:
       List of release notes in the Knowledgebase.
     </p>
     <ul class="tile-text">
-      <li><a href="../certus-rivo/en/products/certus-rivo/release_notes/release_notes_February2026/">February 2026</a></li>
-      <li><a href="../certus-rivo/en/products/certus-rivo/release_notes/release_notes_March2026/">March 2026</a></li>
+      <!-- FIX -->
+      <li><a href="/CERTUS-GYGER-DOCS/certus-rivo/en/products/certus-rivo/release_notes/release_notes_February2026/">February 2026</a></li>
+      <li><a href="/CERTUS-GYGER-DOCS/certus-rivo/en/products/certus-rivo/release_notes/release_notes_March2026/">March 2026</a></li>
     </ul>
   </div>
 
@@ -139,7 +146,6 @@ role:
 
 ## Frequently Asked Questions
 
-<!-- Collapsed by default -->
 ??? note "FAQ1"
     1. Download the latest release from the **Downloads** page.
     2. Add it to your PATH.
