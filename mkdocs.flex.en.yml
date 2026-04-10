@@ -16,8 +16,10 @@ plugins:
       prebuild_index: true
       indexing: full
       min_search_length: 3
+
   - mkdocstrings:
       default_handler: python
+
   - glightbox:
       touchNavigation: true
       loop: false
@@ -32,23 +34,26 @@ plugins:
       background: "#e3e3e3"
       shadow: true
       manual: true
+
   - table-of-figures:
       directive_identifier: 'table-of-figures'
       figure_types:
         - image
         - table
-      custom_templates_path: null
       translations_overrides_path: docs/configurations/javascripts/translations_overrides.json
       caption_identifier_description_separator: ' - '
       sections_breadcrumb_separator: ' > '
+
   - macros:
       include_yaml:
         - variables: docs/data/variables.yaml
         - variables: docs/data/variables.flex.yaml
       on_error_fail: false
       include_dir: docs/common_content
+
+  # ✅ FIX: Always enable PDF generation
   - with-pdf:
-      enabled_if_env: ENABLE_PDF_EXPORT
+      output_path: pdf/User_Manual_CERTUS_FLEX_EN.pdf
 
 extra:
   alternate:
@@ -96,10 +101,11 @@ extra:
   watermark: "SAMPLE"
   page_size: "A4"
 
+  # ✅ Must match output_path above
   pdfDownloadPath: "pdf/User_Manual_CERTUS_FLEX_EN.pdf"
 
 nav:
-  - Home: common_content/introduction.md   # ✅ FIXED
+  - Home: common_content/introduction.md
   - Table of Figures: en/products/certus-flex/table_of_figures.md
 
   - Products:
@@ -130,4 +136,4 @@ nav:
               - Document List: en/products/certus-flex/appendix_document_list.md
               - Web Control: en/products/certus-flex/appendix_web_control.md
               - Decontamination Declaration: en/products/certus-flex/appendix_decontamination_declaration.md
-              - Glossary: common_content/glossary.md   # ✅ FIXED
+              - Glossary: common_content/glossary.md
