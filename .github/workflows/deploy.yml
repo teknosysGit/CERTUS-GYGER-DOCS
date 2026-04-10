@@ -21,7 +21,20 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
+      # Install system libraries required for PDF generation (WeasyPrint)
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libcairo2 \
+            libpango-1.0-0 \
+            libpangocairo-1.0-0 \
+            libgdk-pixbuf2.0-0 \
+            libffi-dev \
+            shared-mime-info
+
+      # Install Python dependencies
+      - name: Install Python dependencies
         run: |
           pip install mkdocs
           pip install mkdocs-material
