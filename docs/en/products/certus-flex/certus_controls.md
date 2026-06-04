@@ -805,9 +805,8 @@ Right-clicking the listed user opens a context menu with more commands.
 
 When you log on as a Windows user, the user name and password of the current PC account is used to log on to {{ variables.product.software.name.en }}. This helps the user log on faster.
 
-/// admonition | Note
-    type: note
-
+/// note
+    
 As the user has already been authenticated by logging on to Windows, no {{ variables.product.software.name.en }} logon is required.
 ///
 
