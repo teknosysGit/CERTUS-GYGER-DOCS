@@ -808,11 +808,9 @@ When you log on as a Windows user, the user name and password of the current PC 
 !!! note
     As the user has already been authenticated by logging on to Windows, no {{ variables.product.software.name.en }} logon is required.
 
-/// figure | CERTUS CONTROL Logon Window
-    attrs: {class: "img-medium on-glb", width: "550", height: "550"}
-
-![CERTUS CONTROL Logon Window](_assets/screenshots/image207.png "CERTUS CONTROL Logon Window")
-///
+<div markdown="1">
+![{{ variables.product.software.name.en }} Login Window](_assets/screenshots/image207.png "CERTUS CONTROL Logon Window"){ .img-medium .on-glb width="550" height="550"}
+</div>
 
 #### Selecting users or groups
 
@@ -821,11 +819,9 @@ Clicking *Use Windows User* opens Window's *Directory Object Picker* Dialog. Thi
 !!! note
     When {{ variables.product.software.name.en }} is started next time, the software automatically uses the user account.
 
-/// figure | Selecting a User or Group
-    attrs: {class: "img-medium on-glb", width: "550", height: "450"}
-
-![Selecting a User or Group](_assets/screenshots/image212.png "Selecting a User or Group")
-///
+<div markdown="1">
+![Selecting a User or Group](_assets/screenshots/image212.png "Selecting a User or Group"){ .img-medium .on-glb width="550" height="450"}
+</div>
 
 | #   | Description                                |
 | --- | ------------------------------------------ |
