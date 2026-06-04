@@ -1,0 +1,686 @@
+/* ==========================================================================
+   typography.css  —  ONLINE TYPOGRAPHY ONLY (do not affect PDF build)
+   --------------------------------------------------------------------------
+   - Light and dark mode separated
+   - Full variable-based font system with master scale
+   - Safe for Material for MkDocs
+   - Does NOT affect PDF (because wrapped in @media screen)
+
+   Integration:
+     - Link this file as the ONLY extra CSS for the website (screen).
+     - Keep PDF styling (page size, headers/footers, print rules) in styles.scss
+       inside your with-pdf custom_template_path.
+
+   Design goals:
+     1) Consolidated, minimal, and readable structure (no duplicates).
+     2) A single "master" scale knob that updates all type (Word-like “Normal”).
+     3) Flexible: any individual style can be customized without losing globals.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0) SCREEN-ONLY SCOPE
+   Guard everything so these rules never leak into WeasyPrint/with-pdf builds.
+   -------------------------------------------------------------------------- */
+@media screen {
+
+   /* ------------------------------------------------------------
+     A) LIGHT MODE (your original settings preserved)
+     ------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------
+     1) DESIGN TOKENS — FONTS, SCALE, RHYTHM
+     - Font stacks retained from your existing typography (Roboto/Open Sans/Arial).
+     - `--font-scale` is the MASTER knob (1 = base, 1.0625 = +6.25%, etc.).
+     - Headings, lists, captions, code, etc. all derive from this.
+     ---------------------------------------------------------------------- */
+
+  :root {
+
+    /* Company Logo configuration for light mode */
+
+    [data-md-color-scheme="default"] .md-header__button.md-logo img,
+    html[data-md-color-scheme="default"] .md-header__button.md-logo img {
+      content: url("_shared_assets/company_logo_light.png");
+    }
+
+    /* --- Font family options (unchanged from your current setup) --- */
+    --font-arial: Arial, "Helvetica Neue", Helvetica, "Liberation Sans",
+                  "Nimbus Sans L", sans-serif;
+    --font-roboto: "Roboto", "Helvetica Neue", Arial, "Noto Sans",
+                   "Liberation Sans", "Nimbus Sans L", sans-serif;
+    --font-open-sans: "Open Sans", "Helvetica Neue", Arial, "Noto Sans",
+                      "Liberation Sans", sans-serif;
+
+    /* Choose the default UI/text font (you can switch to Open Sans/Arial) */
+    --font-sans: var(--font-arial); /* or: var(--font-open-sans) / var(--font-arial) */
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", "DejaVu Sans Mono", monospace;
+
+    /* --- Master scale (GLOBAL “Normal” style) ---
+       Change ONLY this to scale the entire site’s typography.
+       Example:
+         0.9375 = -6.25%
+         1      = baseline
+         1.125  = +12.5%
+    */
+
+    /*--font-scale: 1; */   /* 1 = base size (e.g., 16px if body is 1rem); adjust to scale all type proportionally */
+    --font-scale: 0.85;    /* ~ -15% for a more compact, information-dense style; adjust as needed for your content and audience */
+
+    
+    /* New: dedicated knob for admonition content */
+    --admonition-scale: 1;       /* 1 = same as body; 0.95 = slightly smaller; 1.05 = slightly bigger */
+
+    /* (Optional) title scale separate from body */
+    --admonition-title-scale: 1.0;    /*  1 = same as body; 1.125 = +12.5% larger; adjust as needed for better hierarchy in admonition titles */
+
+  /* spacing between admonition icon and title */
+    --admonition-icon-offset: 1.1rem;   /* default-friendly distance */
+
+    /* --- Core metrics (can be tuned if needed) --- */
+    --weight-regular: 400;
+    --weight-medium:  500;
+    --weight-semibold:600;
+    --weight-bold:    700;
+
+    /* --- Modular type scale (multipliers relative to body) ---
+       Keep these semantic so you can swap values without hunting selectors.
+       These are NOT sizes — they are SCALE FACTORS used with --font-scale.
+    */
+    --step--1: 0.875;  /* small text, captions, meta */
+    --step-0:  1;      /* body text (“Normal”) */
+    --step-1:  1.125;  /* h6 / small headings */
+    --step-2:  1.25;   /* h5 */
+    --step-3:  1.375;  /* h4 */
+    --step-4:  1.5;    /* h3 */
+    --step-5:  1.75;   /* h2 */
+    --step-6:  2;      /* h1 */
+
+    /* --- Semantic aliases (easy local overrides later) --- */
+    --body-scale:      var(--step-0);
+    --small-scale:     var(--step--1);
+    --caption-scale:   var(--step--1);
+
+    --h1-scale: var(--step-6);
+    --h2-scale: var(--step-5);
+    --h3-scale: var(--step-4);
+    --h4-scale: var(--step-3);
+    --h5-scale: var(--step-2);
+    --h6-scale: var(--step-1);
+
+    /* --- Spacing rhythm (based on 1em of current context) --- */
+    --lh-body:    1.6;
+    --lh-heading: 1.25;
+    --space-1: 0.25em;
+    --space-2: 0.5em;
+    --space-3: 0.75em;
+    --space-4: 1em;
+    --space-5: 1.25em;
+    --space-6: 1.5em;
+    --space-8: 2em;
+
+    /* ============================================================
+       LIGHT MODE COLORS — Your existing values preserved
+       + NEW variables for PRIMARY, ACCENT and SURFACE sets
+       ============================================================ */
+
+    /* PRIMARY foreground colors (light mode) */
+    --primary-fg:   #111827;     /* strong text for headings */
+    --primary-fg-2: #1f2937;     /* body text */
+
+    /* ACCENT foreground colors (light mode) */
+    --accent-fg:    #0ea5e9;     /* cyan-accent */
+    --accent-fg-2:  #0b5fff;     /* link primary */
+
+    /* SURFACE / NEUTRAL colors */
+    --surface-0: #ffffff;
+    --surface-1: #f9fafb;
+    --surface-2: #f3f4f6;
+
+    /* BODY / GENERAL colors */
+    --color-text: #1f2937;
+    --color-header-text: #111827;
+    --color-muted: #4b5563;
+    --color-subtle: #6b7280;
+
+    /* Borders */
+    --color-border: #e5e7eb;
+
+    /* Link system (light mode) */
+    --color-link: #0b5fff;
+    --color-link-hover: #084acc;
+    --color-link-visited: #6a38c2;
+
+    /* Accents */
+    --color-accent: #0ea5e9;
+    --color-caption: #6b7280;
+
+    /* Sidebar */
+    --sidebar-title: #111827;
+    --sidebar-subtitle: #1f2937;
+
+    /* Footer */
+    --color-footer-text: #374151;
+
+    /* Selection */
+    --selection-bg: #fde68a;
+    --selection-text: #111827;
+    --outline: 2px solid #0ea5e9;
+
+    --footer-bg: transparent;
+
+  }
+
+  /* ------------------------------------------------------------
+     2) DARK MODE — CLEAN SEPARATION
+     ------------------------------------------------------------ */
+  :root[data-theme="dark"],
+  html[data-theme="dark"],
+  [data-md-color-scheme="slate"],
+  html[data-color-mode="dark"] {
+
+    /* Company Logo configuration for dark mode */
+
+    [data-md-color-scheme="slate"] .md-header__button.md-logo img,
+    html[data-md-color-scheme="slate"] .md-header__button.md-logo img {
+    content: url("_shared_assets/company_logo_dark.png");
+    }
+
+    /* PRIMARY foreground colors (dark mode) */
+    --primary-fg:   #f3f4f6;     /* headings, strong text */
+    --primary-fg-2: #e5e7eb;     /* body text */
+
+    /* ACCENT foreground colors (dark mode) */
+    --accent-fg:    #38bdf8;     /* cyan-accent for dark mode */
+    --accent-fg-2:  #7ab7ff;     /* primary link color */
+
+    /* SURFACE / NEUTRAL (dark mode) */
+    --surface-0: #0f172a;  /* deep background */
+    --surface-1: #1e293b;  /* elevated surfaces */
+    --surface-2: #334155;  /* panels, blocks */
+
+    /* TEXT SYSTEM */
+    --color-text: var(--primary-fg-2);         /* body text */
+    --color-header-text: var(--primary-fg);    /* headings */
+    --color-muted: #cbd5e1;
+    --color-subtle: #9aa3b2;
+
+    /* Borders */
+    --color-border: #334155;
+
+    /* Link system */
+    --color-link: var(--accent-fg-2);
+    --color-link-hover: #a1c9ff;
+    --color-link-visited: #c4a6ff;
+
+    /* Accents */
+    --color-accent: var(--accent-fg);
+    --color-caption: #a3aab6;
+
+    /* Sidebar */
+    --sidebar-title: #f1f5f9;
+    --sidebar-subtitle: #e2e8f0;
+
+    /* Footer */
+    --color-footer-text: #d1d5db;
+
+    --footer-bg: transparent;
+
+
+    /* Selection */
+    --selection-bg: #3b82f6;
+    --selection-text: #f9fafb;
+    --outline: 2px solid #38bdf8;
+
+  }
+
+  /* ------------------------------------------------------------------------
+     3) BASE — BODY/TEXT NORMALIZATION
+     Everything derives from --font-scale. No layout/position changes here.
+     ---------------------------------------------------------------------- */
+
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+  /* Use the chosen sans stack globally; keep theme’s base size but apply master scale. */
+  body {
+    font-family: var(--font-sans);
+    font-weight: var(--weight-regular);
+    line-height: var(--lh-body);
+    color: var(--color-text); /* neutral default; respects theme mode if provided */
+  }
+
+  /* Selection (safe, minimal) */
+  ::selection {
+    background: var(--selection-bg);
+    color: var(--selection-text);
+  }
+
+   /* Media defaults */
+  img, svg, video, canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Code/mono text uses a slightly smaller factor by default */
+  code, kbd, samp {
+    font-family: var(--font-mono);
+    font-size: calc(0.75rem * var(--font-scale) * 0.95);
+  }
+
+  /* Material for MkDocs wraps page content in .md-typeset — scope here for safety. */
+  .md-typeset {
+    /* “Normal” style — one knob to rule them all */
+    font-size: calc(0.75rem * var(--font-scale) * var(--body-scale));
+    line-height: var(--lh-body);
+  }
+
+  /* ------------------------------------------------------------------------
+     4) TEXT ELEMENTS — PARAGRAPHS, LINKS, LISTS, BLOCKQUOTES
+     Keep margins on em so they scale with the current context.
+     ---------------------------------------------------------------------- */
+
+  .md-typeset p { margin: 0; }
+  .md-typeset p + p { margin-top: var(--space-4); }
+
+  .md-typeset a {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-underline-offset: 0.14em;
+    text-decoration-thickness: 1px;
+    font-weight: var(--weight-medium);
+  }
+  .md-typeset a:hover { color: var(--color-link-hover); text-decoration-thickness: 2px; }
+  .md-typeset a:visited { color: var(--color-link-visited); }
+
+  .md-typeset ul,
+  .md-typeset ol {
+    margin: var(--space-4) 0 var(--space-6);
+    padding-left: 1.1em; /* readable bullets without layout shifts */
+  }
+  .md-typeset li + li { margin-top: 0.3em; }
+  .md-typeset li > p { margin: 0.25em 0 0; }
+
+  .md-typeset blockquote {
+    margin: var(--space-6) 0;
+    padding: var(--space-4) var(--space-6);
+    border-left: 4px solid var(--color-accent);
+    color: var(--color-muted);
+  }
+
+  /* ------------------------------------------------------------------------
+     5) HEADINGS — All sizes derive from --font-scale via semantic tokens
+     You can change just --h1-scale (etc.) later without touching selectors.
+     ---------------------------------------------------------------------- */
+
+  .md-typeset h1 {
+    font-size: calc(1rem * var(--font-scale) * var(--h1-scale));
+    font-weight: var(--weight-normal);
+    line-height: var(--lh-heading);
+    letter-spacing: -0.003em;
+    color: var(--color-header-text);
+    margin: 0 0 var(--space-4);    /* extra bottom margin for visual separation from content */ /* top left bottom right */
+  }
+
+  .md-typeset h2 {
+    font-size: calc(0.85rem * var(--font-scale) * var(--h2-scale));
+    font-weight: var(--weight-semibold);
+    color: var(--color-header-text);
+    line-height: var(--lh-heading);
+    letter-spacing: -0.003em;
+    margin: var(--space-6) 0 var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-2);
+  }
+
+  .md-typeset h3 {
+    font-size: calc(0.75rem * var(--font-scale) * var(--h3-scale));
+    font-weight: var(--weight-semibold);
+    line-height: var(--lh-heading);
+    color: var(--color-header-text);
+    margin: var(--space-5) 0 var(--space-2);
+  }
+
+  .md-typeset h4 {
+    font-size: calc(0.65rem * var(--font-scale) * var(--h4-scale));
+    font-weight: var(--weight-semibold);
+    line-height: var(--lh-heading);
+    color: var(--color-header-text);
+    margin: var(--space-4) 0 var(--space-2);
+  }
+
+  .md-typeset h5 {
+    font-size: calc(0.55rem * var(--font-scale) * var(--h5-scale));
+    font-weight: var(--weight-medium);
+    line-height: var(--lh-heading);
+    color: var(--color-header-text);
+    margin: var(--space-3) 0 var(--space-2);
+    text-transform: none;
+  }
+
+  .md-typeset h6 {
+    font-size: calc(0.45rem * var(--font-scale) * var(--h6-scale));
+    font-weight: var(--weight-medium);
+    line-height: var(--lh-heading);
+    letter-spacing: 0.02em;
+    color: var(--color-muted);
+    margin: var(--space-3) 0 var(--space-2);
+  }
+
+  /* Tighter first-child heading spacing in articles */
+  .md-typeset :is(h2, h3, h4, h5, h6):first-child { margin-top: var(--space-3); }
+
+  /* --------------------------------------------------------------------
+     6)  IMAGES, FIGURES, CAPTIONS
+  ---------------------------------------------------------------------- */
+
+  .md-typeset figure { margin: var(--space-5) 0; }
+
+  .md-typeset figcaption {
+    font-size: calc(1rem * var(--font-scale) * var(--caption-scale));
+    margin: 0.5em 0 0 0 !important;     /* top right bottom left */ /* 0.5em is a good default for readability; adjust as needed */
+    line-height: 1.4;
+    color: var(--color-caption);
+    text-align: left;
+    font-style: italic;
+  }
+
+  /* ------------------------------------------------------------------------
+   6b) Remove empty <p> gap inside figure when image is inside a list item
+   MkDocs renders a blank <p></p> before </figure> which creates extra space
+   below the figcaption when the figure is inside a <li>.
+   ---------------------------------------------------------------------- */
+
+  .md-typeset li figure > p:empty {
+    display: none;
+    margin: 0;
+  }
+
+  .md-typeset li figcaption {
+    margin: 0.25em 0 0 0 !important;
+    max-width: 100% !important;
+    text-align: left;
+    padding-left: 0;
+  }
+
+  .md-typeset li figure figcaption {
+    margin: 0.25em 0 0 0 !important;
+    max-width: 100% !important;        /* override Material's 24rem cap */
+    width: 100% !important;            /* ensure it stretches to figure width */
+    text-align: left !important;
+    padding-left: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .md-typeset li figure {
+    margin-bottom: 0.5em;
+    width: fit-content;               /* figure wraps tightly to image width */
+  }
+
+  /* ------------------------------------------------------------------------
+     6) TABLES & CODE BLOCKS
+     ---------------------------------------------------------------------- */
+
+  .md-typeset table { font-size: inherit; }
+  .md-typeset thead th { font-weight: var(--weight-semibold); }
+  .md-typeset pre code {
+    font-size: calc(0.75rem * var(--font-scale) * 0.95);
+    line-height: 1.5;
+  }
+  .md-typeset code {
+    background: none;
+    padding: 0.12em 0.35em;
+    border-radius: 3px;
+    border: 1px solid var(--color-border, #e5e7eb);
+  }
+
+  /* ------------------------------------------------------------------------
+     7) NAV/FOOTER TYPOGRAPHY (labels only; no layout changes)
+     ---------------------------------------------------------------------- */
+
+  .md-footer__link { text-decoration: none; }
+  .md-footer__link-title {
+    font-size: calc(1rem * var(--font-scale) * var(--step-1));
+    font-weight: var(--weight-semibold);
+    line-height: 1.35;
+    color: var(--color-link, #0b5fff);
+  }
+  .md-footer__link:hover .md-footer__link-title {
+    color: var(--color-link-hover, #084acc);
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+    text-decoration-thickness: 2px;
+  }
+  .md-footer__link-label {
+    font-size: calc(1rem * var(--font-scale) * var(--small-scale));
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-subtle, #6b7280);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  /* ------------------------------------------------------------------------
+     8) ACCESSIBILITY & UTILITIES
+     ---------------------------------------------------------------------- */
+
+  :focus-visible {
+    outline: 2px solid var(--focus, #0ea5e9);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-border, #e5e7eb);
+    margin: var(--space-6) 0;
+  }
+
+  /* ------------------------------------------------------------------------
+     9) OPTIONAL: RESPONSIVE TWEAKS FOR VERY NARROW VIEWPORTS
+     (Keeps type comfortable on small phones without changing rem base)
+     ---------------------------------------------------------------------- */
+  @media (max-width: 420px) {
+    :root { --font-scale: 0.975; } /* ~ -2.5% for compact screens */
+  }
+
+
+/* ------------------------------------------------------------------------
+     10) Content inside admonitions follows the master scale × admonition-scale
+  ---------------------------------------------------------------------- */
+  
+  .md-typeset .admonition,
+  .md-typeset details {
+    font-size: calc(0.75rem * var(--font-scale) * var(--admonition-scale));
+    line-height: var(--lh-body, 1.6);
+  }
+
+  /* Title (kept independent but still bound to --font-scale) */
+  .md-typeset .admonition > .admonition-title,
+  .md-typeset details > .admonition-title {
+    font-size: calc(0.75rem * var(--font-scale) * var(--admonition-title-scale));
+    font-weight: var(--weight-semibold, 600);
+    line-height: var(--lh-heading, 1.25);
+  }
+
+  /* keep the screen admonition title comfy; this won’t impact the PDF */
+
+  .md-typeset .admonition > .admonition-title,
+  .md-typeset details > .admonition-title {
+    display: flex;
+    align-items: center;
+    /* The padding here leaves room if your theme shows an icon on the left */
+    padding-left: 2rem; /* adjust if your theme uses different icon spacing */
+  }
+
+  /* ============================================================
+  11) ADMONITION COLOUR OVERRIDES — warning & caution
+  ============================================================
+
+  CONTEXT
+  -------
+  Material for MkDocs ships "warning" as a built-in type (orange).
+  "caution" is a custom type defined in mkdocs.yaml and falls back
+  to the "note" style unless styled here.
+
+  DESIGN DECISION
+  ---------------
+  warning  → YELLOW  (#f9c513 / amber-yellow)
+            Icon:  octicons/bell-16  (set in mkdocs.yaml)
+            Use:   General advisories, deprecation notices, soft alerts.
+
+  caution  → ORANGE  (#ff7043 / deep-orange)
+            Icon:  octicons/alert-16 (set in mkdocs.yaml)
+            Use:   Procedural cautions, safety-critical steps.
+            This preserves the original orange appearance the team expects.
+
+  ICON VARIABLES
+  --------------
+  "warning"  icon is injected automatically by the theme from mkdocs.yaml.
+  "caution"  is a custom type — its icon SVG must be registered manually
+  via --md-admonition-icon--caution so the theme can render it.
+  The SVG below is the raw path for octicons/alert-16 (MIT licence, GitHub).
+  ============================================================ */
+
+  /* --- Register the caution icon (custom type needs manual SVG variable) --- */
+  :root {
+    --md-admonition-icon--caution: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');
+    --md-admonition-icon--important: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="m11.294.984 3.722 3.722a1.75 1.75 0 0 1-.504 2.826l-1.327.613a3.089 3.089 0 0 0-1.707 2.084l-.584 2.454c-.317 1.332-1.972 1.8-2.94.832L5.75 11.311 1.78 15.28a.749.749 0 1 1-1.06-1.06l3.969-3.97-2.204-2.204c-.968-.968-.5-2.623.832-2.94l2.454-.584a3.08 3.08 0 0 0 2.084-1.707l.613-1.327a1.75 1.75 0 0 1 2.826-.504ZM6.283 9.723l2.732 2.731a.25.25 0 0 0 .42-.119l.584-2.454a4.586 4.586 0 0 1 2.537-3.098l1.328-.613a.25.25 0 0 0 .072-.404l-3.722-3.722a.25.25 0 0 0-.404.072l-.613 1.328a4.584 4.584 0 0 1-3.098 2.537l-2.454.584a.25.25 0 0 0-.119.42l2.731 2.732Z"></path></svg>');
+  }
+
+  /* ── WARNING — yellow ───────────────────────────────────────────────────── */
+
+  /* Border: left accent stripe */
+  .md-typeset .admonition.warning,
+  .md-typeset details.warning {
+    border-color: #f9c513;
+  }
+
+  /* Title bar: tinted background + matching left border */
+  .md-typeset .warning > .admonition-title,
+  .md-typeset .warning > summary {
+    background-color: #f9c5131a;   /* ~10% opacity yellow wash */
+    border-color: #f9c513;
+  }
+
+  /* Icon mask colour (the SVG is masked — set its fill via background-color) */
+  .md-typeset .warning > .admonition-title::before,
+  .md-typeset .warning > summary::before {
+    background-color: #f9c513;
+  }
+
+  /* ── CAUTION — orange/amber (original colour preserved) ─────────────────── */
+
+  /* Border */
+  .md-typeset .admonition.caution,
+  .md-typeset details.caution {
+    border-color: #ff7043;
+  }
+
+  /* Title bar */
+  .md-typeset .caution > .admonition-title,
+  .md-typeset .caution > summary {
+    background-color: #ff70431a;   /* ~10% opacity orange wash */
+    border-color: #ff7043;
+  }
+
+  /* Icon colour + mask (custom type needs explicit mask-image binding) */
+  .md-typeset .caution > .admonition-title::before,
+  .md-typeset .caution > summary::before {
+    background-color: #ff7043;
+    -webkit-mask-image: var(--md-admonition-icon--caution);
+            mask-image: var(--md-admonition-icon--caution);
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+            mask-size: contain;
+  }
+
+/* ── IMPORTANT — dark blue ─────────────────── */
+
+  /* Border: dark blue left stripe */
+  .md-typeset .admonition.important,
+  .md-typeset details.important {
+    border-color: #1565c0;
+  }
+
+  /* Title bar: solid dark blue background so white text/icon stays legible  */
+  .md-typeset .important > .admonition-title,
+  .md-typeset .important > summary {
+    background-color: #1565c017;  /* ~10% opacity blue wash (optional, for subtle emphasis without overwhelming) */
+    border-color: #1565c0;
+    color: #000000;              /* title text white                          */
+  }
+
+  /* Icon: white, with explicit mask binding (required for custom types)      */
+  .md-typeset .important > .admonition-title::before,
+  .md-typeset .important > summary::before {
+    background-color: #1565c0;   /* white icon fill                           */
+    -webkit-mask-image: var(--md-admonition-icon--important);
+            mask-image: var(--md-admonition-icon--important);
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+            mask-size: contain;
+  }
+
+/* ------------------------------------------------------------------------
+   12) DRAFT ADMONITION — visible only during local preview (mkdocs serve)
+       The build hook in docs/hooks/strip_drafts.py removes these blocks
+       before publishing, so this styling is for authoring UX only.
+   ---------------------------------------------------------------------- */
+
+  /* Inject the octicons pencil-16 as the admonition icon via a data URI.
+     The SVG uses currentColor, so it automatically inherits the title color.
+     Light mode resolves to #854d0e; dark mode resolves to #fde68a via the
+     overrides below. */
+
+  .md-typeset .admonition.draft,
+  .md-typeset details.draft {
+    --md-admonition-icon--draft: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z'/%3E%3C/svg%3E");
+    --draft-stripe: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 6px,
+      rgba(234, 179, 8, 0.08) 6px,
+      rgba(234, 179, 8, 0.08) 12px
+    );
+    border-color: #ca8a04;
+    background: var(--draft-stripe);
+  }
+
+  .md-typeset .admonition.draft > .admonition-title,
+  .md-typeset details.draft > summary.admonition-title {
+    background-color: rgba(234, 179, 8, 0.2);
+    color: #854d0e;
+  }
+
+  /* Override the default admonition-title ::before icon with the
+     octicons pencil-16 path. The mask-image technique lets the icon
+     inherit color from the parent without needing an external file. */
+  .md-typeset .admonition.draft > .admonition-title::before,
+  .md-typeset details.draft > summary.admonition-title::before {
+    /* octicons pencil-16 — MIT License, github.com/primer/octicons */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3E%3Cpath fill-rule='evenodd' d='M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z'/%3E%3C/svg%3E");
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'%3E%3Cpath fill-rule='evenodd' d='M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+            mask-size: contain;
+    background-color: currentColor;  /* inherits #854d0e (light) or #fde68a (dark) */
+    width: 1rem;
+    height: 1rem;
+  }
+
+  /* Dark mode overrides */
+  [data-md-color-scheme="slate"] .md-typeset .admonition.draft > .admonition-title,
+  [data-md-color-scheme="slate"] .md-typeset details.draft > summary.admonition-title {
+    background-color: rgba(234, 179, 8, 0.15);
+    color: #fde68a;
+  }
+
+  /* Left-align block math formulas */
+  mjx-container[jax="CHTML"][display="true"] {
+    text-align: left !important;
+    margin-left: 0 !important;
+  }
+
+
+} /* @media screen */

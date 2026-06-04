@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Cover</title>
+  <style>
+       
+    /* ========= Base & page ========= */
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: Arial, "Helvetica Neue", Helvetica, Inter, "Noto Sans", sans-serif;
+      color: #000;
+      font-size: 11pt;
+      line-height: 1.45;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .page {
+      page: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 36mm 24mm;   /* breathing room from the page edges */ /* left and right padding should match the left and right margins in @page cover */
+      gap: 10mm;
+
+    /* ── Background image ──────────────────────────────────────────────*/
+      background-image: url("https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-flex/_shared_assets/pdf_cover_page_background.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* ========= Top: company logo ========= */
+    .brand {
+      display: flex;
+      justify-content: flex-start;
+    }
+    .brand img {
+      height: 26mm;
+      width: auto;
+      display: block;
+      text-align: left;
+    }
+    /* ========= Title block ========= */
+    .title-block { margin-top: 6mm; }
+    .manual-label {
+      font-size: 26pt;
+      color: #222;
+      margin: 0 0 3mm 0;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .product-name {
+      font-size: 30pt;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: 0.4px;
+      margin: 0;
+      color: #e4312c;
+    }
+    .divider {
+      margin: 3mm 0 2mm 0;
+      border: 0;
+      border-top: 1.5pt solid #000;
+      height: 0;
+    }
+    .with-line {
+      font-size: 14pt;
+      color: #333;
+      margin: 0;
+      font-weight: 500;
+    }
+    /* ========= Product image ========= */
+    .product-image { margin-top: 6mm; }
+    .product-image img {
+      max-width: 100%;
+      max-height: 50mm;
+      display: block;
+    }
+    /* ========= Meta row ========= */
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6mm;
+      margin-top: auto;
+      font-size: 11pt;
+      color: #111;
+    }
+    .meta-row .version { font-weight: 600; background-color: #111; color: #fff; border-radius: 2pt; padding: 2pt 2pt; }
+    .meta-row .date    { font-weight: 600; background-color: #111; color: #fff; border-radius: 2pt; padding: 2pt 2pt; }
+    .meta-row .sep     { color: #555; }
+    /* ========= Copyright ========= */
+    
+    .copyright {
+      font-size: 10pt;
+      color: #333;
+      margin-top: auto;   /* pushes copyright to the very bottom of the flex column */
+      padding-top: 6mm;   /* breathing room above the copyright line */
+
+    }
+    @media screen { body { background: #fff; } }
+    /* ========= Cover page definition ========= */
+    /*
+      @page cover targets only the page named "page: cover" (set on .page).
+      - Suppress the page number counter in all margin boxes so no number
+        appears anywhere on the cover.
+      - Place the copyright text in @bottom-center so it sits in the true
+        page footer margin, outside the content flow.
+      - margin-top:0 removes the header margin that the rest of the doc uses.
+    */
+    @page cover {
+      
+      /* ── Page margins ───────────────────────────────────────────────────
+         Adjust these four values to set the cover page layout margins.    */
+      margin-top:    10mm;
+      margin-right:  10mm;
+      margin-bottom: 20mm;
+      margin-left:   10mm;
+
+
+      /* Suppress page number in every margin box */
+      @top-left-corner   { content: none; }
+      @top-left          { content: none; }
+      @top-center        { content: none; }
+      @top-right         { content: none; }
+      @top-right-corner  { content: none; }
+      @bottom-left-corner  { content: none; }
+      @bottom-left         { content: none; }
+      @bottom-center       { content: none; }
+      @bottom-right        { content: none; }
+      @bottom-right-corner { content: none; }
+
+      /* ── Copyright notice in the true page footer margin box ────────────
+         This renders inside the bottom margin area, below the content, so
+         it is always anchored at the physical bottom of the page.         */
+      @bottom-left {
+        content: string(copyright) !important;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 10pt;
+        color: #333;
+        text-align: left;
+        vertical-align: bottom;
+        padding-bottom: 10mm;
+        padding-left: 19.05mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+
+    <!-- Company logo
+         Use file:// absolute URL so WeasyPrint can load it from disk.
+         Set pdfCoverLogoURL in mkdocs.yml extra: as a file:// path.       -->
+    <div class="brand">
+      <img src="https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-flex/_shared_assets/company_logo_light.png" alt="" />
+    </div>
+
+    <!-- Title block -->
+    <div class="title-block">
+      <p class="manual-label">{{ cover_title }}</p>
+      <p class="product-name">CERTUS FLEX</p>
+      <hr class="divider">
+      <p class="with-line">{{ cover_subtitle }}</p>
+    </div>
+
+    <div class="product-image">
+      <img src="https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-flex/en/products/certus-flex/_assets/images/certus_flex.png" alt="" />
+    </div>
+
+    <!-- Footer meta -->
+    <div>
+      <div class="meta-row">
+        <span class="version">12.0</span> | 
+        <span class="date">March 2026</span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

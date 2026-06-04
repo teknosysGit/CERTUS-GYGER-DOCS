@@ -1,0 +1,494 @@
+/* === PDF Styles for mkdocs-with-pdf (WeasyPrint) ===
+   Place as configurations/templates/pdf/styles.scss
+   This file is auto-discovered via custom_template_path.
+
+   Key ideas:
+   - Use @page margin boxes for headers/footers.
+   - Use absolute (site-rooted) URLs for images: /assets/...
+   - Suppress header/footer on :first because we use a dedicated cover.html.
+*/
+
+/* ---------- Page size & margins ---------- */
+/* General print-specific adjustments (overriding default styles) */
+
+@media print {
+  
+  @page {
+    
+    font-family: "Open Sans", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Nimbus Sans L", sans-serif;
+    font-size: 10pt; /* default for headers/footers unless overridden below */
+    color: #000;
+
+    size: A4 portrait;
+    margin-top: 32mm;     /* space for header text + rule */
+    margin-bottom: 28mm;  /* space for footer text + rule */
+    margin-left: 16mm;
+    margin-right: 16mm;
+    image-resolution: from-image 300dpi;
+  }
+
+  /* ---------- Suppress running elements on cover ---------- */
+  @page :first {
+    @top-left    { content: none; }
+    @top-center  { content: none; border-bottom: none; padding-bottom: 0; }
+    @top-right   { content: none; }
+    @bottom-left { content: none; }
+    @bottom-center { content: none; border-top: none; padding-top: 0; }
+    @bottom-right { content: none; }
+    margin-top: 0;
+  }
+
+  /* ---------- Base text, counters, and running strings ---------- */
+  body {
+    font-family: "Open Sans", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Nimbus Sans L", sans-serif;
+    font-size: 13pt;
+    line-height: 1.3;
+    color: #000;
+    counter-reset: h1 0 h2 0;
+  }
+
+  h1 {
+    font-size: 15pt;
+    counter-increment: h1;
+    counter-reset: h2;
+    /* Capture H1 number/text for header */
+    string-set: h1_num counter(h1);
+    string-set: h1_text content(text);
+    break-before: page; /* start each H1 on a new page for nice sections */
+
+  }
+
+  /* Avoid double page breaks at chapter boundaries.
+     When H1 is already the first element of its container (because
+     mkdocs-with-pdf wraps each nav page in a section and starts a new
+     page), forcing another break-before creates a blank page.
+     These selectors override that. */
+  section > h1:first-child,
+  article > h1:first-child,
+  div > h1:first-child,
+  .page > h1:first-child,
+  body > h1:first-child,
+  #doc-contents > section > h1:first-child,
+  #doc-contents > article > h1:first-child {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+
+  h2 {
+    counter-increment: h2;
+    /* Capture latest H2 text */
+    string-set: h2_text content(text);
+  }
+
+  h1 { color: #e4312c !important;}
+  h2, h3, h4 { color: #000 !important; }
+
+  .toc h1, .toc h2 { break-after: avoid; }
+  h1, h2, h3 { page-break-after: avoid; }
+  pre code { font-size: 90%; }
+
+  /*------ Custom styles for the cover page (cover.html) ---------- */
+
+  #doc-cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      text-align: center;
+      padding: 2cm;
+      box-sizing: border-box;
+
+      .wrapper {
+          margin-bottom: 1cm;
+
+          &.upper {
+              margin-bottom: 2cm;
+          }
+      }
+
+      .logo {
+          width: 150px;
+          height: 150px;
+          margin: 0 auto;
+          background-size: contain;
+          background-repeat: no-repeat;
+      }
+
+      h1 {
+          font-size: 25pt;
+          margin-bottom: 0.5em;
+          color: #333;
+      }
+
+      h2 {
+          font-size: 20pt;
+          color: #666;
+      }
+
+      h3 {
+          font-size: 16pt;
+          color: #666;
+      }
+      h4 {
+          font-size: 14pt;
+          color: #666;
+      }
+
+      .properties {
+          margin-top: auto; /* Pushes properties to the bottom */
+          font-size: 0.9em;
+          color: #888;
+      }
+
+      p {
+          margin: 0.2em 0;
+      }
+  }
+   
+  :root {
+
+    /* Global image scaling knob for PDF:
+       1   = natural content width
+       0.9 = 90% (default)
+       1.1 = 110% (use with caution near margins) */
+    --img-scale: 0.9; /* decrease for smaller images, increase for bigger */
+
+    --admonition-icon-offset: 1.5rem; /* tune 1.6–2.0rem if needed */
+  
+    --adm-icon-left: 0.70rem;  /* how far from the left edge the icon sits */
+    --adm-icon-top:  0.52rem;  /* vertical tweak to visually center the icon */
+    --adm-icon-size: 1.00rem;  /* width/height "box" for the icon (not the glyph itself) */
+    --adm-gap:       0.45rem;  /* space between icon box and the title text */
+    --adm-title-minh: 1.75rem; /* ensure room for icon at small font scales */
+    --adm-title-lh:   1.30;    /* title line-height, stable in print */
+  }
+
+  /* Ensure page breaks are handled nicely for the cover */
+  #doc-cover {
+      page-break-after: always;
+  }
+  
+  /* Example of overriding general heading colors if needed */
+  article h1, article h2, article h3 {
+      border-bottom-color: #000 !important;
+  }
+  
+  /* ── Admonition container ───────────────────────────────────────────────
+     FIX for mid-chapter blank pages: changed `break-inside: avoid` to
+     `break-inside: auto` so admonitions can split across pages when they're
+     too tall to fit in the remaining space. Previously, a tall admonition
+     near the bottom of a page would get pushed to the next page, leaving
+     the current page blank. Now it can start where it is and continue on
+     the next page.                                                         */
+
+  .md-typeset .admonition,
+  .md-typeset details {
+    position: relative !important;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .md-typeset .admonition > .admonition-title,
+  .md-typeset details > summary,
+  .md-typeset details > .admonition-title {
+    position:       relative  !important;
+    display:        block     !important;
+    padding-left:   2rem      !important;
+    padding-right:  0.6rem    !important;
+    padding-top:    0.4rem    !important;
+    padding-bottom: 0.4rem    !important;
+    line-height:    1.4       !important;
+    /* Keep the title attached to the first line of content */
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .md-typeset .admonition > .admonition-title::before,
+  .md-typeset details > summary::before,
+  .md-typeset details > .admonition-title::before {
+    content:   ""       !important;
+    position:  absolute !important;
+    left:      0.6rem   !important;
+    top:       0.625em  !important;
+    width:     1rem     !important;
+    height:    1rem     !important;
+  }
+
+  /* ============================================================
+     Table of Figures
+     ============================================================ */
+
+  .table-of-figures table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-of-figures td {
+    padding: 4px 8px;
+  }
+
+  .md-content h1#list-of-figures {
+    page-break-before: always;
+  }
+
+  /* Also track chapter number */
+  body {
+    counter-reset: chapter-counter;
+  }
+
+  h1 {
+    counter-increment: chapter-counter;
+    counter-reset: figure-counter;
+  }
+
+  /* ============================================================
+     WARNING — yellow (#f9c513)
+     ============================================================ */
+
+  .admonition.warning {
+    border-color: #f9c513 !important;
+  }
+
+  .warning > .admonition-title {
+    background-color: rgba(249, 197, 19, 0.15);
+  }
+
+  .warning > .admonition-title::before {
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#f9c513" d="M8 16a2 2 0 0 0 1.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 0 0 8 16ZM3 5a5 5 0 0 1 10 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.519 1.519 0 0 1 13.482 13H2.518a1.516 1.516 0 0 1-1.263-2.36l1.703-2.554A.255.255 0 0 0 3 7.947Zm5-3.5A3.5 3.5 0 0 0 4.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.017.017 0 0 0-.003.01l.001.006.004.006.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007a.017.017 0 0 0-.003-.01l-1.703-2.554a1.745 1.745 0 0 1-.294-.97V5A3.5 3.5 0 0 0 8 1.5Z"></path></svg>') !important;
+    background-color: transparent !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-mask-image: none !important;
+            mask-image: none !important;
+  }
+
+  /* ============================================================
+    CAUTION — orange/amber (#ff7043)
+    ============================================================ */
+
+  .admonition.caution {
+    border-color: #ff7043 !important;
+  }
+
+  .caution > .admonition-title {
+    background-color: rgba(255, 112, 67, 0.12);
+  }
+
+  .caution > .admonition-title::before {
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#ff7043" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>') !important;
+    background-color: transparent !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-mask-image: none !important;
+            mask-image: none !important;
+  }
+
+  /* ============================================================
+    IMPORTANT — dark blue (#1565c0)
+    ============================================================ */
+
+  .admonition.important {
+    border-color: #1565c0 !important;
+  }
+
+  .important > .admonition-title {
+    background-color: #1565c017 !important;
+    color: #000000 !important;
+  }
+
+  .important > .admonition-title::before {
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill="#1565c0" d="m11.294.984 3.722 3.722a1.75 1.75 0 0 1-.504 2.826l-1.327.613a3.089 3.089 0 0 0-1.707 2.084l-.584 2.454c-.317 1.332-1.972 1.8-2.94.832L5.75 11.311 1.78 15.28a.749.749 0 1 1-1.06-1.06l3.969-3.97-2.204-2.204c-.968-.968-.5-2.623.832-2.94l2.454-.584a3.08 3.08 0 0 0 2.084-1.707l.613-1.327a1.75 1.75 0 0 1 2.826-.504ZM6.283 9.723l2.732 2.731a.25.25 0 0 0 .42-.119l.584-2.454a4.586 4.586 0 0 1 2.537-3.098l1.328-.613a.25.25 0 0 0 .072-.404l-3.722-3.722a.25.25 0 0 0-.404.072l-.613 1.328a4.584 4.584 0 0 1-3.098 2.537l-2.454.584a.25.25 0 0 0-.119.42l2.731 2.732Z"></path></svg>') !important;
+    background-color: transparent !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-mask-image: none !important;
+            mask-image: none !important;
+  }
+
+  /* ---------- Header rulers (below header content) ---------- */
+  @page :left {
+    @top-center {
+      font-size: 10pt;
+      line-height: 1.25;
+      padding-bottom: 3mm;
+    }
+  }
+  @page :right {
+    @top-center {
+      font-size: 10pt;
+      line-height: 1.25;
+      padding-bottom: 3mm;
+    }
+  }
+
+  /* ---------- Footer rulers (above footer content) ---------- */
+  @page :left {
+    @bottom-center {
+      content: "";
+      height: 0;
+      padding-top: 2.5mm;
+      border-top: 1.25pt solid #0052cc;
+    }
+  }
+  @page :right {
+    @bottom-center {
+      content: "";
+      height: 0;
+      padding-top: 2.5mm;
+      border-top: 1.25pt solid #0052cc;
+    }
+  }
+
+  /* ---------- Helper defaults for margin boxes ---------- */
+  @page {
+    @top-left   { vertical-align: middle; }
+    @top-center { white-space: pre; }
+    @top-right  { vertical-align: middle; }
+  }
+
+  /* ---------- LEFT pages (even) ---------- */
+  @page :left {
+    @top-left {
+      content: url("https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-rivo/_shared_assets/company_logo_small.png");
+      vertical-align: middle;
+      text-align: left;
+    }
+
+    @top-center {
+      white-space: pre;
+      font-size: 10pt;
+      line-height: 1.25;
+      text-align: center;
+      color: #000;
+    }
+
+    @top-right {
+      font-family: "Open Sans", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Nimbus Sans L", sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #000;
+
+      content: string(h1_num) string(h1_text) "\A" string(h2_text);
+      color: #000;
+      font-weight: 700;
+      font-size: 10pt;
+      line-height: 1.2;
+      padding: 1pt 4pt;
+      border-radius: 3pt;
+      text-align: right;
+    }
+
+    @bottom-left-corner {
+      content: counter(page);
+      font-size: 10pt; font-weight: 700; color: #000;
+    }
+
+    @bottom-left {
+      content: "User Manual - CERTUS RIVO | V12.0";
+      font-size: 10pt; color: #000;
+      text-align: left;
+      padding-left: 6pt;
+    }
+
+    @bottom-right {
+      content: string(author);
+      font-size: 10pt; color: #000;
+    }
+  }
+
+  /* ---------- RIGHT pages (odd) ---------- */
+  @page :right {
+    @top-left {
+      font-family: "Open Sans", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Nimbus Sans L", sans-serif;
+      font-size: 10pt;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #000;
+    
+      content: string(h1_num) string(h1_text) "\A" string(h2_text);
+      color: #000;
+      font-weight: 700;
+      font-size: 10pt;
+      line-height: 1.2;
+      padding: 1pt 4pt;
+      border-radius: 3pt;
+      text-align: left;
+    }
+
+    @top-center {
+      white-space: pre;
+      font-size: 10pt;
+      line-height: 1.25;
+      color: #000;
+      text-align: center;
+    }
+
+    @top-right {
+      content: url("https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-rivo/_shared_assets/company_logo_small.png");
+      vertical-align: middle;
+      text-align: right;
+    }
+
+    @bottom-right {
+       content: "User Manual - CERTUS RIVO | V12.0";
+      font-size: 10pt; color: #000;
+      text-align: right;
+      padding-right: 6pt;
+    }
+
+    @bottom-right-corner {
+      content: counter(page);
+      font-size: 10pt; font-weight: 700; color: #000;
+    }
+
+    @bottom-left {
+      content: string(author);
+      font-size: 10pt; color: #000;
+      text-align: left;
+    }
+  }
+
+  /* ---------- Images ---------- */
+  .md-typeset img,
+  .md-typeset figure img {
+    width:  auto !important;
+    height: auto !important;
+
+    max-width:  calc(100% * var(--img-scale)) !important;
+    max-height: 180mm !important;
+
+    object-fit: contain !important;
+
+    display: block;
+  }
+
+  .md-typeset img.img-icon   { max-width: 10% !important; }
+  .md-typeset img.img-small  { max-width: 40% !important; }
+  .md-typeset img.img-medium { max-width: 60% !important; }
+  .md-typeset img.img-large  { max-width: 90% !important; }
+
+  figure {
+    text-align: left !important;
+    margin: 1em 0 !important;
+    display: block !important;
+    width: fit-content !important;
+  }
+
+  .md-typeset figure {
+    margin: 1em 0 !important;
+    text-align: left !important;
+  }
+
+  figure figcaption,
+  .img-caption {
+    color: #4b5563 !important;
+    text-align: center !important;
+    margin: 0.25em 0 0 0 !important;
+    max-width: 100% !important;
+  }
+}
+/* ---------- Tables & captions ---------- */
+table, .md-typeset table:not([class]) { color: #000; }
+.md-typeset table thead th, .md-typeset table tbody td { color: #000; }
+.md-typeset table, .md-typeset table th, .md-typeset table td { border-color: #0052cc; }

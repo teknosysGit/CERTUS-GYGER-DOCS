@@ -1,0 +1,331 @@
+/* ==========================================================================
+   home.css  —  HOMEPAGE / INDEX.MD COMPONENT STYLES
+   --------------------------------------------------------------------------
+   All styles for components used in index.md live here:
+     - .home-hero        (hero banner with image)
+     - .hero-cta         (call-to-action links in hero)
+     - .lead             (lead paragraph text)
+     - .home-tile        (product / quick-link cards)
+     - .tile-title       (card heading)
+     - .tile-text        (card body text)
+     - .tile-link        (card links)
+     - .tile-media       (card images)
+     - .tile-meta        (card footer/meta)
+     - .home-tiles       (responsive grid wrapper)
+     - Homepage heading overrides (.md-content__inner > h1/h2)
+
+   Integration:
+     - Add this file as an extra CSS file in mkdocs.yml alongside typography.css.
+     - typography.css handles global type and tokens; this file handles layout
+       and component styles for the landing page only.
+
+   Design tokens (--font-scale, --color-*, --tile-*, etc.) are defined in
+   typography.css and inherited here — do NOT redefine tokens in this file.
+   ========================================================================== */
+
+@media screen {
+
+  /* ============================================================
+     1) TILE COLOR TOKENS — light & dark
+     (Moved from typography.css so all tile theming is co-located)
+     ============================================================ */
+
+  /* Light mode */
+  :root {
+    --tile-surface: var(--surface-1);      /* card background (light gray) */
+    --tile-border:  var(--color-border);
+
+    --tile-title-fg: var(--primary-fg-2);  /* darker header on gray bg */
+    --tile-text-fg:  var(--color-text);
+    --tile-link-fg:  #0b5fff;
+    --tile-link-hov: #084acc;
+    --tile-link-vis: #6a38c2;
+  }
+
+  /* Dark mode */
+  :root[data-theme="dark"],
+  html[data-theme="dark"],
+  [data-md-color-scheme="slate"],
+  html[data-color-mode="dark"] {
+    --tile-surface: var(--surface-1);      /* e.g., #1e293b */
+    --tile-border:  var(--color-border);
+
+    --tile-title-fg: #e5e7eb;
+    --tile-text-fg:  var(--primary-fg-2);
+    --tile-link-fg:  #7ab7ff;
+    --tile-link-hov: #a1c9ff;
+    --tile-link-vis: #c4a6ff;
+  }
+
+  /* ============================================================
+     2) LEAD PARAGRAPH
+     A slightly larger, muted intro paragraph (used in hero area).
+     ============================================================ */
+
+  .lead {
+    font-size: calc(0.75rem * var(--font-scale) * 1.0625);
+    color: var(--color-muted, #4b5563);
+    line-height: 1.55;
+  }
+
+  /* ============================================================
+     3) HOME HERO — two-column layout (text + image)
+        Responsive: stacks vertically on mobile portrait (<= 600 px)
+     ============================================================ */
+
+  .home-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* 50 / 50 on wide screens */
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    background: var(--tile-surface);
+    border: 1px solid var(--tile-border);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+  }
+
+  /* Text column: let it breathe */
+  .home-hero > div:first-child {
+    min-width: 0;   /* prevent grid blowout */
+  }
+
+  /* Image column: constrain and center */
+  .home-hero > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .home-hero img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block;
+  }
+
+  /* --- Tablet: slightly tighter split (40 / 60) --- */
+  @media (max-width: 960px) {
+    .home-hero {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  /* --- Mobile portrait: stack vertically --- */
+  @media (max-width: 600px) {
+    .home-hero {
+      grid-template-columns: 1fr;   /* single column */
+      gap: 1.25rem;
+    }
+
+    /* On mobile the image moves below the text; cap its size */
+    .home-hero img {
+      max-width: 100%;
+    }
+  }
+
+  /* ============================================================
+     4) HERO CALL-TO-ACTION LINKS
+     ============================================================ */
+
+  .hero-cta {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;  /* vertical gap 0.5, horizontal gap 0.75 */
+  }
+
+  .hero-cta a {
+    font-weight: var(--weight-semibold, 600);
+    color: var(--color-link, #0b5fff) !important;
+    text-decoration: underline;
+    text-underline-offset: 0.14em;
+    text-decoration-thickness: 1.25px;
+    white-space: nowrap;
+  }
+
+  .hero-cta a:hover {
+    color: var(--color-link-hover, #084acc) !important;
+    text-decoration-thickness: 2px;
+  }
+
+  /* Replace the " | " separator with a CSS pseudo-element so the pipe
+     is purely presentational and does not appear on mobile wrap */
+  .hero-cta a + a::before {
+    content: "|";
+    margin-right: 0.75rem;
+    color: var(--color-subtle, #6b7280);
+    font-weight: var(--weight-regular, 400);
+    text-decoration: none;
+    display: inline;
+  }
+
+  /* ============================================================
+     5) HOMEPAGE HEADING OVERRIDES
+     Scoped to .md-content__inner so they do not bleed into other pages.
+     ============================================================ */
+
+  .md-content__inner > h1 {
+    font-size: calc(1rem * var(--font-scale) * var(--h1-scale));
+    font-weight: var(--weight-bold);
+    margin-bottom: 1rem;
+    color: var(--color-header-text) !important;
+  }
+
+  .md-content__inner > h2 {
+    font-size: calc(0.75rem * var(--font-scale) * var(--h2-scale));
+    margin-top: 2rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-header-text) !important;
+  }
+
+  /* Generic headings inside cards / grids use body text color */
+  .md-typeset .card h1,
+  .md-typeset .card h2,
+  .md-typeset .card h3,
+  .md-typeset .card h4,
+  .md-typeset .card h5,
+  .md-typeset .card h6,
+  .md-typeset .grid h1,
+  .md-typeset .grid h2,
+  .md-typeset .grid h3,
+  .md-typeset .grid h4,
+  .md-typeset .grid h5,
+  .md-typeset .grid h6 {
+    color: var(--color-text) !important;
+  }
+
+  /* ============================================================
+     6) HOME-TILES GRID — responsive columns
+        1 col (phones) → 2 col (tablets ≥ 768 px) → 3 col (≥ 1024 px)
+     ============================================================ */
+
+  /* Passthrough: we let the theme grid container stay intact */
+  .md-typeset .grid.cards.home-tiles,
+  .md-typeset .grid.home-tiles {
+    /* layout is handled below — no additional overrides here */
+  }
+
+  /* Explicit CSS grid so column count is controlled per breakpoint */
+  .md-typeset .grid.cards.home-tiles {
+    display: grid;
+    gap: 0.8rem;
+    grid-template-columns: 1fr;         /* phones: single column */
+  }
+
+  @media (min-width: 768px) {
+    .md-typeset .grid.cards.home-tiles {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .md-typeset .grid.cards.home-tiles {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Do not force width/flex on items; the grid places them */
+  .md-typeset .grid.cards.home-tiles > *,
+  .md-typeset .grid.home-tiles > * {
+    /* intentionally empty */
+  }
+
+  /* ============================================================
+     7) HOME TILE — individual card
+     ============================================================ */
+
+  .home-tile {
+    background: var(--tile-surface);
+    border: 1px solid var(--tile-border);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+  }
+
+  /* --- Tile heading / title --- */
+  .home-tile .tile-title {
+    font-size: calc(1rem * var(--font-scale) * var(--h4-scale));
+    font-weight: var(--weight-semibold);
+    line-height: var(--lh-heading);
+    color: var(--tile-title-fg);
+    margin: var(--space-3) 0 var(--space-2);
+  }
+
+  /* Size variants */
+  .home-tile .tile-title.h3 { font-size: calc(0.75rem * var(--font-scale) * var(--h3-scale)); }
+  .home-tile .tile-title.h2 { font-size: calc(0.75rem * var(--font-scale) * var(--h2-scale)); }
+
+  /* Generic heading tags inside tiles also use tile palette */
+  .home-tile h1,
+  .home-tile h2,
+  .home-tile h3,
+  .home-tile h4,
+  .home-tile h5,
+  .home-tile h6 {
+    color: var(--tile-title-fg) !important;
+    margin: var(--space-3) 0 var(--space-2);
+  }
+
+  /* --- Tile body text --- */
+  .home-tile .tile-text,
+  .home-tile .tile-text p,
+  .home-tile .tile-text li {
+    font-size: calc(0.75rem * var(--font-scale) * var(--body-scale));
+    line-height: var(--lh-body);
+    color: var(--tile-text-fg) !important;
+    margin: 0;
+  }
+
+  .home-tile .tile-text + .tile-text { margin-top: var(--space-3); }
+
+  /* --- Tile lists --- */
+  .home-tile ul,
+  .home-tile ol {
+    margin: var(--space-3) 0;
+    padding-left: 1.1em;
+  }
+
+  .home-tile li + li { margin-top: 0.25em; }
+
+  /* --- Tile explicit link class --- */
+  .home-tile .tile-link,
+  .home-tile a.tile-link {
+    color: var(--tile-link-fg);
+    text-decoration: underline;
+    text-underline-offset: 0.14em;
+    text-decoration-thickness: 1.25px;
+    font-weight: var(--weight-medium);
+  }
+
+  .home-tile .tile-link:hover,
+  .home-tile a.tile-link:hover {
+    color: var(--tile-link-hov) !important;
+    text-decoration-thickness: 2px;
+  }
+
+  .home-tile .tile-link:visited,
+  .home-tile a.tile-link:visited {
+    color: var(--tile-link-vis) !important;
+  }
+
+  /* --- Tile image / media --- */
+  .home-tile .tile-media {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    object-fit: cover;
+  }
+
+  /* --- Tile footer / meta line --- */
+  .home-tile .tile-meta {
+    font-size: calc(1rem * var(--font-scale) * var(--small-scale));
+    color: var(--color-subtle);
+    margin-top: var(--space-3);
+  }
+} /* @media screen */

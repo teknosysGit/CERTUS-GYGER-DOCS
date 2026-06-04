@@ -1,0 +1,41 @@
+# -------------------------------------------------------
+# variables.flex.yaml
+# Loaded after variables.yaml for CERTUS FLEX builds.
+# Defines variables.product.* as an alias to Flex values.
+# In any markdown file, use variables.product.* for the
+# active product regardless of which build is running.
+# -------------------------------------------------------
+
+product:
+  id: "flex"                  # use this in {% if %} conditions
+  name:
+    en: "CERTUS FLEX"
+    de: "CERTUS FLEX"
+  shortName:
+    en: "CF"
+    de: "CF"
+  tagline:
+    en: "A fully automatic, contactless dispenser for a variety of fluids into well plates."
+    de: "Ein vollautomatischer, berührungsloser Dispenser für eine Vielzahl von Flüssigkeiten in Wellplatten."
+  description:
+    en: "CERTUS FLEX is a compact, modular and versatile dispensing system for precise and repeatable dispensing of fluids in the micro to milliliter range."
+    de: "CERTUS FLEX ist ein kompaktes, modulares und vielseitiges Dosiersystem für die präzise und wiederholbare Dosierung von Flüssigkeiten im Mikro- bis Milliliterbereich."
+  software:
+    name:
+      en: "CERTUS CONTROL"
+      de: "CERTUS CONTROL"
+    version: "V 2.1.19"
+    releaseDate: "February 2026"
+    releaseDateDE: "Februar 2026"
+  productImageURL: "https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-flex/en/products/certus-flex/_assets/images/certus_flex.png"
+  pdf:
+    coverTitle: "User Manual"
+    coverTitleDE: "Benutzerhandbuch"
+    coverSubtitle: "With CERTUS CONTROL 2.1.19"
+    coverSubtitleDE: "Mit CERTUS CONTROL 2.1.19"
+    outputPath: "pdf/User_Manual_CERTUS_FLEX_EN.pdf"
+    outputPathDE: "pdf/User_Manual_CERTUS_FLEX_DE.pdf"
+    version: "v12.0"
+  docs:
+    safetyPage: "safety.md"
+    packagingPage: "packaging.md"

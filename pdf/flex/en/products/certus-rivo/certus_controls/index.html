@@ -1,0 +1,5531 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Fritz Gyger AG">
+      
+      
+        <link rel="canonical" href="https://teknosysgit.github.io/CERTUS-GYGER-DOCS/certus-flex/en/products/certus-rivo/certus_controls/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../_shared_assets/company_favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>{{ variables.product.software.name.en }} - Certus Knowledgebase - CERTUS FLEX (PDF)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1%207.775V2.75C1%201.784%201.784%201%202.75%201h5.025c.464%200%20.91.184%201.238.513l6.25%206.25a1.75%201.75%200%200%201%200%202.474l-5.026%205.026a1.75%201.75%200%200%201-2.474%200l-6.25-6.25A1.75%201.75%200%200%201%201%207.775m1.5%200c0%20.066.026.13.073.177l6.25%206.25a.25.25%200%200%200%20.354%200l5.025-5.025a.25.25%200%200%200%200-.354l-6.25-6.25a.25.25%200%200%200-.177-.073H2.75a.25.25%200%200%200-.25.25ZM6%205a1%201%200%201%201%200%202%201%201%200%200%201%200-2%22/%3E%3C/svg%3E');--md-admonition-icon--important:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22m11.294.984%203.722%203.722a1.75%201.75%200%200%201-.504%202.826l-1.327.613a3.09%203.09%200%200%200-1.707%202.084l-.584%202.454c-.317%201.332-1.972%201.8-2.94.832L5.75%2011.311%201.78%2015.28a.749.749%200%201%201-1.06-1.06l3.969-3.97-2.204-2.204c-.968-.968-.5-2.623.832-2.94l2.454-.584a3.08%203.08%200%200%200%202.084-1.707l.613-1.327a1.75%201.75%200%200%201%202.826-.504M6.283%209.723l2.732%202.731a.25.25%200%200%200%20.42-.119l.584-2.454a4.59%204.59%200%200%201%202.537-3.098l1.328-.613a.25.25%200%200%200%20.072-.404l-3.722-3.722a.25.25%200%200%200-.404.072l-.613%201.328a4.58%204.58%200%200%201-3.098%202.537l-2.454.584a.25.25%200%200%200-.119.42l2.731%202.732Z%22/%3E%3C/svg%3E');--md-admonition-icon--caution:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2016a2%202%200%200%200%201.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138%200-.252.113-.235.25A2%202%200%200%200%208%2016M3%205a5%205%200%200%201%2010%200v2.947q0%20.076.042.139l1.703%202.555A1.519%201.519%200%200%201%2013.482%2013H2.518a1.516%201.516%200%200%201-1.263-2.36l1.703-2.554A.26.26%200%200%200%203%207.947Zm5-3.5A3.5%203.5%200%200%200%204.5%205v2.947c0%20.346-.102.683-.294.97l-1.703%202.556-.003.01.001.006q0%20.003.004.006l.006.004.007.001h10.964l.007-.001.006-.004.004-.006.001-.007-.003-.01-1.703-2.554a1.75%201.75%200%200%201-.294-.97V5A3.5%203.5%200%200%200%208%201.5%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.5%201.75v11.5c0%20.138.112.25.25.25h3.17a.75.75%200%200%201%200%201.5H2.75A1.75%201.75%200%200%201%201%2013.25V1.75C1%20.784%201.784%200%202.75%200h8.5C12.216%200%2013%20.784%2013%201.75v7.736a.75.75%200%200%201-1.5%200V1.75a.25.25%200%200%200-.25-.25h-8.5a.25.25%200%200%200-.25.25m13.274%209.537zl-4.557%204.45a.75.75%200%200%201-1.055-.008l-1.943-1.95a.75.75%200%200%201%201.062-1.058l1.419%201.425%204.026-3.932a.75.75%200%201%201%201.048%201.074M4.75%204h4.5a.75.75%200%200%201%200%201.5h-4.5a.75.75%200%200%201%200-1.5M4%207.75A.75.75%200%200%201%204.75%207h2a.75.75%200%200%201%200%201.5h-2A.75.75%200%200%201%204%207.75%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.5%207.75A.75.75%200%200%201%207.25%207h1a.75.75%200%200%201%20.75.75v2.75h.25a.75.75%200%200%201%200%201.5h-2a.75.75%200%200%201%200-1.5h.25v-2h-.25a.75.75%200%200%201-.75-.75M8%206a1%201%200%201%201%200-2%201%201%200%200%201%200%202%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.499.75a.75.75%200%200%201%201.5%200v.996C5.9%202.903%206.793%203.65%207.662%204.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873%2010.794-.045%2012.622.26%2014.408.558%2016%201.94%2016%204.25c0%201.278-.954%202.575-2.44%202.734l.146.508.065.22c.203.701.412%201.455.476%202.226.142%201.707-.4%203.03-1.487%203.898C11.714%2014.671%2010.27%2015%208.75%2015h-6a.75.75%200%200%201%200-1.5h1.376a4.5%204.5%200%200%201-.563-1.191%203.84%203.84%200%200%201-.05-2.063%204.65%204.65%200%200%201-2.025-.293.75.75%200%200%201%20.525-1.406c1.357.507%202.376-.006%202.698-.318l.009-.01a.747.747%200%200%201%201.06%200%20.75.75%200%200%201-.012%201.074c-.912.92-.992%201.835-.768%202.586.221.74.745%201.337%201.196%201.621H8.75c1.343%200%202.398-.296%203.074-.836.635-.507%201.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4%202.4%200%200%201-.507-.441%203.1%203.1%200%200%201-.633-1.248.75.75%200%200%201%201.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738%200%201.25-.615%201.25-1.25%200-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706%201.345-.46.92-.27%201.774.019%203.062l.042.19.01.05c.348.443.666.949.94%201.553a.75.75%200%201%201-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7%205.527c-.814-.68-1.75-1.462-2.692-2.619a3.7%203.7%200%200%200-1.023.88c-.406.495-.663%201.036-.722%201.508.116.122.306.21.591.239.388.038.797-.06%201.032-.19a.75.75%200%200%201%20.728%201.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75%205.677V5.5c0-.984.48-1.94%201.077-2.664.46-.559%201.05-1.055%201.673-1.353z%22/%3E%3C/svg%3E');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M13.78%204.22a.75.75%200%200%201%200%201.06l-7.25%207.25a.75.75%200%200%201-1.06%200L2.22%209.28a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018L6%2010.94l6.72-6.72a.75.75%200%200%201%201.06%200%22/%3E%3C/svg%3E');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M0%208a8%208%200%201%201%2016%200A8%208%200%200%201%200%208m8-6.5a6.5%206.5%200%201%200%200%2013%206.5%206.5%200%200%200%200-13M6.92%206.085h.001a.749.749%200%201%201-1.342-.67c.169-.339.436-.701.849-.977C6.845%204.16%207.369%204%208%204a2.76%202.76%200%200%201%201.637.525c.503.377.863.965.863%201.725%200%20.448-.115.83-.329%201.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6%206%200%200%200-.26.16%201%201%200%200%200-.276.245.75.75%200%200%201-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1%201%200%200%200%20.277-.245C8.96%206.514%209%206.427%209%206.25a.61.61%200%200%200-.262-.525A1.27%201.27%200%200%200%208%205.5c-.369%200-.595.09-.74.187a1%201%200%200%200-.34.398M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M2.344%202.343za8%208%200%200%201%2011.314%2011.314A8.002%208.002%200%200%201%20.234%2010.089a8%208%200%200%201%202.11-7.746m1.06%2010.253a6.5%206.5%200%201%200%209.108-9.275%206.5%206.5%200%200%200-9.108%209.275M6.03%204.97%208%206.94l1.97-1.97a.749.749%200%200%201%201.275.326.75.75%200%200%201-.215.734L9.06%208l1.97%201.97a.749.749%200%200%201-.326%201.275.75.75%200%200%201-.734-.215L8%209.06l-1.97%201.97a.749.749%200%200%201-1.275-.326.75.75%200%200%201%20.215-.734L6.94%208%204.97%206.03a.75.75%200%200%201%20.018-1.042.75.75%200%200%201%201.042-.018%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M4.72.22a.75.75%200%200%201%201.06%200l1%20.999a3.5%203.5%200%200%201%202.441%200l.999-1a.748.748%200%200%201%201.265.332.75.75%200%200%201-.205.729l-.775.776c.616.63.995%201.493.995%202.444v.327q0%20.15-.025.292c.408.14.764.392%201.029.722l1.968-.787a.75.75%200%200%201%20.556%201.392L13%207.258V9h2.25a.75.75%200%200%201%200%201.5H13v.5q-.002.615-.141%201.186l2.17.868a.75.75%200%200%201-.557%201.392l-2.184-.873A5%205%200%200%201%208%2016a5%205%200%200%201-4.288-2.427l-2.183.873a.75.75%200%200%201-.558-1.392l2.17-.868A5%205%200%200%201%203%2011v-.5H.75a.75.75%200%200%201%200-1.5H3V7.258L.971%206.446a.75.75%200%200%201%20.558-1.392l1.967.787c.265-.33.62-.583%201.03-.722a1.7%201.7%200%200%201-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72%201.28a.75.75%200%200%201%200-1.06m.53%206.28a.75.75%200%200%200-.75.75V11a3.5%203.5%200%201%200%207%200V7.25a.75.75%200%200%200-.75-.75ZM6.173%205h3.654A.17.17%200%200%200%2010%204.827V4.5a2%202%200%201%200-4%200v.327c0%20.096.077.173.173.173%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M5%205.782V2.5h-.25a.75.75%200%200%201%200-1.5h6.5a.75.75%200%200%201%200%201.5H11v3.282l3.666%205.76C15.619%2013.04%2014.543%2015%2012.767%2015H3.233c-1.776%200-2.852-1.96-1.899-3.458Zm-2.4%206.565a.75.75%200%200%200%20.633%201.153h9.534a.75.75%200%200%200%20.633-1.153L12.225%2010.5h-8.45ZM9.5%202.5h-3V6c0%20.143-.04.283-.117.403L4.73%209h6.54L9.617%206.403A.75.75%200%200%201%209.5%206Z%22/%3E%3C/svg%3E');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M1.75%202.5h10.5a.75.75%200%200%201%200%201.5H1.75a.75.75%200%200%201%200-1.5m4%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5m0%205h8.5a.75.75%200%200%201%200%201.5h-8.5a.75.75%200%200%201%200-1.5M2.5%207.75v6a.75.75%200%200%201-1.5%200v-6a.75.75%200%200%201%201.5%200%22/%3E%3C/svg%3E');--md-admonition-icon--draft:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M11.013%201.427a1.75%201.75%200%200%201%202.474%200l1.086%201.086a1.75%201.75%200%200%201%200%202.474l-8.61%208.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75%200%200%201-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176%204.823L9.75%204.81l-6.286%206.287a.25.25%200%200%200-.064.108l-.558%201.953%201.953-.558a.25.25%200%200%200%20.108-.064Zm1.238-3.763a.25.25%200%200%200-.354%200L10.811%203.75l1.439%201.44%201.263-1.263a.25.25%200%200%200%200-.354Z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../configurations/stylesheets/pdf-button.css">
+    
+      <link rel="stylesheet" href="../../../../configurations/stylesheets/home.css">
+    
+      <link rel="stylesheet" href="../../../../configurations/stylesheets/typography.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#certus-control" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Certus Knowledgebase - CERTUS FLEX (PDF)" class="md-header__button md-logo" aria-label="Certus Knowledgebase - CERTUS FLEX (PDF)" data-md-component="logo">
+      
+  <img src="../../../../_shared_assets/company_logo_light.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Certus Knowledgebase - CERTUS FLEX (PDF)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              {{ variables.product.software.name.en }}
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Certus Knowledgebase - CERTUS FLEX (PDF)" class="md-nav__button md-logo" aria-label="Certus Knowledgebase - CERTUS FLEX (PDF)" data-md-component="logo">
+      
+  <img src="../../../../_shared_assets/company_logo_light.png" alt="logo">
+
+    </a>
+    Certus Knowledgebase - CERTUS FLEX (PDF)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../common_content/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/about_this_document/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/transportation_storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transportation and Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/specifications_dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/specifications_device_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Device Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/start_up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/assembly_and_operation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assembly and Operation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/certus_controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certus Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/decommissioning_disposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decommissioning and Disposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/appendix_change_index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/appendix_decontamination_declaration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decontamination Declaration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/appendix_document_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Document List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../certus-flex/appendix_web_control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum System Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-the-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring the IP Address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-inco-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing the INCO Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-certus-flex-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing CERTUS FLEX Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stand-alone-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stand-Alone Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrated-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integrated Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging on
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging on">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging-on-as-an-administrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging on as an Administrator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-onto-the-simulation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging onto the Simulation Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-start-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview -- Start Menu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#menu-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Menu bar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#well-plate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Well Plate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaporation-curtain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaporation Curtain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valve-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valve Display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocol Editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Help
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Users
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symbols-in-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbols in use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-menu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol-editor_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocol Editor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocol Editor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symbols-in-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbols in use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operating-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiment-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment Menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-menu_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-menu_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#certus-calibrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CERTUS Calibrator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CERTUS Calibrator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symbols-in-use_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbols in use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-menu_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-menu_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbols-in-use_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbols in use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-menu_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-menu_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context menu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interval-purge-loop-ipl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interval Purge Loop (IPL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#region-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Region Editor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispensing-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispensing Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backfill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backfill
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="certus-control">CERTUS CONTROL<a class="headerlink" href="#certus-control" title="Permanent link">&para;</a></h1>
+<p>CERTUS CONTROL software, which is required for the operation of CERTUS FLEX, should be installed on the user's PC.</p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>CERTUS CONTROL:</p>
+<ul>
+<li>Allows the execution of user protocols with CERTUS FLEX. CERTUS FLEX</li>
+<li>Makes it possible to distribute the user's dispensing tasks across various regions while simultaneously using various valve types for various fluids.</li>
+<li>Supports dispensing on all formats of well plates, as well as calibration and verification of each micro valve. In addition, it offers automatic generation of detailed dispensing reports for each experiment.</li>
+</ul>
+</li>
+<li>
+<p>Opening, creating, and editing protocols.</p>
+</li>
+<li>Performing calibrations to ensure the highest accuracy of dispensing results.</li>
+<li>Administering users with various rights.</li>
+<li>Automatically logging on using a Windows account.</li>
+<li>Performing all manner of refilling functions/movements.</li>
+<li>Simultaneously dispensing various fluids.</li>
+<li>Creating customized well plates.</li>
+<li>Exporting and importing calibrations and protocols.</li>
+<li>Importing dispensing quantities and regions from Excel files.</li>
+<li>Using time-controlled cleaning functions of the micro valves.</li>
+<li>Manually activating dispensing functions.</li>
+</ul>
+<p>A protocol can be directly executed once it is created using CERTUS CONTROL and connected to CERTUS FLEX.</p>
+<p>CERTUS CONTROL has a simulation mode in which you can create and simulate a protocol without being connected to CERTUS FLEX.</p>
+<h2 id="minimum-system-requirements">Minimum System Requirements<a class="headerlink" href="#minimum-system-requirements" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Processor</th>
+<th>Dual Core Intel/AMD processor, at least 2 GHz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAM</td>
+<td>4 GB</td>
+</tr>
+<tr>
+<td>Free memory</td>
+<td>1 GB</td>
+</tr>
+<tr>
+<td>Monitor resolution</td>
+<td>1280 x 720 or higher</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>1 Gbit/s</td>
+</tr>
+<tr>
+<td>Operating systems</td>
+<td>Windows 7 | 8 | 10 | 11</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>NET Framework 4.8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>The installation of CERTUS CONTROL requires a Windows computer to meet the minimum system requirements and the following installation method to be applied.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Installation of CERTUS CONTROL requires administrator rights. During the installation of CERTUS CONTROL, CERTUS FLEX does not have to be switched on or connected.</p>
+</div>
+<h3 id="installation-files">Installation Files<a class="headerlink" href="#installation-files" title="Permanent link">&para;</a></h3>
+<p>The installation files are on the supplied USB stick or can be downloaded from our FTP server.</p>
+<ul>
+<li>Installation files -- USB:<ul>
+<li>Setup CERTUS CONTROL V 2.1.19 folder &gt; CERTUS CONTROL V 2.1.19</li>
+</ul>
+</li>
+<li>Installation files -- FTP:<ul>
+<li>Open the following link in your browser: <a href="https://downloads.fgyger.ch/certus/GUI">https://downloads.fgyger.ch/certus/GUI</a> </li>
+<li>Click the bottom folder (corresponds to the latest release) and download Setup CERTUS CONTROL V 2.1.19.zip.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+<h3 id="configuring-the-ip-address">Configuring the IP Address<a class="headerlink" href="#configuring-the-ip-address" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>The standard IP address of CERTUS FLEX is: <code>192.168.1.1</code>. </p>
+</li>
+<li>
+<p>The computer should be part of the same network.</p>
+<ul>
+<li><strong>Example</strong>: <code>192.168.1.2</code></li>
+<li><strong>Subnet</strong>: <code>255.255.255.0</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="installing-the-inco-server">Installing the INCO Server<a class="headerlink" href="#installing-the-inco-server" title="Permanent link">&para;</a></h3>
+<p>The installation of an INCO server is needed to control and monitor CERTUS FLEX, and is absolutely necessary.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The INCO server is also used for maintenance/repair works. 
+The INCO needs to be installed only once.</p>
+</div>
+<ol>
+<li>
+<p>Double-click on <em>IndelToolsSetup-tools_24.10.4.exe</em>.</p>
+<p><img _="," alt="Indel Tools Setup - Welcome" class="img-medium on-glb" height="350" src="../_assets/screenshots/image5.png" width="350" /></p>
+</li>
+<li>
+<p>Leave the default path on <code>C:\\Indel</code>.</p>
+<p><img _="," alt="Indel Tools Setup - Path" class="img-medium on-glb" height="350" src="../_assets/screenshots/image7.png" width="350" /></p>
+</li>
+<li>
+<p>Define <strong>Indel Tools</strong> as name.</p>
+<p><img _="," alt="Indel Tools Setup - Program Name" class="img-medium on-glb" height="350" src="../_assets/screenshots/image9.png" width="350" /></p>
+</li>
+</ol>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+</div>
+<ol>
+<li>
+<p>Uncheck all components.</p>
+<p><img _="," alt="Indel Tools Setup - Components" class="img-medium on-glb" height="350" src="../_assets/screenshots/image11.png" width="350" /></p>
+</li>
+</ol>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+</div>
+<ol>
+<li>
+<p>Select only the INCO Server rule.</p>
+<p><img _="," alt="Indel Tools Setup - Firewall Configuration" class="img-medium on-glb" height="350" src="../_assets/screenshots/image13.png" width="350" /></p>
+</li>
+<li>
+<p>Confirm the installation with Next.</p>
+<p><img _="," alt="Indel Tools Setup - Start Installation" height="350" src="../_assets/screenshots/image14.png" width="350" /></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once the installation is complete, the following symbol appears in the taskbar: <img alt="" class="img-icon" height="50" src="../_assets/icons/image15.png" width="50" /></p>
+</div>
+<h3 id="installing-certus-flex-control">Installing CERTUS FLEX Control<a class="headerlink" href="#installing-certus-flex-control" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Double-click to execute <code>CERTUS CONTROL V 2.1.19.msi</code>.</p>
+<p><img alt="CERTUS CONTROL Setup - Welcome" class="img-medium on-glb" height="350" src="../_assets/screenshots/image19.png" width="350" /></p>
+</li>
+<li>
+<p>Read and accept the license agreement.</p>
+<p><img alt="CERTUS CONTROL Setup - License Agreement" class="img-medium on-glb" height="350" src="../_assets/screenshots/image21.png" width="350" /></p>
+</li>
+<li>
+<p>Select the type of application (see next page).</p>
+<p><img alt="CERTUS CONTROL Setup - Application Type" class="img-medium on-glb" height="350" src="../_assets/screenshots/image23.png" width="350" /></p>
+</li>
+<li>
+<p>Execute the installation.</p>
+<p><img alt="CERTUS CONTROL Setup - Start Installation" class="img-medium on-glb" height="350" src="../_assets/screenshots/image25.png" width="350" /></p>
+</li>
+</ol>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>It is recommended to install the Net Framework 4.8 or higher.</li>
+<li>The necessary installer ndp48-x86-x64-allos-enu.exe can be found in the Setup <em>CERTUS CONTROL V 2.1.19</em> folder.</li>
+</ul>
+</div>
+</div>
+<h3 id="stand-alone-application">Stand-Alone Application<a class="headerlink" href="#stand-alone-application" title="Permanent link">&para;</a></h3>
+<p>Select the <strong>Stand-Alone</strong> option if CERTUS FLEX is to be operated as a stand-alone unit.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once CERTUS CONTROL is successfully installed, the CERTUS CONTROL symbol appears on the desktop: <img alt="CERTUS CONTROL" class="img-icon" height="50" src="../_assets/icons/icon_certus_control_app_symbol.png" width="50" /></p>
+</div>
+<h3 id="integrated-application">Integrated Application<a class="headerlink" href="#integrated-application" title="Permanent link">&para;</a></h3>
+<p>If CERTUS FLEX is part of an automated system, select the Integrated option to make CERTUS FLEX integration possible.</p>
+<p><img alt="CERTUS CONTROL Integration with CERTUS FLEX" class="img-medium on-glb" height="350" src="../_assets/screenshots/image23.png" width="350" /></p>
+<p>The following two additional options are available for the installation:</p>
+<ul>
+<li><em><strong>Auto Start</strong></em>: If the Auto Start option is selected, the automation interface and WEB CON- TROL are started automatically when the PC is started.</li>
+<li><em><strong>WEB CONTROL</strong></em>: is an extension of CERTUS CONTROL.
+  It allows the user to execute simple commands such as Flush, Prime or Purge via a web browser.</li>
+</ul>
+<p>For the installation of WEB CONTROL, see <a href="../web_control/#web-control-installation">WEB CONTROL - Installation</a>.</p>
+<h4 id="url-reservation">URL-Reservation<a class="headerlink" href="#url-reservation" title="Permanent link">&para;</a></h4>
+<p><img alt="CERTUS SILA - URL Reservation" class="img-medium on-glb" height="350" src="../_assets/screenshots/image31.png" width="350" /></p>
+<p>You can choose between automatic and manual reservation.</p>
+<p>A reservation is necessary to allow non-administrator users to access a specific URL name- space.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once CERTUS CONTROL is successfully installed, the Integration Manager symbol appears on the desktop: <img alt="Integration Manager Symbol" class="img-icon" height="50" src="../_assets/icons/image33.png" width="50" /></p>
+</div>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+<h4 id="activating-the-license">Activating the license<a class="headerlink" href="#activating-the-license" title="Permanent link">&para;</a></h4>
+<p>For the integration with laboratory automation, a license file is required.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>The license file to control CERTUS FLEX is closely coupled with the hardware of the PC on which <strong>CERTUS CONTROL</strong> is installed. </p>
+</li>
+<li>
+<p>If the PC or its hardware is replaced, a new license should be requested.</p>
+</li>
+</ul>
+</div>
+<p>Once <strong>CERTUS CONTROL</strong> is installed, the following steps should be taken:</p>
+<p><em><strong>A. Creating a license template</strong></em></p>
+<ol>
+<li>
+<p>Double-click the Integration Manager symbol on the desktop.</p>
+<ul>
+<li>
+<p>Now the symbol appears in the taskbar.</p>
+<p><img alt="Integration Manager Icon" class="on-glb" src="../_assets/screenshots/image35.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Double-click the Integration Manager symbol in the taskbar.</p>
+<ul>
+<li>The CERTUS Integration Manager opens.</li>
+</ul>
+</li>
+<li>
+<p>Click Licence Template and send the XML file along with the serial number of the base unit to <a href="mailto:service@nnano.com">service@nnano.com</a> 
+    (The license file will be delivered by the technical staff.)</p>
+<p><img alt="License Template" class="on-glb" src="../_assets/screenshots/image37.png" /></p>
+<ul>
+<li>Delivery of the license file (after one working day at the latest)</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For testing purposes, the integration can be executed as a simulation. You do not need a license or CERTUS FLEX for that.</p>
+</div>
+<p><em><strong>B. Installing the license file</strong></em></p>
+<ol>
+<li>Save the license file in:<em>%ProgramData%\Gyger\CERTUS CONTROL\lic</em>.</li>
+<li>
+<p>Start the CERTUS CONTROL Integration Manager (using the symbol in the taskbar).</p>
+<ul>
+<li>The license is activated and the Licence Template option is no longer visible.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The license file can be renamed and moved. For support, please contact your distributor.</p>
+</div>
+<p><em><strong>C. Restart</strong></em></p>
+<ol>
+<li>
+<p>Restart the PC to complete the installation.</p>
+<ul>
+<li>The CERTUS CONTROL symbol appears on the desktop.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a new installation on another PC, a new license file is needed. Please contact us by e-mail at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#101;&#114;&#118;&#105;&#99;&#101;&#64;&#110;&#110;&#97;&#110;&#111;&#46;&#99;&#111;&#109;">&#115;&#101;&#114;&#118;&#105;&#99;&#101;&#64;&#110;&#110;&#97;&#110;&#111;&#46;&#99;&#111;&#109;</a> to request a new license file.</p>
+</div>
+</div>
+<h3 id="additional-information">Additional information<a class="headerlink" href="#additional-information" title="Permanent link">&para;</a></h3>
+<h4 id="reserve-url-namespace">Reserve URL namespace<a class="headerlink" href="#reserve-url-namespace" title="Permanent link">&para;</a></h4>
+<p><strong>Reserve Certus SiLAprovider URL</strong></p>
+<p>The CERTUS CONTROL installer reserves the Certus SiLA provider URL with the default port <strong>13100</strong> (<code>url=http://+:13100/CertusSiLAProvider</code>).</p>
+<p>The reservation can also be done manually with the netsh command line utility. Per default Certus SiLA provider runs on port 13100.</p>
+<p>The Certus SiLA provider runs on port <code>13100</code> by default.</p>
+<p>The following example reserves the URL namespace for the CERTUS SiLA provider on port <strong>13100</strong>:</p>
+<ol>
+<li>Open the command prompt as administrator.</li>
+<li>
+<p>Type: <code>*netsh http add urlacl url=http://+:13100/CertusSiLAProvider user= domain \ user</code></p>
+<p><strong>Note</strong>: Replace <strong>domain</strong> and <strong>user</strong> with the actual values.</p>
+</li>
+<li>
+<p>Confirm with <strong>Enter</strong>.</p>
+</li>
+</ol>
+<p><strong>Reserve event receiver URL</strong></p>
+<p>This command has to be executed on the PC where the scheduler software runs. </p>
+<p>For port number and event receiver URL ask your scheduling software provider.</p>
+<ol>
+<li>Open the command prompt as administrator.</li>
+<li>
+<p>Type: <code>netsh http add urlacl *url=http://+:PortNumber / EventReceiverURI user=[domain]\\[user]</code></p>
+<p><strong>Note</strong>: Replace <strong>PortNumber</strong>, <strong>EventReceiverURI</strong>, <strong>domain</strong>, and <strong>user</strong> with the actual values.</p>
+</li>
+<li>
+<p>Confirm with <strong>Enter</strong>.</p>
+</li>
+</ol>
+<p><strong>Checking Access to the CERTUS SiLA Provider</strong></p>
+<ol>
+<li>Enter <a href="http://localhost:13100/CertusSilAProvider?wsdl">(http://localhost:13100/CertusSilAProvider?wsdl)</a> in your browser.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The URL can be used if the SiLA provider and browser are installed on the same computer. </p>
+</div>
+<p><img alt="XML Code" class="on-glb" src="../_assets/screenshots/image38.png" /></p>
+<ul>
+<li>
+<p>SiLA provider's WSDL is shown.</p>
+</li>
+<li>
+<p>CERTUS SiLA can only be used in conjunction with PMS.</p>
+</li>
+</ul>
+<p><strong>Starting/stopping the SiLA provider</strong></p>
+<p><img alt="Start/Stop SiLA provider" src="../_assets/images/certus_flex_license_not_exist.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th style="text-align: right;"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Active" class="img-icon" height="80" src="../_assets/icons/icon_active.png" width="80" /></td>
+<td>active</td>
+<td></td>
+<td style="text-align: right;">stops the SiLA provider</td>
+<td><img alt="Stop" class="img-icon" height="80" src="../_assets/icons/icon_stop.png" width="80" /></td>
+</tr>
+<tr>
+<td><img alt="Status Change" class="img-icon" height="80" src="../_assets/icons/icon_status_change.png" width="80" /></td>
+<td>status change</td>
+<td></td>
+<td style="text-align: right;">opens a maintenance window for the host</td>
+<td><img alt="Show" class="img-icon" height="80" src="../_assets/icons/icon_show.png" width="80" /></td>
+</tr>
+<tr>
+<td><img alt="Inactive" class="img-icon" height="80" src="../_assets/icons/icon_inactive.png" width="80" /></td>
+<td>inactive</td>
+<td></td>
+<td style="text-align: right;">starts the SiLA provider</td>
+<td><img alt="Run" class="img-icon" height="80" src="../_assets/icons/icon_run.png" width="80" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="logging-on">Logging on<a class="headerlink" href="#logging-on" title="Permanent link">&para;</a></h2>
+<h3 id="logging-on-as-an-administrator">Logging on as an Administrator<a class="headerlink" href="#logging-on-as-an-administrator" title="Permanent link">&para;</a></h3>
+<p>When you log on for the first time to the user profile management, you need to have a predefined user profile with administrator rights:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User name</td>
+<td>Admin</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>admin</td>
+</tr>
+</tbody>
+</table>
+<p><img alt=" CERTUS CONTROL Login Window" class="img-medium on-glb" height="450" src="../_assets/screenshots/image42.png" title="CERTUS CONTROL, Log-In Window" width="450" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note: Unauthorized admin access</p>
+<p>After you log in as “Admin” for the first time, you should immediately change your password “admin” to prevent unauthorized access to the admin account.</p>
+<p>► After log-in: <strong>Users</strong> &gt; Double-click the administrator &gt; <strong>Edit User</strong>.</p>
+<p>► Replace the password <strong>admin</strong> with a new one and confirm with <strong>Save</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More information on <em>Users</em> and the creation and edition of other user accounts can be found in the section, see <a href="#users">Users</a>.</p>
+</div>
+<h3 id="logging-onto-the-simulation-mode">Logging onto the Simulation Mode<a class="headerlink" href="#logging-onto-the-simulation-mode" title="Permanent link">&para;</a></h3>
+<p>If no CERTUS FLEX is available or you give up hardware control, the simulation mode is used.</p>
+<p>A simulation can be started as follows:</p>
+<ul>
+<li>
+<p>In the start menu, select <em>CERTUS CONTROL Simulation</em> and press <strong>ENTER</strong>.</p>
+</li>
+<li>
+<p>After you log on, select the desired dispensing head.</p>
+</li>
+</ul>
+<h2 id="overview-start-menu">Overview -- Start Menu<a class="headerlink" href="#overview-start-menu" title="Permanent link">&para;</a></h2>
+<p><img alt=" CERTUS CONTROL Start Menu" class="img-medium on-glb" height="450" src="../_assets/screenshots/image46.png" width="450" /></p>
+<p>Fig. 37 CERTUS CONTROL, Start Menu</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th></th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><img alt=" Library" height="70" src="../_assets/icons/icon_library_menu.png" width="70" /></td>
+<td><strong>Library</strong></td>
+<td>Edit measures and software functions. See <a href="#library">Library</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><img alt=" Settings" height="70" src="../_assets/icons/icon_settings_menu.png" width="70" /></td>
+<td><strong>Settings</strong></td>
+<td>Manage and calibrate fluids, micro valves, and well plates. See <a href="#settings">Settings</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td><img alt=" Close" height="70" src="../_assets/icons/icon_close_menu.png" width="70" /></td>
+<td><strong>Close</strong></td>
+<td>Close the software.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><img alt=" Help" height="70" src="../_assets/icons/icon_help_menu.png" width="70" /></td>
+<td><strong>Help</strong></td>
+<td>View the license agreement, documentation, and system information, and create backups. See <a href="#help">Help</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td><img alt=" User" height="70" src="../_assets/icons/icon_users_menu.png" width="70" /></td>
+<td><strong>User</strong></td>
+<td>Edit user data. See <a href="#users">Users</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td><img alt=" Protocol Editor" height="70" src="../_assets/icons/icon_protocol_editor_menu.png" width="70" /></td>
+<td><strong>Protocol Editor</strong></td>
+<td>Create and execute experiments. See <a href="#protocol-editor">Protocol Editor</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td><img alt=" Current User" height="70" src="../_assets/icons/icon_current_user_menu.png" width="70" /></td>
+<td><strong>Current User</strong></td>
+<td>Shows the current user's name.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="library">Library<a class="headerlink" href="#library" title="Permanent link">&para;</a></h2>
+<p><img alt="Library Menu" height="75" src="../_assets/icons/icon_library_menu.png" width="75" /></p>
+<p>In the <strong>Library</strong> menu, you can manage all fluids, micro valves, well plates, and calibrations for an experiment. Next, you go to <em>Protocol Editor.</em> When you click <em>Library</em> in the start menu, a separate window (<em>Library Manager</em>) opens.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before you can start an experiment, all data, if they are not available yet, should be acquired in Library Manager.</p>
+</div>
+<p><strong>Symbols in use</strong></p>
+<table>
+<thead>
+<tr>
+<th>Icons</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Save" height="32" src="../_assets/icons/icon_save.png" width="32" /></td>
+<td><strong>Title bar</strong>: Saves the change and closes the window. Active only if a change has been made.</td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="Settings" height="32" src="../_assets/icons/icon_settings.png" width="32" /></td>
+<td>Setting predefined by the manufacturer.</td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="Active Element" height="32" src="../_assets/icons/icon_active_element.png" width="32" /></td>
+<td>Active element that has been temporarily loaded.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="menu-bar">Menu bar<a class="headerlink" href="#menu-bar" title="Permanent link">&para;</a></h3>
+<p><img alt="Menu bar" src="../_assets/screenshots/image76.png" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Menu</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Editor</strong></td>
+<td>Save and quit</td>
+<td>Saves the changes and closes the windows.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Quit</td>
+<td>Closes the window.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Export</strong></td>
+<td>Export to file</td>
+<td>Exports fluids, valves, calibrations, plates to a file according the selected file format. The ".calibration" file will also include the related fluids.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Import</strong></td>
+<td>Import from file</td>
+<td>Import fluids, valves, calibration, plates from a file.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Legacy V1 Fluids</td>
+<td>Imports fluids from a v1 configuration file<sup id="fnref:*"><a class="footnote-ref" href="#fn:*">1</a></sup>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Legacy V1 Valves</td>
+<td>Imports valves from a v1 configuration file<sup id="fnref2:*"><a class="footnote-ref" href="#fn:*">1</a></sup>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Legacy V1 Plates</td>
+<td>Imports plates from a v1 configuration file<sup id="fnref3:*"><a class="footnote-ref" href="#fn:*">1</a></sup>.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Legacy V1 Calibrations</td>
+<td>Imports calibrations from a v1 configuration file<sup id="fnref4:*"><a class="footnote-ref" href="#fn:*">1</a></sup>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fluid">Fluid<a class="headerlink" href="#fluid" title="Permanent link">&para;</a></h3>
+<p>All fluids are defined here:</p>
+<p><img alt="Fluids" class="on-glb" height="450" src="../_assets/screenshots/image84.png" title="Library Manager, Fluid" width="550" /></p>
+<p><strong>Input area</strong></p>
+<p><img alt="Input area" class="on-glb" src="../_assets/screenshots/image86.png" title="Library Manager, Input Area" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>add new</em></td>
+<td>Add a new fluid</td>
+</tr>
+<tr>
+<td></td>
+<td><em>edit</em></td>
+<td>Edit a fluid (first select a fluid)</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Fluid Name</em></td>
+<td>Fluid name</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Density</em></td>
+<td>Fluid density</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Concentration</em></td>
+<td>Molar concentration of the fluid</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Color</em></td>
+<td>Color identification of the fluid (from the palette or RGB)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Comment</em></td>
+<td>Comment on the fluid (e.g., composition)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Temperature</em></td>
+<td>Fluid temperature</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>apply</em></td>
+<td>Confirm changes made</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>discard</em></td>
+<td>Discard changes made</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Units of fluid features can be adjusted in Settings. For more information see.</p>
+</div>
+<p><strong>Context menu</strong></p>
+<p>When you right-click selected fluid, a context menu with more commands opens.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Make permanent</em></td>
+<td></td>
+<td>Switch the fluids from temporary to permanent.</td>
+</tr>
+<tr>
+<td><em>Delete</em></td>
+<td></td>
+<td>Delete the selected fluids.</td>
+</tr>
+<tr>
+<td><em>Export...</em></td>
+<td></td>
+<td>Export the selected fluids.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="valve">Valve<a class="headerlink" href="#valve" title="Permanent link">&para;</a></h3>
+<p>It is where all micro valves are managed:</p>
+<p><strong>Symbols in use</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Information" height="32" src="../_assets/icons/icon_info.png" width="32" /></td>
+<td>Information (legend for micro valves)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Library Manager Micro Valves" class="on-glb" height="450" src="../_assets/screenshots/image95.png" title="Library Manager, Micro Valves" width="550" /></p>
+<p><strong>Input area</strong></p>
+<p><img alt="Input area" class="on-glb" src="../_assets/screenshots/image97.png" title="Library Manager, Input Area" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>add new</em></td>
+<td>Activates the text box for a new serial number</td>
+</tr>
+<tr>
+<td></td>
+<td><em>add comment</em></td>
+<td>A new comment can be added to the comment section</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Serial Number</em></td>
+<td>Text box for the serial number of a micro valve</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Valve Type</em></td>
+<td>The valve type will be displayed by typing the serial number with the following order: Nozzle diameter / Travel (Filter) (product number)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Entry Date</em></td>
+<td>Entry date for the newly added micro valve</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>New Comment</em></td>
+<td>New comment to be attached to the comment section</td>
+</tr>
+<tr>
+<td>6</td>
+<td><em>Info (i)</em></td>
+<td>Visualization of a micro valve with labels</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click on <strong>HIDE</strong> to hide the image.</p>
+</div>
+<p><strong>Contex area</strong></p>
+<p>Right-click the selected micro valves to open a context menu with more commands.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Make permanent</em></td>
+<td>Switch the micro valves from temporary to permanent.</td>
+</tr>
+<tr>
+<td><em>Delete</em></td>
+<td>Delete the selected micro valves.</td>
+</tr>
+<tr>
+<td><em>Export...</em></td>
+<td>Export the selected micro valves.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="well-plate">Well Plate<a class="headerlink" href="#well-plate" title="Permanent link">&para;</a></h3>
+<p>It is where all well plates are defined:</p>
+<p><strong>Symbols in use</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Information" height="32" src="../_assets/icons/icon_warning.png" width="32" /></td>
+<td>Warning about settings</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Well plate – definitions</strong></p>
+<p><img alt="Library Manager Well Plates" height="450" src="../_assets/screenshots/image106.png" title="Library Manager, Well Plates" width="550" /></p>
+<p><img alt="Well Plates Standard SBS" height="450" src="../_assets/screenshots/image107.png" title="Well Plates, Standard SBS" width="550" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Reference</em></td>
+<td>Reference point of the unit</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Well</em></td>
+<td>Single well plate cavity</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Row (X)</em></td>
+<td>Row across the entire well plate</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Column (Y)</em></td>
+<td>Column across the entire well plate</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Well Volume</em></td>
+<td>Maximum well volume</td>
+</tr>
+<tr>
+<td>6</td>
+<td><em>Plate height</em></td>
+<td>Well plate</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Well Plates Offsets and Pitches" height="450" src="../_assets/screenshots/image108.png" title="Well Plates, Offsets and Pitches" width="550" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Offset (X)</em></td>
+<td>Horizontal distance between the reference point and the first well</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Offset (Y)</em></td>
+<td>Vertical distance between the reference point and the first well</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Pitch (X)</em></td>
+<td>Horizontal distance between two wells</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Pitch (Y)</em></td>
+<td>Vertical distance between two wells</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Input area</strong></p>
+<p><img alt="Well Plates Settings" height="450" src="../_assets/screenshots/image109.png" title="Well Plates Settings" width="550" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Field</th>
+<th></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>add new</em></td>
+<td></td>
+<td>Add a new well plate</td>
+</tr>
+<tr>
+<td></td>
+<td><em>edit</em></td>
+<td></td>
+<td>Edit a well plate (select it first)</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Plate Name</em></td>
+<td></td>
+<td>Well plate name</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Color</em></td>
+<td></td>
+<td>Color identification of the well plate (palette or RGB)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Well Volume</em></td>
+<td></td>
+<td>Maximum well volume</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Layout</em></td>
+<td>Col:</td>
+<td>Number of wells in a column (vertical)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Row:</td>
+<td>Number of wells in a row (horizontal)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><em>Pitch</em></td>
+<td>X:</td>
+<td>Distance between two wells in the X direction (horizontal)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Y:</td>
+<td>Distance between two wells in the Y direction (vertical)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><em>Offset</em></td>
+<td>X:</td>
+<td>Distance to thefirst (upper left) well in the X direction (horizontal)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Y:</td>
+<td>Distance to the first (upper left) well in the Y direction (vertical)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Z:</td>
+<td>Well plate height</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Evaporation</td>
+<td></td>
+<td>Optional use of an evaporation curtain</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Clicking <strong>NONE</strong> opens EDIT EVAPORATION CURTAIN.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Context menu</strong></p>
+<p>Right-clicking the selected well plates opens a context menu with more commands.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Make permanent</em></td>
+<td>Switch the well plates from temporary to permanent.</td>
+</tr>
+<tr>
+<td><em>Delete</em></td>
+<td>Delete the selected well plates.</td>
+</tr>
+<tr>
+<td><em>Export...</em></td>
+<td>Export the selected well plates.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="evaporation-curtain">Evaporation Curtain<a class="headerlink" href="#evaporation-curtain" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An evaporation curtain is used to reduce evaporation deviations, also called edge effects, in border wells due to external factors such as ambient temperature.</p>
+</div>
+<p><img alt="Library Manager, Editing the Evaporation Curtain" height="650" src="../_assets/screenshots/image136.png" title="Library Manager, Editing the Evaporation Curtain" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Evaporation list</td>
+<td>List defined dispensing rows in this evaporation curtain</td>
+</tr>
+<tr>
+<td>2</td>
+<td>add new</td>
+<td>Add a new dispensing position</td>
+</tr>
+<tr>
+<td>3</td>
+<td>edit</td>
+<td>Edit the dispensing position</td>
+</tr>
+<tr>
+<td>4</td>
+<td>X Offset</td>
+<td>Horizontal distance between the reference point and the dispensing point</td>
+</tr>
+<tr>
+<td></td>
+<td>Y Offset</td>
+<td>Vertical distance between the reference point and the dispensing point</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Max. Volume</td>
+<td>Maximum volume of the evaporation zone</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Single</td>
+<td>Single dispensing</td>
+</tr>
+<tr>
+<td></td>
+<td>Horizontal</td>
+<td>Dispensations in the horizontal direction</td>
+</tr>
+<tr>
+<td></td>
+<td>Vertical</td>
+<td>Dispensations in the vertical direction</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Count total</td>
+<td>Number of dispensations in the relevant direction</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Repeat Distance</td>
+<td>Distance between repeat dispensations</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Preview</td>
+<td>View dispensing positions for the evaporation zone</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Context menu</strong></p>
+<p>Right-clicking a dispensing row opens a context menu with more commands.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Move-UP</td>
+<td>Move a dispensing point up</td>
+</tr>
+<tr>
+<td>Move-DOWN</td>
+<td>Move a dispensing point down</td>
+</tr>
+<tr>
+<td>Delete Evaporation</td>
+<td>Delete a dispensing point from the list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="calibration">Calibration<a class="headerlink" href="#calibration" title="Permanent link">&para;</a></h3>
+<p>Viewing and managing all calibrations.</p>
+<p><strong>Symbols in use</strong></p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Calibration" height="32" src="../_assets/icons/icon_calibration.png" width="32" /></td>
+<td>Flags calibrations which use a fluid that is currently missing from the library.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Right-clicking a calibration opens the CERTUS VIEW CALIBRATION window. It shows individual calibration points, data, and curves. You cannot change them. For more information see <a href="#certus-calibrator">CERTUS Calibrator</a>.</p>
+</div>
+<p><img alt="Library Manager, Calibration" height="650" src="../_assets/screenshots/image152.png" title="Library Manager, Calibration" width="750" /></p>
+<h4 id="filtering-possibilities">Filtering Possibilities<a class="headerlink" href="#filtering-possibilities" title="Permanent link">&para;</a></h4>
+<p>Filters can be used to partially reduce the number of all calibrations. Calibrations can be filtered by date (<em>Date</em>), fluid name (<em>Fluid name</em>), pressure (<em>Pressure</em>), micro valve type (<em>Valve Type</em>), micro valve filter (<em>Valve Filter</em>), micro valve serial number (<em>Valve S/N</em>), and connection (<em>Connection</em>).</p>
+<p><img alt="Calibrations Filtering Possibilities" class="img-medium on-glb" height="650" src="../_assets/screenshots/image153.png" title="Library Manager, Calibrations Filtering Possibilities" width="750" /></p>
+<h4 id="input-area">Input area<a class="headerlink" href="#input-area" title="Permanent link">&para;</a></h4>
+<p><img alt="Calibrations Filtering Possibilities" class="img-medium on-glb" height="650" src="../_assets/screenshots/image154.png" title="Library Manager, Calibrations Input Area" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Include calibrations assigned to the current dispensing head</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Show only the latest calibrations of each setup</td>
+</tr>
+<tr>
+<td>3</td>
+<td>List only calibrations suitable for the current dispensing head</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Show what calibrations are used with the current dispensing head</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Delete all filters</td>
+</tr>
+</tbody>
+</table>
+<h4 id="context-menu">Context menu<a class="headerlink" href="#context-menu" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Right-clicking the selected calibrations opens a context menu with more commands.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Make permanent</em></td>
+<td>Switch the calibrations from temporary to permanent.</td>
+</tr>
+<tr>
+<td><em>Delete</em></td>
+<td>Delete the selected calibrations.</td>
+</tr>
+<tr>
+<td><em>Export...</em></td>
+<td>Export the selected calibrations including the related fluids</td>
+</tr>
+<tr>
+<td><em>View...</em></td>
+<td>Open a window showing calibration details.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<p><img alt="Settings" height="100" src="../_assets/icons/icon_settings_menu.png" width="100" /></p>
+<p>The <em>Settings</em> menu enables to customize CERTUS CONTROL or define general default values.</p>
+<h3 id="default-values">Default Values<a class="headerlink" href="#default-values" title="Permanent link">&para;</a></h3>
+<p>The default values of the measures and laboratory balances used are defined here.</p>
+<p><img alt="Settings, Default Values" class="img-medium on-glb" height="650" src="../_assets/screenshots/image164.png" title="Settings, Default Values" width="750" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changes in the measures are automatically updated and the values entered converted accordingly.</p>
+</div>
+<h3 id="calibration_1">Calibration<a class="headerlink" href="#calibration_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Settings, Calibration" class="img-medium on-glb" height="650" src="../_assets/screenshots/image165.png" title="Settings, Calibration" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Balance</td>
+<td>Define the default value of the balance name</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Fluid temperature</td>
+<td>Define the default value of fluid temperature</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Minimum weight</td>
+<td>The dispensing weight during calibration (for laboratory balances with a rough reading accuracy)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Naming</td>
+<td>Defines the name of the calibration with tokens. It will be displayed in the channel configuration inside the protocol editor.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>See <a href="../operations/#adjust-the-calibration-name">Adjust the Calibration name</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="valve-display">Valve Display<a class="headerlink" href="#valve-display" title="Permanent link">&para;</a></h3>
+<p><img alt="Calibration, Valve Display" height="650" src="../_assets/screenshots/image166.png" title="Calibration, Valve Display" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Valve Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Valve type G</td>
+<td>Will be shown in the Library if selected</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Valve type GC</td>
+<td>Will be shown in the Library if selected</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Valve type GCR</td>
+<td>Will be shown in the Library if selected</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The valve types can also be selected in the Library Manager. For Information about the different micro valve types, please contact your distributor.</p>
+</div>
+<h3 id="protocol-editor">Protocol Editor<a class="headerlink" href="#protocol-editor" title="Permanent link">&para;</a></h3>
+<p>The settings of the <em>Protocol Editor</em> are defined here.</p>
+<p><img alt="Settings, Protocol Editor Settings" class="img-medium on-glb" height="650" src="../_assets/screenshots/image180.png" title="Settings, Protocol Editor Settings" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Default saving format</td>
+<td>Storage format (.expt/.protocol)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Protocol Validator</td>
+<td>Show/hide the protocol inspection window</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Protocol Report</td>
+<td>Show/hide the protocol reporting window</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Configuration Manager</td>
+<td>Check and remove non-matching calibration<br></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Always ask before removing calibration</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><strong>expt</strong>: contains <em>Configuration</em> and <em>Protocol</em></li>
+<li><strong>protocol</strong>: contains only <em>Protocol</em></li>
+</ul>
+</div>
+<h3 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
+<p>Various maintenance settings are defined here.</p>
+<p><img alt="Settings, Maintenance Settings" class="img-medium on-glb" height="650" src="../_assets/screenshots/image188.png" title="Settings, Maintenance Settings" width="750" /></p>
+<h4 id="flush">Flush<a class="headerlink" href="#flush" title="Permanent link">&para;</a></h4>
+<p><img alt="Settings, Flush Settings" class="img-medium on-glb" height="650" src="../_assets/screenshots/image189.png" title="Settings, Flush Settings" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Time limit</em></td>
+<td>Define the maximum duration of a flush command</td>
+</tr>
+<tr>
+<td><em>Endless</em></td>
+<td>The flush command is executed until the stop button is pressed</td>
+</tr>
+<tr>
+<td><em>Button must be hold pressed</em></td>
+<td>The flush command is executed until the stop button is released again</td>
+</tr>
+</tbody>
+</table>
+<h4 id="log">Log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h4>
+<p><img alt="Settings, Log Settings" class="img-medium on-glb" height="650" src="../_assets/screenshots/image190.png" title="Settings, Log Settings" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Log folder</em></td>
+<td>Define a customized path for log files. Default: <code>C:\ProgramData\Gyger\CERTUS CONTROL\log</code></td>
+</tr>
+<tr>
+<td><em>Log levels</em></td>
+<td>Define a log level for each software module (<em>View</em>, <em>Core</em>, <em>Indel</em>, or SiLA). Levels: <em>All</em>, <em>Info</em>, <em>Warn</em> (sorted by priority).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="report">Report<a class="headerlink" href="#report" title="Permanent link">&para;</a></h4>
+<p><img alt="Settings, Report Settings" class="img-medium on-glb" height="650" src="../_assets/screenshots/image191.png" title="Settings, Report Settings" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Report folder</em></td>
+<td>Define a customized path for report files</td>
+</tr>
+<tr>
+<td><em>Disable report files</em></td>
+<td>Disable report file settings</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+<h3 id="device">Device<a class="headerlink" href="#device" title="Permanent link">&para;</a></h3>
+<p>Various device settings are defined here.</p>
+<p><img alt="Settings, Device Settings" class="img-medium on-glb" height="650" src="../_assets/screenshots/image193.png" title="Settings, Device Settings" width="750" /></p>
+<h4 id="information">Information<a class="headerlink" href="#information" title="Permanent link">&para;</a></h4>
+<p><img alt="Settings, Information Settings" class="img-medium on-glb" height="650" src="../_assets/screenshots/image194.png" title="Settings, Information Settings" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th><strong>Item</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Firmware</em></td>
+<td>The currently installed CERTUS FLEX firmware.</td>
+</tr>
+<tr>
+<td><em>Serial Number</em></td>
+<td>The serial number of the CERTUS FLEX.</td>
+</tr>
+<tr>
+<td><em>Target Name</em></td>
+<td>Name used for communication with CERTUS CONTROL.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The IPaddress can only be changed as a user with service rights!</p>
+</div>
+<h4 id="ip-address">IP Address<a class="headerlink" href="#ip-address" title="Permanent link">&para;</a></h4>
+<p><img alt="Settings, IP Address Settings" height="650" src="../_assets/screenshots/image195.png" title="Settings, IP Address Settings" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Current IP Address</em></td>
+<td>IP address currently used</td>
+</tr>
+<tr>
+<td><em>New IP Address</em></td>
+<td>Defines a new IP address</td>
+</tr>
+<tr>
+<td><em>Change IP</em></td>
+<td>Set a new address</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The IP address can only be changed by a user with support rights!</p>
+</div>
+<h4 id="well-plate-holder">Well Plate Holder<a class="headerlink" href="#well-plate-holder" title="Permanent link">&para;</a></h4>
+<p>Here the acceleration ramp of the well plate holder can be selected. To use this feature, the following requisites are required:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>CERTUS CONTROL</em></td>
+<td>Version 2.1.15 or higher</td>
+</tr>
+<tr>
+<td><em>CERTUS FLEX Firmware</em></td>
+<td>Version 1.0.9.403 or higher</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>CERTUS CONTROL 2.1.15 can also be used with an older firmware version. However, in this case this feature is not available.</p>
+</div>
+<p><img alt="Settings, Well Plate Holder" class="img-medium on-glb" height="650" src="../_assets/screenshots/image196.png" title="Settings, Well Plate Holder" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td>Normal acceleration of the well plate holder.</td>
+</tr>
+<tr>
+<td>Gently</td>
+<td>Slow acceleration of the well plate holder. The well plate is always clamped during a pre-dispense phase.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
+<p><img alt="Help" height="100" src="../_assets/icons/icon_help_menu.png" width="100" /></p>
+<p>In the Help menu, you will find help on the program. In addition, the user manual in PDF format is available here.</p>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+<p><img alt="CERTUS CONTROL, Help" height="350" src="../_assets/screenshots/image199.png" title="Help" width="450" /></p>
+</div>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Documentation</em></td>
+<td>Access documentation resources</td>
+</tr>
+<tr>
+<td></td>
+<td><em>manual</em></td>
+<td>Open this user manual</td>
+</tr>
+<tr>
+<td></td>
+<td><em>what's new?</em></td>
+<td>Overview of CERTUS CONTROL releases</td>
+</tr>
+<tr>
+<td></td>
+<td><em>eula</em></td>
+<td>End user license contract</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>System Information</em></td>
+<td>Software and hardware information</td>
+</tr>
+<tr>
+<td></td>
+<td><em>copy to file</em></td>
+<td>Export information as an XML file</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>License</em></td>
+<td>License overview</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Backup + Support</em></td>
+<td>Backup and support</td>
+</tr>
+<tr>
+<td></td>
+<td><em>data backup</em></td>
+<td>Create a backup of all software related data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h2>
+<p><img alt="Users" height="100" src="../_assets/icons/icon_users_menu.png" width="100" /></p>
+<p>In the <em>Users</em> menu, you can create new users or manage existing ones. CERTUS CONTROL differentiates between three user levels: <em>Operator</em>, <em>Administrator</em> and <em>Service</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can only make changes to your own user details or those of users with lower user rights.</p>
+</div>
+<h3 id="symbols-in-use">Symbols in use<a class="headerlink" href="#symbols-in-use" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Save" height="32" src="../_assets/icons/icon_save.png" width="32" /></td>
+<td><strong>Title bar</strong>: Clicking saves the change and closes the window. (Active only if a change has been made.)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="CERTUS CONTROL Users" class="img-medium on-glb" height="550" src="../_assets/screenshots/image202.png" title="Users" width="550" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Admin</em></td>
+<td>Listing by user rights</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Add User...</em></td>
+<td>Open a window to add a new user</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-menu_1">Context menu<a class="headerlink" href="#context-menu_1" title="Permanent link">&para;</a></h3>
+<p>Right-clicking the listed user opens a context menu with more commands.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Edit User</em></td>
+<td>Edit user data</td>
+</tr>
+<tr>
+<td><em>Delete User</em></td>
+<td>Delete the user</td>
+</tr>
+<tr>
+<td><em>Add User</em></td>
+<td>Add a new user</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adding-users">Adding Users<a class="headerlink" href="#adding-users" title="Permanent link">&para;</a></h3>
+<h4 id="logon-through-manual-registration">Logon through manual registration<a class="headerlink" href="#logon-through-manual-registration" title="Permanent link">&para;</a></h4>
+<p><img alt="CERTUS CONTROL Login Window" class="img-medium on-glb" height="550" src="../_assets/screenshots/image206.png" title="Cirtus Control Login Window" width="550" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>First Name</em></td>
+<td>User's first name</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Last Name</em></td>
+<td>User's last name</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Logon Name</em></td>
+<td>Logon name</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Password</em></td>
+<td>User password</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>User Level</em></td>
+<td>Define the user level</td>
+</tr>
+<tr>
+<td></td>
+<td><em>None</em></td>
+<td>Disable the user account</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Operator</em></td>
+<td>User with restricted access (predefined only)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Admin</em></td>
+<td>User with administrator rights</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Service</em></td>
+<td>For support staff only</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Comment</em></td>
+<td>(Optional) Comment on the user account</td>
+</tr>
+</tbody>
+</table>
+<h4 id="logon-as-a-windows-user">Logon as a Windows User<a class="headerlink" href="#logon-as-a-windows-user" title="Permanent link">&para;</a></h4>
+<p>When you log on as a Windows user, the user name and password of the current PC account is used to log on to CERTUS CONTROL. This helps the user log on faster.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As the user has already been authenticated by logging on to Windows, no CERTUS CONTROL logon is required.</p>
+</div>
+<p><img alt="CERTUS CONTROL Login Window" class="img-medium on-glb" height="550" src="../_assets/screenshots/image207.png" title="CERTUS CONTROL Logon Window" width="550" /></p>
+<h4 id="selecting-users-or-groups">Selecting users or groups<a class="headerlink" href="#selecting-users-or-groups" title="Permanent link">&para;</a></h4>
+<p>Clicking <em>Use Windows User</em> opens Window's <em>Directory Object Picker</em> Dialog. This dialog enables to select which Windows user is to be used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When CERTUS CONTROL is started next time, the software automatically uses the user account. </p>
+</div>
+<p><img alt="Selecting a User or Group" class="img-medium on-glb" height="450" src="../_assets/screenshots/image212.png" title="Selecting a User or Group" width="550" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Group or/and user</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Search path (where should it be searched?)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Extended search settings</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Selecting a User or Group, Extension Window" class="img-medium on-glb" height="350" src="../_assets/screenshots/image216.png" title="Selecting a User or Group, Extension Window" width="450" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Start search for Windows users</td>
+</tr>
+<tr>
+<td>2</td>
+<td>List Windows users found</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Select the desired user from the list and click <strong>OK</strong> to confirm.<ul>
+<li>The extension window is closed and user data are accepted.</li>
+</ul>
+</li>
+<li>Confirm once again with <strong>OK</strong>.<ul>
+<li>The window is closed and user data (logon name and password) are imported into <em>USER EDITOR</em>.</li>
+</ul>
+</li>
+<li>Where necessary, adjust the name and surname and define the user level.<ul>
+<li>Clicking OK creates a user, which is then listed in <em>USER MANAGER</em>.</li>
+<li>The Windows user was successfully added.</li>
+</ul>
+</li>
+</ul>
+<h2 id="protocol-editor_1">Protocol Editor<a class="headerlink" href="#protocol-editor_1" title="Permanent link">&para;</a></h2>
+<p><img alt="Protocol Editor" class="img-medium on-glb" height="100" src="../_assets/icons/icon_protocol_editor_menu.png" width="100" /></p>
+<p>Clicking <em>Protocol Editor</em> in the start menu opens the <em>Protocol Editor</em> window. Experiments are prepared and executed in <em>Protocol Editor</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before you can start an experiment, all basic data (fluid, micro valve, well plate) has to be included in the library.</p>
+</div>
+<h3 id="symbols-in-use_1">Symbols in use<a class="headerlink" href="#symbols-in-use_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Icons</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Title Bar" class="img-icon" height="32" src="../_assets/icons/icon_save.png" width="32" /></td>
+<td><strong>Title bar</strong>: Clicking saves the change and closes the window. (Active only if a change has been made.)</td>
+</tr>
+<tr>
+<td><img alt="Title Bar" class="img-icon" height="32" src="../_assets/icons/icon_quick_access.png" width="32" /></td>
+<td><strong>Title bar</strong> (Quick Access): Opens a new protocol</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+<p><img alt="Protocol Editor, Menu Bar" class="img-medium" height="450" src="../_assets/screenshots/image223.png" title="Protocol Editor, Menu Bar" width="750" /></p>
+</div>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Experiment</em></td>
+<td>Clicking the Experiment tab opens the backstage view</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Execution</em></td>
+<td>Execute, stop, and pause the experiment</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Processing</em></td>
+<td>Show the current execution status</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Air control</em></td>
+<td>Switch on and off compressed air</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Channels</em></td>
+<td>Open Configuration Manager</td>
+</tr>
+<tr>
+<td>6</td>
+<td><em>Maintenance</em></td>
+<td>Open Flyout Maintenance. Enable manual execution of dispensing commands.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><em>Live Log</em></td>
+<td>Open Flyout Live Log. Enable text-based monitoring of processing.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><em>Summary</em></td>
+<td>Open an overview of the current experiment</td>
+</tr>
+<tr>
+<td>9</td>
+<td><em>IPL</em></td>
+<td>Open Flyout Interval Purge Loop</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+<p><img alt="Protocol Editor, Status Bar" class="img-medium" height="450" src="../_assets/screenshots/image231.png" title="Protocol Editor, Status Bar" width="750" />   </p>
+</div>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Show the rights and name of the logged-on user</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Show the compressed air in current use</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Show which dispensing head is connected</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Change the view zoom of the well plate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operating-principle">Operating Principle<a class="headerlink" href="#operating-principle" title="Permanent link">&para;</a></h3>
+<div class="admonition draft">
+<p class="admonition-title">Draft</p>
+<p><img _="," alt="Operating Principle" class="img-medium" height="450" src="../_assets/screenshots/image232.png" title="Operating Principle" width="750" /></p>
+</div>
+<p><em>Protocol Editor</em> sources its information in <em>Library</em>.</p>
+<p>Information in <em>Configuration</em> should reflect CERTUS FLEX current status (such as fluid, connected channels, type of micro valve, and calibrations).</p>
+<p>In <em>Protocol</em>, dispensing information and settings are defined (such as volume, well number, and fluid).</p>
+<table>
+<thead>
+<tr>
+<th>File Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>experiment</em> (.expt)</td>
+<td>The experiment file consists of configuration and protocol parts. This format is suitable if you would like to repeat the same experiment with exactly the same configuration later on.</td>
+</tr>
+<tr>
+<td><em>protocol</em> (.protocol)</td>
+<td>The protocol file consists of only the protocol part. No configuration data is saved. This format is suitable if you would like to start a protocol with various configurations.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="experiment-menu">Experiment Menu<a class="headerlink" href="#experiment-menu" title="Permanent link">&para;</a></h3>
+<p>Clicking the <em>Experiment</em> tab brings you to the backstage view. Here you can save and open protocols and experiments, as well as enable the dispensing head view.</p>
+<p><img _="," alt="Operating Principle" height="300" src="../_assets/screenshots/image241.png" width="250" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Back to Protocol Editor</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Save</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Save as (*.expt or *.protocol)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Open (*.expt or *.protocol)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Recently used files or folders (listed on the right)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Create a new protocol</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Switch on and off the dispensing head view</td>
+</tr>
+<tr>
+<td></td>
+<td>In the simulation mode, the following settings are available:</td>
+</tr>
+<tr>
+<td></td>
+<td><img _="," alt="Simulation mode" height="350" src="../_assets/screenshots/image257.png" width="500" /></td>
+</tr>
+<tr>
+<td></td>
+<td>• Speed of the moving dispensing head (selection on the right)</td>
+</tr>
+<tr>
+<td></td>
+<td>• Dispensing speed (selection on the left)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Export protocol to XML (SpreadsheetML 2003 format)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Import dosage volumes from CSV</td>
+</tr>
+<tr>
+<td></td>
+<td>The format of the csv file must correspond to the CERTUS CONTROL.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Open the user manual</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Close Protocol Editor</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Close CERTUS CONTROL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>The Configuration tab shows the current channel configurations. The data used for that comes from the library. </p>
+<p>The defined channel configurations should reflect the current status of CERTUS FLEX, such as supply kits, fluid classifications, channel activations, etc.</p>
+<h4 id="symbols-in-use_2">Symbols in use<a class="headerlink" href="#symbols-in-use_2" title="Permanent link">&para;</a></h4>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Dispensing head configuration" height="32" src="../_assets/icons/image258.png" width="32" /></td>
+<td>Symbol standing for dispensing head configuration</td>
+</tr>
+<tr>
+<td><img alt="Supply configuration" height="32" src="../_assets/icons/image259.png" width="32" /></td>
+<td>Symbol standing for supply configuration</td>
+</tr>
+<tr>
+<td><img alt="Start/pause dispensing" height="32" src="../_assets/icons/image260.png" width="32" /><img alt="Start/pause dispensing" height="32" src="../_assets/icons/icon_pause.png" width="32" /></td>
+<td>Start/pause dispensing</td>
+</tr>
+<tr>
+<td><img alt="Stops dispensing" height="32" src="../_assets/icons/image261.png" width="32" /></td>
+<td>Stops dispensing</td>
+</tr>
+<tr>
+<td><img alt="Compatibility" height="32" src="../_assets/icons/image262.png" width="32" /></td>
+<td>Compatibility of all calibration properties with the channel configuration</td>
+</tr>
+<tr>
+<td><img alt="Volume factor" height="32" src="../_assets/icons/image263.png" width="32" /></td>
+<td>The volume factor is other than 1</td>
+</tr>
+<tr>
+<td><img alt="Incompatibility" height="32" src="../_assets/icons/image264.png" width="32" /></td>
+<td>Incompatible with the currently installed dispensing head</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><img alt="Protocol Editor Configuration" class="img-medium on-glb" height="550" src="../_assets/screenshots/image265.png" title="Protocol Editor Configuration" width="750" /> </p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Head and Supply configuration...</em></td>
+<td><strong>Left-click</strong>: Opens <em>Template Manager</em> (p. 102) for managing configuration templates.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Right-click</strong>: <em>Transfer configuration</em> (p. 161) for transferring configuration to other dispensing head types.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Management of dispensing head templates</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Channel (#1)</em></td>
+<td>The channel overview provides information on configuration elements in use.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-menu_2">Context menu<a class="headerlink" href="#context-menu_2" title="Permanent link">&para;</a></h3>
+<p>Right-clicking <em>Channel</em> opens a context menu with more commands.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Edit Channels</em></td>
+<td>Edit channels. Opens Configuration Manager</td>
+</tr>
+<tr>
+<td><em>Calibrate</em></td>
+<td>Open the CERTUS Calibrator window for calibrations</td>
+</tr>
+<tr>
+<td><em>Verify</em></td>
+<td>Verify the calibration</td>
+</tr>
+<tr>
+<td><em>Disable</em></td>
+<td>Disable the channel</td>
+</tr>
+<tr>
+<td><em>Enable</em></td>
+<td>Enable the channel (visible only when disabled)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="template-manager">Template Manager<a class="headerlink" href="#template-manager" title="Permanent link">&para;</a></h3>
+<p>Clicking <em>Head and Supply configuration... Opens the *Template Manager</em> window. You can apply, save, and edit dispensing head templates here.</p>
+<p>In principle, the dispensing head template consists of two parts:</p>
+<ol>
+<li><strong>Supply configuration</strong>
+    For each channel, it contains the assigned fluid, container, pressure, volume factor, and calibration.</li>
+<li><strong>Dispensing head configuration</strong>
+    For each channel, it contains the dispensing head (CF8, CF5, etc.) and the micro valve used, and informs if the channel is active.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A template may also contain only one of these parts. This can be defined when creating a dispensing head template.</p>
+</div>
+<p><img alt="CERTUS CONTROL Template Manager" class="img-medium on-glb" height="550" src="../_assets/screenshots/image269.png" title="CERTUS CONTROL Template Manager" width="750" /> </p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Save Active Configuration</em></td>
+<td>Save the currently active configuration</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Templates</em></td>
+<td>List the saved dispensing head templates</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Fluid Supply Preview</em></td>
+<td>This template’s supply configuration</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Valve Head Preview</em></td>
+<td>This template’s dispensing head configuration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-menu_3">Context menu<a class="headerlink" href="#context-menu_3" title="Permanent link">&para;</a></h3>
+<p>Right-clicking a Dispensing head template in the Template list opens a context menu with more commands.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Apply...</em></td>
+<td>Apply the dispensing head template. <a href="../operations/#using-a-dispensing-head-template">Using a Dispensing Head Template</a></td>
+</tr>
+<tr>
+<td><em>Rename</em></td>
+<td>Rename the dispensing head template.</td>
+</tr>
+<tr>
+<td><em>Save as...</em></td>
+<td>Save a copy of the dispensing head template. <a href="../operations/#copy-the-configuration-template">Copy the Configuration Template</a></td>
+</tr>
+<tr>
+<td><em>Delete</em></td>
+<td>Delete the dispensing head template.<br/>The active configuration as well as the factory templates cannot be deleted.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="certus-calibrator">CERTUS Calibrator<a class="headerlink" href="#certus-calibrator" title="Permanent link">&para;</a></h2>
+<p>Right-click the channel under Configuration and select <em>Calibrate</em> to open the
+<em>CERTUS Calibrator</em> window.</p>
+<p>Here you can create calibrations to increase dispensing accuracy. For more information, see <a href="../operations/#calibration">Calibration</a>.</p>
+<h3 id="symbols-in-use_3">Symbols in use<a class="headerlink" href="#symbols-in-use_3" title="Permanent link">&para;</a></h3>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Flags" height="32" src="../_assets/icons/image275.png" width="32" /></td>
+<td>Flags the assigned calibration in the relevant channel</td>
+</tr>
+<tr>
+<td><img alt="Calibration attribute" height="32" src="../_assets/icons/image276.png" width="32" /></td>
+<td>Calibration attribute incompatible with the relevant channel configuration attribute</td>
+</tr>
+<tr>
+<td><img alt="Calibration attribute" height="32" src="../_assets/icons/image277.png" width="32" /></td>
+<td>Calibration successfully completed</td>
+</tr>
+<tr>
+<td><img alt="New Calibration Point" height="32" src="../_assets/icons/image284.png" width="32" /></td>
+<td>Newly created calibration point does not lie within the tolerance range of &plusmn; 5%</td>
+</tr>
+<tr>
+<td><img alt="Standard Calibration Point" height="32" src="../_assets/icons/icon_settings.png" width="32" /></td>
+<td>Marks a standard calibration point</td>
+</tr>
+<tr>
+<td><img alt="Flags" height="32" src="../_assets/icons/icon_custom_calibration.png" width="32" /></td>
+<td>Flags a customized calibration point (*! = most recently defined)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><img alt="Protocol Editor, Certus Calibrator" class="img-medium on-glb" height="350" src="../_assets/screenshots/image280.png" title="Protocol Editor, CERTUS Calibrator" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Configuration</em></td>
+<td>Overview of the current channel configuration</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Setup</em></td>
+<td>Open Flyout Maintenance (Fig. 61, p. 106)</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Calibration</em></td>
+<td>Overview of calibration points (Fig. 62, p. 106)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Graph</em></td>
+<td>Graphical representation of flow rate and volume (p. 106)</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Metadata</em></td>
+<td>Calibration data (Fig. 65, p. 109)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Protocol Editor, Certus Calibrator" class="img-medium on-glb" height="350" src="../_assets/screenshots/image281.png" title="Protocol Editor, CERTUS Calibrator Configuration" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Balance weight unit</td>
+<td>Set the currently used balance unit</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Maintenance</td>
+<td>Open Maintenance Flyout for the flush and air ON/OFF functions</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Protocol Editor, Certus Calibrator" class="img-medium on-glb" height="450" src="../_assets/screenshots/image290.png" title="Protocol Editor, CERTUS Calibrator Configuration" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item/Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Dispense</em></td>
+<td>Dispensing with a specified opening time and closing number</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Enable/Disable</em></td>
+<td>Enabling/disabling of calibration points.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>By selecting "Show disabled calibration points" the deactivated points are shown/hidden.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Symbols</em></td>
+<td>Tagging of standard and customer-specific calibration points</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Open Time</em></td>
+<td>Valve opening time for this calibration point</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Shots</em></td>
+<td>Closing number with a specified opening time</td>
+</tr>
+<tr>
+<td>6</td>
+<td><em>Weight</em></td>
+<td>Balance/measured weight of the dispensed quantity</td>
+</tr>
+<tr>
+<td>7</td>
+<td><em>Volume</em></td>
+<td>Volume calculated from measured weight and density</td>
+</tr>
+<tr>
+<td>8</td>
+<td><em>Flowrate</em></td>
+<td>Flow rate calculated from volume and opening time</td>
+</tr>
+<tr>
+<td>9</td>
+<td><em>Load Calibration</em></td>
+<td>Load calibration values from the library</td>
+</tr>
+<tr>
+<td>10</td>
+<td><em>Add Point</em></td>
+<td>Add a customized calibration value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-menu_4">Context menu<a class="headerlink" href="#context-menu_4" title="Permanent link">&para;</a></h3>
+<p>Right-click on a row with a calibration point opens the context menu enabling further commands.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edit Volume...</td>
+<td>Opens a menu for editing the volume. See <a href="#calibration-point-volume-editing">Calibration Point - Volume Editing</a></td>
+</tr>
+<tr>
+<td>Delete Values</td>
+<td>Deletes calibration points. With the CTRL key pressed, multiple points can be selected.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="CERTUS Calibrator, Flowrate-Graph" class="img-medium on-glb" height="450" src="../_assets/screenshots/certus_calibrator_flowrate_graph.png" title="CERTUS Calibrator, Flowrate-Graph" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Flow rate</td>
+<td>Flow rate</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Open Time</td>
+<td>Micro valve opening time</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Calibration</td>
+<td>Calibration point</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="CERTUS Calibrator, Volume-Graph" class="img-medium on-glb" height="450" src="../_assets/screenshots/certus_calibrator_volume_graph.png" title="CERTUS Calibrator, Volume-Graph" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Volume</td>
+<td>Dispensed volume</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Open Time</td>
+<td>Micro valve opening time</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Calibration</td>
+<td>Calibration point</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The graph can be zoomed in/outwith the mouse wheel and moved by holding down the right mouse button. See <a href="../operations/#verification-using-the-graph">Verification using the Graph</a>.</p>
+</div>
+<h3 id="context-menu_5">Context menu<a class="headerlink" href="#context-menu_5" title="Permanent link">&para;</a></h3>
+<p>Right-click on a curve opens the following commands:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Show Factory</em></td>
+<td>Enables/disables the display of the standard calibration curve (gray) for the corresponding current micro valve, supply kit, and ultrapure water as the media.</td>
+</tr>
+<tr>
+<td><em>Show Current</em></td>
+<td>Enables/disables the display of the current calibration curve (orange).</td>
+</tr>
+<tr>
+<td><em>Linear Time Axis</em></td>
+<td>Toggles the time axis scaling between logarithmic and linear.</td>
+</tr>
+<tr>
+<td><em>Linear Volume Axis</em></td>
+<td>Toggles the volume axis scaling between logarithmic and linear.</td>
+</tr>
+<tr>
+<td><em>Reset Axis</em></td>
+<td>Resets the graphs to default.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="CERTUS Calibrator, Metadata" class="img-medium on-glb" height="450" src="../_assets/screenshots/certus_calibrator_metadata.png" title="CERTUS Calibrator, Metadata" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>User</td>
+<td>User name</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Laboratory</td>
+<td>Laboratory name</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Date</td>
+<td>Date with time stamp</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Balance</td>
+<td>Name of the laboratory balance used</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Fluid temp</td>
+<td>Temperature of the calibrated fluid</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Comment</td>
+<td>(Optional) Comment on the calibration</td>
+</tr>
+</tbody>
+</table>
+<h4 id="calibration-point-volume-editing">Calibration Point - Volume Editing<a class="headerlink" href="#calibration-point-volume-editing" title="Permanent link">&para;</a></h4>
+<p>After selecting <strong>Edit Volume</strong> in the context menu of a calibration point (page 99), the <em>Calibration Point Volume Edit</em> window opens. Here the volume of the calibration point can be readjusted by entering the measured volume or a factor.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="arithmatex">\[Factor = \frac{(V~Expected)}{(V~Measured)}\]</div>
+<p>→ Hence + 1% corresponds with a factor of 1.010.</p>
+</div>
+<p><img alt="CERTUS Calibrator, Calibration Point Volume Edit" class="img-medium" height="450" src="../_assets/screenshots/calibration_point_volume_edit.png" title="CERTUS Calibrator, Calibration Point Volume Edit" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Volume Measured</em></td>
+<td>Entry of a measured volume.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Factor</em></td>
+<td>Entry of a correction factor.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Initial</em></td>
+<td>The initial value of the calibration point to be corrected.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Resulting</em></td>
+<td>The calibration point resulting from the correction.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>OK</em></td>
+<td>Accepts the entered correction.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="custom-calibration-by-volume">Custom calibration by volume<a class="headerlink" href="#custom-calibration-by-volume" title="Permanent link">&para;</a></h4>
+<p>Clicking <strong>Add Values</strong> opens the <em>Custom Calibration by Volume</em> window. Here you can calibrate a customized target volume.</p>
+<p>See <a href="../operations/#adding-customized-calibration-points">Adding customized Calibration Points</a></p>
+<p><img alt="CERTUS Calibrator, Custom Calibration by Volume" class="img-medium" height="450" src="../_assets/screenshots/certus_calibrator_calibration_by_volume.png" title="CERTUS Calibrator, Custom Calibration by Volume" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Target Volume</em></td>
+<td>Target volume for the calibration</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Shots</em></td>
+<td>Closing number</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Deviation</em></td>
+<td>Deviation from the entered target volume</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Selection</em></td>
+<td>Select the calibration point</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Take Best</em></td>
+<td>Select a calibration value with the lowest deviation (%), which is included in the calibration list.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="calibration-selector">Calibration Selector<a class="headerlink" href="#calibration-selector" title="Permanent link">&para;</a></h4>
+<p>Clicking <em>Load Values</em> opens the <em>Calibration Selector</em> window. Here you can compare calibrations included in Library with those defined in the configuration and add them to the calibration list.</p>
+<p><img alt="CERTUS Calibrator, Calibration Selector" class="img-medium" height="450" src="../_assets/screenshots/certus_control_calibration_selector.png" title="CERTUS Calibrator, Calibration Selector" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Select Calibration from which to load values</em></td>
+</tr>
+<tr>
+<td></td>
+<td>Selection of calibrations included in the library, which can be filtered.</td>
+</tr>
+<tr>
+<td></td>
+<td>(See <a href="#filtering-possibilities">Filtering possibilities</a>)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Text box with limiting possibilities</td>
+</tr>
+<tr>
+<td></td>
+<td>(See <a href="#input-area">Input area</a>)</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Compare to Configuration</em></td>
+</tr>
+<tr>
+<td></td>
+<td>Compare the selected calibration with the current channel configuration</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To view calibration values in <em>Calibration Selector</em>: Right-click the calibration and click <em>View Calibration</em>.</p>
+</div>
+<h3 id="configuration-manager">Configuration Manager<a class="headerlink" href="#configuration-manager" title="Permanent link">&para;</a></h3>
+<p><img alt="Configuration Manager" class="img-medium on-glb" height="250" src="../_assets/screenshots/CM_channels_menu.png" title="Configuration Manager - Channels Menu" width="450" /></p>
+<p>Clicking the <em>Channels</em> symbol or double-clicking the channel area opens the <em>Configuration Manager</em> window.</p>
+<p>Individual or multiple channels are configured here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The behavior regarding the removal of calibrations can be set under Settings =&gt; Protocol Editor.</p>
+</div>
+<h3 id="symbols-in-use_4">Symbols in use<a class="headerlink" href="#symbols-in-use_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img _="," alt="Symbol for High Pressure" height="32" src="../_assets/icons/image338.png" width="32" /></td>
+<td>The entered pressure is too high/low (allowable = 0.051 – 1.00 bar)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Protocol Editor Configuration Manager" class="img-medium on-glb" height="450" src="../_assets/screenshots/image398.png" title="Protocol Editor, Configuration Manager" width="750" /> </p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Fluid Supply Kits</strong></td>
+<td>Create/manage bottle and syringe kits. Assign a fluid and pressure to each bottle or syringe kit.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Channel Configuration</strong></td>
+<td>Configure individual dispensing channels. A channel consists of a kit, a micro valve, a factor value, and a calibration.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Configuration Manager Fluid Supply Kits" class="img-medium on-glb" height="450" src="../_assets/screenshots/configuration_manager_fluid_supply_kits.png" title="Configuration Manager, Fluid Supply Kits" width="750" /> </p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Kit-ID</strong></td>
+<td>Letter identification of the kit</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Fluid Supply</strong></td>
+<td>Supply kit with a number of outlets</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Fluid</strong></td>
+<td>Dedicated fluid in the container</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Pressure [bar]</strong></td>
+<td>Operating pressure for the supply kit (0.01 to 1.00 bar)</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Add Supply Kit</strong></td>
+<td>Add more bottle/syringe kits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-menu_6">Context menu<a class="headerlink" href="#context-menu_6" title="Permanent link">&para;</a></h3>
+<p>Right-clicking fluid Supply Kits opens a context menu with more commands:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Change Kit ID letter</em></td>
+<td>Change the kit ID letter</td>
+</tr>
+<tr>
+<td><em>Delete Kit</em></td>
+<td>Delete the kit</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Configuration Manager, Channel Configuration" class="img-medium on-glb" height="450" src="../_assets/screenshots/configuration_manager_channel_configuration.png" title="Configuration Manager, Channel Configuration" width="650" /> </p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><em>En (Enable)</em></td>
+<td>Enable or disable the channel</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><em>Supply Kit</em></td>
+<td>Select the supply kit</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><em>Valve</em></td>
+<td>Select the micro valve</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><em>Calibration</em></td>
+<td>Assigned calibration (clicking the Box Plot opens <em>Calibration Manager</em>)</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><em>Factor</em></td>
+<td>Correction factor of the dispensing volume</td>
+</tr>
+</tbody>
+</table>
+<h3 id="context-menu_7">Context menu<a class="headerlink" href="#context-menu_7" title="Permanent link">&para;</a></h3>
+<p>Right-clicking the <em>Channel Configuration</em> opens the following commands:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Copy Channel</em></td>
+<td>Copy the selected channel configuration</td>
+</tr>
+<tr>
+<td><em>Paste Channel</em></td>
+<td>Paste the copied channel configuration</td>
+</tr>
+<tr>
+<td><em>Move Channel</em></td>
+<td>Replace or exchange the channel configuration with another channel</td>
+</tr>
+</tbody>
+</table>
+<h3 id="calibration-manager">Calibration Manager<a class="headerlink" href="#calibration-manager" title="Permanent link">&para;</a></h3>
+<p>In <em>Calibration Manager</em>, the calibration is reassigned to the relevant channel.</p>
+<p><img alt="Calibration Manager, Select Current Calibration" class="img-medium on-glb" height="450" src="../_assets/screenshots/certus_control_select_current_calibration.png" title="Calibration Manager, Select Current Calibration" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><em>Select current Calibration</em> -</td>
+</tr>
+<tr>
+<td></td>
+<td>Use various filtering possibilities to select a calibration suitable for this channel.</td>
+</tr>
+<tr>
+<td></td>
+<td>(See <a href="#filtering-possibilities">Filtering possibilities</a>)</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Text box with limiting possibilities</td>
+</tr>
+<tr>
+<td></td>
+<td>(See <a href="#input-area">Input area</a>)</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><em>Compare to Configuration</em></td>
+</tr>
+<tr>
+<td></td>
+<td>Compare the selected calibration with the current channel configuration.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintenance_1">Maintenance<a class="headerlink" href="#maintenance_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Maintenance" class="img-medium on-glb" height="150" src="../_assets/screenshots/CM_maintenance_menu.png" width="350" /></p>
+<p>Clicking the <strong>Maintenance</strong> symbol opens Maintenance Flyout on the right. Individual or multiple channels can be flushed here before a protocol is executed. </p>
+<p>Switching on/off compressed air is also made possible.</p>
+<p><img alt="Maintenance" class="img-medium on-glb" height="150" src="../_assets/screenshots/image403.png" title="Maintenance Flyout" width="350" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><em>Definition</em></td>
+<td>Select the channel and defines operation of the dispensing head during execution</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><em>Preparation</em></td>
+<td>Dispensing commands to prepare the channel</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><em>Cleaning</em></td>
+<td>Dispensing commands to clean the channel</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><em>Air</em></td>
+<td>Switch on/off compressed air (execution without compressed air is impossible)</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><em>Axis</em></td>
+<td>Bring the axes back to their park position after collision</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Maintenance, Definition" class="img-medium on-glb" height="250" src="../_assets/screenshots/image404.png" title="Maintenance, Definition" width="450" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Select/disable all channels</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Channel number</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Fluid assigned to the channel</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Define the prime volume</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Define the purge volume</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Move down the dispensing head before use</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Maintenance, Preparation and Cleaning" class="img-medium on-glb" height="250" src="../_assets/screenshots/image405.png" title="Maintenance, Preparation and Cleaning" width="450" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>As long as the key is pressed, the micro valve is flushed</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Open the micro valve until the prime volume is reached</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Briefly opens and closes the micro valve until the purge volume is reached (the volume is further divided depending on the micro valve)</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Cleaning cycle: a combination of <em>Prime</em> and <em>Purge</em></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Number of cleaning cycle repetitions</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Maintenance, Air" class="img-medium on-glb" height="200" src="../_assets/screenshots/image406.png" title="Maintenance Air" width="400" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Switch compressed air on / off.</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Air pressure mode<br/></td>
+</tr>
+<tr>
+<td></td>
+<td>* Auto: The air pressure defined in the supply kit is used.</td>
+</tr>
+<tr>
+<td></td>
+<td>* Manual: Any air pressure can be selected. (0.051 - 1 bar)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Air pressure mode set to <strong>Manual</strong> can cause deviations in the dispensed prime and purge volumes.</p>
+</div>
+<h3 id="live-log">Live Log<a class="headerlink" href="#live-log" title="Permanent link">&para;</a></h3>
+<p><img alt="Maintenance, Live Log" class="img-medium on-glb" height="200" src="../_assets/screenshots/image407.png" width="400" /></p>
+<p>Clicking the <strong>Live Log</strong> symbol displays a flyout window with completed protocol steps at the bottom part of the screen.</p>
+<p><img alt="Maintenance, Live Log Fly" class="img-medium on-glb" height="250" src="../_assets/screenshots/image408.png" title="Maintenance, Live Log Flyout" width="450" /></p>
+<p>Here you can view individual processes during dispensing.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Back</strong></td>
+<td>Close the view and returns to Protocol Editor</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Protocol Output</strong></td>
+<td>List all protocol preparation steps</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Error</strong></td>
+<td>List protocol preparation errors, which have to be confirmed with <em>Cancel</em> to continue</td>
+</tr>
+</tbody>
+</table>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<p><img alt="Maintenance, Summary" class="img-medium on-glb" height="250" src="../_assets/screenshots/image409.png" width="450" /></p>
+<p>Clicking the <strong>Summary</strong> symbol displays an overview of the current experiment. Here, the selected element is summarized in the protocol area.</p>
+<p><img alt="Protocol Editor, Summary View" class="img-medium on-glb" height="250" src="../_assets/screenshots/image410.png" title="Protocol Editor, Summary View" width="450" /></p>
+<h3 id="interval-purge-loop-ipl">Interval Purge Loop (IPL)<a class="headerlink" href="#interval-purge-loop-ipl" title="Permanent link">&para;</a></h3>
+<p><img alt="Interval Purge, Menu" class="img-medium on-glb" height="250" src="../_assets/screenshots/image411.png" width="450" /></p>
+<p>Clicking the <em>IPL</em> symbol opens a flyout window on the right.</p>
+<p>Here, a prime/purge cycle (which corresponds to a clean cycle) can be executed at the desired interval over a longer time period (up to three days).</p>
+<p>It is used to prevent reactions such as fluid hardening/agglutination during longer down- times.</p>
+<p><img alt="Interval Purge, Definition" class="img-medium on-glb" height="250" src="../_assets/screenshots/image412.png" title="Interval Purge Flyout" width="450" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Clicking the arrow closes the window</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Start, pause, and stop execution</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Select the channel for a prime/purge cycle</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Save and load IPL settings</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Text box for the prime volume</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Text box for the purge volume</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Clicking the symbol copies the entered value to all channels</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td>Number of cycles</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Interval Purge, Head Behavior" class="img-medium on-glb" height="250" src="../_assets/screenshots/image413.png" title="Interval Purge, Head Behavior" width="450" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Behavior of the dispensing head</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Move Dispensing Head down</em>: each time the dispensing head moves down</td>
+</tr>
+<tr>
+<td></td>
+<td><em>Keep Dispensing Head down</em>: the dispensing head remains down</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Time interval until the next prime/purge cycle</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Total time of the cycle</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Switch on and off compressed air</td>
+</tr>
+</tbody>
+</table>
+<h3 id="protocol">Protocol<a class="headerlink" href="#protocol" title="Permanent link">&para;</a></h3>
+<p>In <em>Protocol</em>, the well plate is provided with dispensing regions and layers.</p>
+<p>It is possible to define exact dispensing volumes for individual wells or regions, as well as dispensing movement sequences.</p>
+<p><img alt="Protocol Editor, Protocol" class="img-medium on-glb" height="450" src="../_assets/screenshots/image414.png" title="Protocol Editor, Protocol" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Information on the well plate</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>List added layers</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Region within a layer</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Layer overview</td>
+</tr>
+<tr>
+<td></td>
+<td>(A new layer can be created by clicking on the plus symbol)</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Show the well plate with its regions</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Protocol Editor, Definitions" class="img-medium on-glb" height="450" src="../_assets/screenshots/image415.png" title="Protocol Editor, Definitions" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><em>Region</em></td>
+<td>Region on a layer</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><em>Layer</em></td>
+<td>Separate layer. Dispensing starts with Layer1.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="symbols-in-use_5">Symbols in use<a class="headerlink" href="#symbols-in-use_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Well plate name" src="../_assets/icons/icon_well_plate_name.svg" /></td>
+<td>Well plate name</td>
+</tr>
+<tr>
+<td><img alt="Number of wells" src="../_assets/icons/icon_number_of_wells.svg" /></td>
+<td>Number of wells</td>
+</tr>
+<tr>
+<td><img alt="Well plate height" src="../_assets/icons/icon_well_page_height.png" /></td>
+<td>Well plate height</td>
+</tr>
+<tr>
+<td><img alt="Maximum well volume" src="../_assets/icons/icon_max_well_volume.png" /></td>
+<td>Maximum well volume</td>
+</tr>
+<tr>
+<td><img alt="Evaporation curtain" src="../_assets/icons/icon_evaporation_curtain.png" /></td>
+<td>Evaporation curtain with fluid data used</td>
+</tr>
+<tr>
+<td><img alt="Root node" src="../_assets/icons/icon_root_node.png" /></td>
+<td>Root node of all layers</td>
+</tr>
+<tr>
+<td><img alt="Single layer" src="../_assets/icons/icon_single_layer.png" /></td>
+<td>Single layer</td>
+</tr>
+<tr>
+<td><img alt="Timer" src="../_assets/icons/icon_timer_for_dispensing.png" /></td>
+<td>Timer for dispensing pauses before or after a region</td>
+</tr>
+<tr>
+<td><img alt="Region" src="../_assets/icons/icon_region.png" /></td>
+<td>Region</td>
+</tr>
+<tr>
+<td><img alt="Repetition within a region" src="../_assets/icons/icon_repetition_within_region.png" /></td>
+<td>Repetition within a region</td>
+</tr>
+<tr>
+<td><img alt="Fluid" src="../_assets/icons/icon_fluid.png" /></td>
+<td>Fluid</td>
+</tr>
+<tr>
+<td><img alt="Active element" src="../_assets/icons/icon_active_temp_loaded_element.png" /></td>
+<td>Active, temporarily loaded element</td>
+</tr>
+<tr>
+<td><img alt="Function name" src="../_assets/icons/icon_function.png" /></td>
+<td>Function name</td>
+</tr>
+<tr>
+<td><img alt="Constant volume" src="../_assets/icons/icon_constant_volume.png" /></td>
+<td>Constant volume</td>
+</tr>
+<tr>
+<td><img alt="Start volume" src="../_assets/icons/icon_start_volume.png" /></td>
+<td>Start volume</td>
+</tr>
+<tr>
+<td><img alt="End volume" src="../_assets/icons/icon_end_volume.png" /></td>
+<td>End volume</td>
+</tr>
+<tr>
+<td><img alt="Linear function increment" src="../_assets/icons/icon_linear_increment.png" /></td>
+<td>Linear function increment</td>
+</tr>
+<tr>
+<td><img alt="Line-by-line Movement Pattern" src="../_assets/icons/icon_line-by-line_movement.png" /></td>
+<td>Line-by-line movement pattern</td>
+</tr>
+<tr>
+<td><img alt="Line-by-line S-line" src="../_assets/icons/icon_line-by-line_sline.png" /></td>
+<td>Line-by-line S-line movement pattern</td>
+</tr>
+<tr>
+<td><img alt="Column-by-column" src="../_assets/icons/icon_column-by-column_movement.png" /></td>
+<td>Column-by-column movement pattern</td>
+</tr>
+<tr>
+<td><img alt="Column-by-column S-line" src="../_assets/icons/icon_column-by-column-sline.png" /></td>
+<td>Column-by-column S-line movement pattern</td>
+</tr>
+<tr>
+<td><img alt="Exponential function" src="../_assets/icons/icon_exponential_function_base.png" /></td>
+<td>Exponential function base</td>
+</tr>
+<tr>
+<td><img alt="Starting position of the volume calculation" src="../_assets/icons/icon_volume_calc_starting_position.png" /></td>
+<td>Starting position of the volume calculation in a dispensing step</td>
+</tr>
+<tr>
+<td><img alt="Backfil function Refilling" src="../_assets/icons/icon_backfill_function.png" /></td>
+<td>Backfill function refilling until this volume</td>
+</tr>
+<tr>
+<td><img alt="Backfill function refilling until this volume" src="../_assets/icons/icon_backfill_calc_selected_volume.png" /></td>
+<td>Only this region included in the calculation of the backfill function</td>
+</tr>
+<tr>
+<td><img alt="Backfill all preceding layers" src="../_assets/icons/icon_backfill_func_preceding_layers.png" /></td>
+<td>Backfill function for all preceding layers</td>
+</tr>
+<tr>
+<td><img alt="Number of self-specified volumes" src="../_assets/icons/icon_self_specified_volumes.png" /></td>
+<td>Number of self-specified volumes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="context-menu_8">Context menu<a class="headerlink" href="#context-menu_8" title="Permanent link">&para;</a></h4>
+<p><img alt="Protocol Context menu" src="../_assets/screenshots/protocol_context_menu.png" title="Protocol Context Menu" /></p>
+<p>Right-clicking well plate information opens a context menu with more commands:</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Change Well Plate" src="../_assets/icons/icon_change_well_plate.png" /></td>
+<td><em>Change Well Plate</em></td>
+<td>Open a dialog to change the well plate</td>
+</tr>
+<tr>
+<td><img alt="Set Evaporation" src="../_assets/icons/icon_evaporation_curtain.png" /></td>
+<td><em>Set Evaporation</em></td>
+<td>Determine the filling volume (%) of the evaporation column</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Add new Layer" src="../_assets/screenshots/protocol_context_layers_menu.png" /></p>
+<p>Right-clicking <em>Layers</em> opens a context menu with more commands:</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Add new Layer" src="../_assets/icons/icon_add_layers.png" /></td>
+<td><em>Add new Layer</em></td>
+<td>Add a layer</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Layer 1" height="50" src="../_assets/screenshots/protocol_context_layer_added.png" width="150" /></p>
+<p>Right-clicking <em>Layer</em> opens a context menu with more commands:</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Rename Layer" src="../_assets/icons/icon_rename_layer.png" /></td>
+<td><em>Rename Layer</em></td>
+<td>Rename the layer</td>
+</tr>
+<tr>
+<td><img alt="Delete Layer" src="../_assets/icons/icon_delete_layer.png" /></td>
+<td><em>Delete Layer</em></td>
+<td>Delete the layer</td>
+</tr>
+<tr>
+<td><img alt="Import Region" src="../_assets/icons/icon_import_region.png" /></td>
+<td><em>Import Region</em></td>
+<td>Import the region</td>
+</tr>
+<tr>
+<td><img alt="Enabled Layer" src="../_assets/icons/icon_enabled_layer.png" /></td>
+<td><em>Enabled Layer</em></td>
+<td>Disable/enable the layer</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Region context menu" src="../_assets/screenshots/protocol_context_region.png" /></p>
+<p>Right-clicking <em>Region</em> opens a context menu with more commands:</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Edit Region" src="../_assets/icons/icon_edit_region.png" /></td>
+<td><em>Edit Region</em></td>
+<td>Opens Region Editor to edit the region</td>
+</tr>
+<tr>
+<td><img alt="Rename Region" src="../_assets/icons/icon_rename_region.png" /></td>
+<td><em>Rename Region</em></td>
+<td>Rename the region</td>
+</tr>
+<tr>
+<td><img alt="Delete Region" src="../_assets/icons/icon_delete_region.png" /></td>
+<td><em>Delete Region</em></td>
+<td>Delete the region</td>
+</tr>
+<tr>
+<td><img alt="Save Region As" src="../_assets/icons/icon_save_as_region.png" /></td>
+<td><em>Save Region As</em></td>
+<td>Save the region as</td>
+</tr>
+<tr>
+<td><img alt="Enabled Region" src="../_assets/icons/icon_enabled_region.png" /></td>
+<td><em>Enabled Region</em></td>
+<td>Disable/enable the region</td>
+</tr>
+<tr>
+<td><img alt="Add Timer" src="../_assets/icons/icon_region_add_timer.png" /></td>
+<td><em>Add Timer</em></td>
+<td>Add a timer for pauses before/after the region</td>
+</tr>
+</tbody>
+</table>
+<h3 id="region-editor">Region Editor<a class="headerlink" href="#region-editor" title="Permanent link">&para;</a></h3>
+<p>To open Region Editor, double-click the Region or right-click the region and then Edit Region.
+Region Editor makes it possible to define which fluid and how will be dispensed within the region.</p>
+<p><img alt="Protocol, Region Editor" height="450" src="../_assets/screenshots/protocol_region_editor.png" title="Protocol, Region Editor" width="650" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Synchronous Dispense</em></td>
+<td>Dispense fluids synchronously or sequentially</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Fluid Selection</em></td>
+<td>Choose single or mixed fluids</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Axial Movement</em></td>
+<td>Define processing direction (row-by-row, column-by-column, or S-line patterns)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Sequence Replicates</em></td>
+<td>Define number and sequence of replicates</td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Dispense Steps</em></td>
+<td>Configure individual dispensing steps</td>
+</tr>
+<tr>
+<td>6</td>
+<td><em>Region Overview</em></td>
+<td>Lists all dispensing steps within the region</td>
+</tr>
+</tbody>
+</table>
+<h4 id="add-dispense-step">Add dispense step<a class="headerlink" href="#add-dispense-step" title="Permanent link">&para;</a></h4>
+<p><img alt="Add Dispense Step" src="../_assets/screenshots/protocol_add_dispense_step.png" title="Add Dispense Step" /></p>
+<p>Clicking the <strong>Add Dispense Step</strong> symbol opens a menu with dispensing functions.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>fluids</em></td>
+<td>Selection of non-assigned fluids</td>
+</tr>
+<tr>
+<td>2</td>
+<td><img alt="Constant Dispensing" class="img-icon" height="80" src="../_assets/icons/icon_constant_dispensing.png" width="80" /></td>
+<td>Constant dispensing of dispensing volumes</td>
+</tr>
+<tr>
+<td>3</td>
+<td><img alt="Linear Increase" class="img-icon" height="80" src="../_assets/icons/icon_linear_dispensing.png" width="80" /></td>
+<td>Linear increase in dispensing volumes</td>
+</tr>
+<tr>
+<td>4</td>
+<td><img alt="Exponential Increase" class="img-icon" height="80" src="../_assets/icons/icon_exponential_dispensing.png" width="80" /></td>
+<td>Exponential increase in dispensing volumes</td>
+</tr>
+<tr>
+<td>5</td>
+<td><img alt="Tabulated Values" class="img-icon" height="80" src="../_assets/icons/icon_tabulated_dispensing.png" width="80" /></td>
+<td>Dispensing volume in accordance with tabulated values</td>
+</tr>
+<tr>
+<td>6</td>
+<td><img alt="Well Refilling" class="img-icon" height="80" src="../_assets/icons/icon_refilling_upto_specified_value.png" width="80" /></td>
+<td>Well refilling up to the specified value while taking into account precedingd ispensations</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a more detailed description of the dispensing functions: See <a href="#dispensing-functions">Dispensing Functions</a>.</p>
+</div>
+<h4 id="synchronous-dispense">Synchronous dispense<a class="headerlink" href="#synchronous-dispense" title="Permanent link">&para;</a></h4>
+<p><img alt="Region Editor, Synchronous Dispense" src="../_assets/screenshots/synchronous_dispensing.png" title="Region Editor, Synchronous Dispense" /></p>
+<p><img alt="Fluid by Fluid" src="../_assets/images/fluid_by_flulid_dispensing.png" title="Dispensing using Fluid by Fluid option" /></p>
+<p>In fluid <em>by fluid</em>, only one fluid is dispensed during the experiment.</p>
+<p><img alt="Mixed Fluid" src="../_assets/images/mixed_fluid_dispensing.png" title="Dispensing using Mixed Fluid option" /></p>
+<p>In <em>Mixed fluids</em>, multiple fluids are simultaneously dispensed during the experiment.</p>
+<p><strong>Axial movement</strong></p>
+<p>Defines the processing direction in a region.</p>
+<p><img alt="Regional Editor, Axial Movement" src="../_assets/images/region_editor_axial_movement.png" title="Regional Editor, Axial Movement" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="S-Line Horizontal" src="../_assets/images/sline_horizontal.png" /></th>
+<th style="text-align: center;"><img alt="S-Line Vertical" src="../_assets/images/sline_verticle.png" /></th>
+<th style="text-align: center;"><img alt="Column by Column" src="../_assets/images/row_by_row.png" /></th>
+<th style="text-align: center;"><img alt="Column by Column" src="../_assets/images/column_by_column.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="S-Line Horizontal" src="../_assets/icons/icon_sline_horizontal.png" /></td>
+<td style="text-align: center;"><img alt="S-Line Vertical" src="../_assets/icons/icon_sline_vertical.png" /></td>
+<td style="text-align: center;"><img alt="S-Line Horizontal" src="../_assets/icons/icon_row_by_row.png" /></td>
+<td style="text-align: center;"><img alt="S-Line Vertical" src="../_assets/icons/icon_column_by_column.png" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">S-Line Horizontal</td>
+<td style="text-align: center;">S-Line Vertical</td>
+<td style="text-align: center;">Row by Row</td>
+<td style="text-align: center;">Column by Column</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sequence-replicate">Sequence Replicate<a class="headerlink" href="#sequence-replicate" title="Permanent link">&para;</a></h4>
+<p>Defines the number and sequence of replicates.</p>
+<p><img alt="Region Editor, Sequence Replicate" src="../_assets/screenshots/sequence_replicate.png" title="Region Editor, Sequence Replicate" /></p>
+<p><strong>Example</strong>: 4x4 well region with linear dispensing</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Sequence Replicate, Column None" src="../_assets/images/sequence_replicate_no_column.png" /></th>
+<th style="text-align: center;"><img alt="Sequence Replicate, 2 Replicates" src="../_assets/images/sequence_replicate_2_columns.png" /></th>
+<th style="text-align: center;"><img alt="Sequence Replicate, 4 Replicates" src="../_assets/images/sequence_replicate_4_columns.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Column</td>
+<td style="text-align: center;">Column</td>
+<td style="text-align: center;">Column</td>
+</tr>
+<tr>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">2 replicates (each is two wells wide)</td>
+<td style="text-align: center;">4 replicates (each is one well wide)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img alt="Sequence Replicate, Row None" src="../_assets/images/sequence_replicate_no_row.png" /></th>
+<th style="text-align: center;"><img alt="Sequence Replicate, 2 Replicates" src="../_assets/images/sequence_replicate_2_rows.png" /></th>
+<th style="text-align: center;"><img alt="Sequence Replicate, 4 Replicates" src="../_assets/images/sequence_replicate_4_rows.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Row</td>
+<td style="text-align: center;">Row</td>
+<td style="text-align: center;">Row</td>
+</tr>
+<tr>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">2 replicates (each is two wells high)</td>
+<td style="text-align: center;">4 replicates (each is one well high)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>An indivisible number of wells (3, 5, 7, 11,...) can onlybe divided by itself. </li>
+<li>A combination of row and column subdivisions is also possible.</li>
+</ul>
+</div>
+<h3 id="dispensing-functions">Dispensing Functions<a class="headerlink" href="#dispensing-functions" title="Permanent link">&para;</a></h3>
+<p>Dispensing functions with the most important settings are described here. (Supplement to <a href="#add-dispense-step">Region Editor, Add Dispense Step</a>)</p>
+<h4 id="constant">Constant<a class="headerlink" href="#constant" title="Permanent link">&para;</a></h4>
+<p><img alt="Constant Dispensing Example" class="img-medium" height="150" src="../_assets/images/dispensing_functions_constant.png" width="150" /></p>
+<p>Constant dispensing. Each well is refilled with the same volume.</p>
+<p><img alt="Dispensing Functions" src="../_assets/screenshots/dispensing_functions.png" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Volume</em></td>
+<td>Desired dispensing volume</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Pre-Dispense</em></td>
+<td>Optional dispensing into the waste tray before dispensing proper.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Make sure that the micro valve is completely refilled with fluid.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="linear">Linear<a class="headerlink" href="#linear" title="Permanent link">&para;</a></h4>
+<p>Defines a linear increase in the dispensing volume.</p>
+<ul>
+<li>Enter the end volume → factor calculation.</li>
+<li>Enter the factor value → end volume calculation.</li>
+</ul>
+<p><img alt="Linear Increase in Dispensing Volume" class="img-medium on-glb" height="450" src="../_assets/screenshots/linear_increase_dispensing_volume.png" title="Linear Increase in Dispensing Volume" width="550" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Start Volume</em></td>
+<td>Volume of the first well</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>End Volume</em></td>
+<td>Volume of the last well</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Increment Volume</em></td>
+<td>Change the volume of each well (both positive and negative)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Function Route</em></td>
+<td>Set the function route of the calculated dispensing volume.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>See <a href="#function-route-and-start-position">Function route and start position</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Start Position</em></td>
+<td>Sets the start position for the function route.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>See <a href="#function-route-and-start-position">Function route and start position</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td><em>Pre-Dispense</em></td>
+<td>Optional dispensing into the waste tray before dispensing proper.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Make sure that the micro valve is completely refilled with fluid.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="factor">Factor<a class="headerlink" href="#factor" title="Permanent link">&para;</a></h4>
+<p>Defines an exponential increase in the dispensing volume. Dosage exponentially increasing according to the following values:</p>
+<ul>
+<li>Enter the end volume → factor calculation.</li>
+<li>Enter the factor value → end volume calculation.</li>
+</ul>
+<p><img alt="Factor Increase in Dispensing Volume" class="img-small" height="200" src="../_assets/icons/icon_factor.png" width="200" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Start Volume</em></td>
+<td>Volume of the first well</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>End Volume</em></td>
+<td>Volume of the last well</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Factor</em></td>
+<td>Exponential increase base</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Function Route</em></td>
+<td>Set the function route of the calculated dispensing volume.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>See <a href="#function-route-and-start-position">Function route and start position</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td><em>Start Position</em></td>
+<td>Sets the start position for the function route.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>See <a href="#function-route-and-start-position">Function route and start position</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td><em>Pre-Dispense</em></td>
+<td>Optional dispensing into the waste tray before dispensing proper.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Make sure that the micro valve is completely refilled with fluid.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="discrete">Discrete<a class="headerlink" href="#discrete" title="Permanent link">&para;</a></h3>
+<p>Default from the table or copied Excel files.</p>
+<p><img alt="Discrete Dispensing Example" class="img-small" height="150" src="../_assets/icons/icon_discrete.png" width="150" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Edit List</em></td>
+<td>Opens the <em>Discrete Volumes Editor</em> window.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Pre-Dispense</em></td>
+<td>Optional dispensing into the waste tray before dispensing proper.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Make sure that the micro valve is completely refilled with fluid.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Discrete Volumes Editor" src="../_assets/screenshots/discrete_settings.png" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Table for manually entering the dispensing volume</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Values copied from an Excel file are included in the table.</td>
+</tr>
+<tr>
+<td></td>
+<td>For this purpose, flag the desired rows in Excel and copy them to the clipboard.</td>
+</tr>
+<tr>
+<td></td>
+<td>The position of the values to be imported is defined by designating target wells (in the top left corner) of the new region.</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Discrete Volumes Editor" src="../_assets/screenshots/discrete_volume_editor.png" title="Region Editor, Discrete Volumes Editor" /></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Table for manually entering the dispensing volume</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Values copied from an Excel file are included in the table. For this purpose, flag the desired rows in Excel and copy them to the clipboard.</td>
+</tr>
+<tr>
+<td></td>
+<td><img alt="Clipboard Import" src="../_assets/screenshots/clipboard_import.png" /></td>
+</tr>
+<tr>
+<td></td>
+<td>The position of the values to be imported is defined by designating target wells (in the top left corner) of the new region.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>How to add an Excel table with the dispensing function Discrete is described in <a href="../operations/#adding-a-dispensing-quantity-as-an-excel-table">Adding a dispensing quantity as an Excel table</a>.</p>
+</div>
+<h3 id="backfill">Backfill<a class="headerlink" href="#backfill" title="Permanent link">&para;</a></h3>
+<p><img alt="Backfill" class="img-small" height="150" src="../_assets/icons/icon_backfill.png" width="150" /></p>
+<p>The well is refilled up to the specified value while taking into account preceding dispensa- tions.</p>
+<p><img alt="Backfill Settings" height="89" src="../_assets/screenshots/backfill_settings.png" width="729" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><em>Backfill Volume</em></td>
+<td>Refill the well up to this volume.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><em>This region:</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Refill while taking into account preceding dispensations within the region</td>
+</tr>
+<tr>
+<td>2</td>
+<td><em>Backfill Mode</em></td>
+<td><em>Preceding Layers:</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Refill while also taking into account previous dispensations from preceding layers</td>
+</tr>
+<tr>
+<td>3</td>
+<td><em>Pre-Dispense</em></td>
+<td>Optional dispensing into the waste tray before dispensing proper.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Make sure that the micro valve is completely refilled with fluid.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Backfill function is always performed as the last step. </p>
+</div>
+<h4 id="function-route-and-start-position">Function route and start position<a class="headerlink" href="#function-route-and-start-position" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note Confusion</p>
+<p>The function route (FR) and start position (SP) should not be confused with the travel of the dispensing head. Function-related settings are only meant here.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/fr_horizontal_top_left.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/fr_horizontal_bottom_right.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/fr_horizontal_top_right.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/fr_horizontal_bottom_left.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR</td>
+<td style="text-align: center;">Horizontal</td>
+<td style="text-align: center;">Horizontal</td>
+<td style="text-align: center;">Horizontal</td>
+<td style="text-align: center;">Horizontal</td>
+</tr>
+<tr>
+<td>SP</td>
+<td style="text-align: center;">Top left</td>
+<td style="text-align: center;">Bottom right</td>
+<td style="text-align: center;">Top right</td>
+<td style="text-align: center;">Bottom left</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/sline_horizontal.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/sline_horizontal_bottom_right.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/sline_horizontal_top_right.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/sline_horizontal_bottom_left.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR</td>
+<td style="text-align: center;">Horizontal S-Line</td>
+<td style="text-align: center;">Horizontal S-Line</td>
+<td style="text-align: center;">Horizontal S-Line</td>
+<td style="text-align: center;">Horizontal S-Line</td>
+</tr>
+<tr>
+<td>SP</td>
+<td style="text-align: center;">Top left</td>
+<td style="text-align: center;">Bottom right</td>
+<td style="text-align: center;">Top right</td>
+<td style="text-align: center;">Bottom left</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/column_by_column.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/vertical_bottom_right.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/vertical_top_right.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/vertical_bottom_left.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR</td>
+<td style="text-align: center;">Vertical</td>
+<td style="text-align: center;">Vertical</td>
+<td style="text-align: center;">Vertical</td>
+<td style="text-align: center;">Vertical</td>
+</tr>
+<tr>
+<td>SP</td>
+<td style="text-align: center;">Top left</td>
+<td style="text-align: center;">Bottom right</td>
+<td style="text-align: center;">Top right</td>
+<td style="text-align: center;">Bottom left</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/fr_horizontal_top_left.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/fr_horizontal_bottom_right.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/fr_horizontal_top_right.png" /></th>
+<th style="text-align: center;"><img alt="" src="../_assets/images/fr_horizontal_bottom_left.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FR</td>
+<td style="text-align: center;">Vertical S-Line</td>
+<td style="text-align: center;">Vertical S-Line</td>
+<td style="text-align: center;">Vertical S-Line</td>
+<td style="text-align: center;">Vertical S-Line</td>
+</tr>
+<tr>
+<td>SP</td>
+<td style="text-align: center;">Top left</td>
+<td style="text-align: center;">Bottom right</td>
+<td style="text-align: center;">Top right</td>
+<td style="text-align: center;">Bottom left</td>
+</tr>
+</tbody>
+</table>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:*">
+<p>v1-configuration file: Gyger.Certus.CoreService.config.xml&#160;<a class="footnote-backref" href="#fnref:*" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:*" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:*" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:*" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © Fritz Gyger AG. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["search.highlight", "search.suggest", "navigation.tracking", "navigation.sections", "navigation.instant", "navigation.indexes", "navigation.footer", "content.code.annotate", "content.code.copy", "content.code.focus", "content.code.tabbed", "content.tabs.link", "content.tooltips", "header.autolinks", "header.linked", "toc.sticky"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../configurations/javascripts/pdf-config.js"></script>
+      
+        <script src="../../../../configurations/javascripts/pdf-button.js"></script>
+      
+        <script src="../../../../configurations/javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../../configurations/javascripts/figure_caption.js"></script>
+      
+    
+  </body>
+</html>

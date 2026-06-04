@@ -1,0 +1,26 @@
+# variables used various markdown files and templates, included via the macros plugin in mkdocs.yaml
+company:
+  name: "Fritz Gyger AG"
+  website: "https://www.fgyger.ch"
+  logoURL: "https://teknosysgit.github.io/CERTUS-GYGER-DOCS/docs/_shared_assets/company_logo_light.png"
+site:
+  title: "Certus Knowledgebase"
+  tagline: "Streamlined onboarding with clear, task‑based flows and expert guidance."
+  description: "Comprehensive documentation for Certus Flex and Certus Rivo dispensing systems, covering setup, operation, maintenance, and troubleshooting to empower users with expert guidance and support."
+  siteURL: "https://teknosysgit.github.io/CERTUS-GYGER-DOCS/"
+  authors:
+    primary: "Docs Team"
+    contributors: 
+      - "Arnold Zueger"
+      - "Reto Gyger"
+  newTopics:
+    subtitle: "Freshly published guidance to help you move faster."
+  updatedTopics:
+    subtitle: "Revisions, clarifications, and expanded coverage."
+addOn:
+  name:
+    en: "Add-on Modules"
+    de: "Add-on Module"
+  tagline:
+    en: "Optional modules and accessories to extend capabilities."
+    de: "Optionale Module und Zubehör zur Erweiterung der Funktionen."
