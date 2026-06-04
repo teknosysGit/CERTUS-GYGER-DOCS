@@ -98,6 +98,7 @@ hooks:
   #- docs/configurations/hooks/create pdf_event_hook.py
 
 markdown_extensions:
+  - pymdownx.blocks.admonition
   - admonition
   - pymdownx.snippets
   - pymdownx.details
