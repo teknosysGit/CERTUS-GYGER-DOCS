@@ -805,23 +805,25 @@ Right-clicking the listed user opens a context menu with more commands.
 
 When you log on as a Windows user, the user name and password of the current PC account is used to log on to {{ variables.product.software.name.en }}. This helps the user log on faster.
 
-!!! note
-    As the user has already been authenticated by logging on to Windows, no {{ variables.product.software.name.en }} logon is required.
+/// admonition | Note
+    type: note
 
-<div markdown="1">
+As the user has already been authenticated by logging on to Windows, no {{ variables.product.software.name.en }} logon is required.
+///
+
 ![{{ variables.product.software.name.en }} Login Window](_assets/screenshots/image207.png "CERTUS CONTROL Logon Window"){ .img-medium .on-glb width="550" height="550"}
-</div>
 
 #### Selecting users or groups
 
 Clicking *Use Windows User* opens Window's *Directory Object Picker* Dialog. This dialog enables to select which Windows user is to be used.
 
-!!! note
-    When {{ variables.product.software.name.en }} is started next time, the software automatically uses the user account.
+/// admonition | Note
+    type: note
 
-<div markdown="1">
+When {{ variables.product.software.name.en }} is started next time, the software automatically uses the user account.
+///
+
 ![Selecting a User or Group](_assets/screenshots/image212.png "Selecting a User or Group"){ .img-medium .on-glb width="550" height="450"}
-</div>
 
 | #   | Description                                |
 | --- | ------------------------------------------ |
