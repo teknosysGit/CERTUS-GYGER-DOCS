@@ -808,7 +808,7 @@ When you log on as a Windows user, the user name and password of the current PC 
 !!! note
     As the user has already been authenticated by logging on to Windows, no {{ variables.product.software.name.en }} logon is required.
 
-![{{variables.product.software.name.en }} Login Window](_assets/screenshots/image207.png "CERTUS CONTROL Logon Window"){ .img-medium .on-glb width="550" height="550"}
+![{{variables.product.software.name.en }} Login Window](_assets/screenshots/image207.png){ .img-medium .on-glb width="550" height="550"}
 
 #### Selecting users or groups
 
